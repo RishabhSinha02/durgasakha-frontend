@@ -6,14 +6,14 @@
         "use": "@vercel/static"
       },
       {
-        "src": "server.js",
+        "src": "dist/durgasakha-frontend/server.js",
         "use": "@vercel/node"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "server.js"
+        "dest": "dist/durgasakha-frontend/server.js"
       }
     ]
   }
