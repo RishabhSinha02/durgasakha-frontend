@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node dist/durgasakha-frontend/server/main.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run durgasakha-frontend:serve-ssr",
-    "serve:ssr": "node dist/durgasakha-frontend/server/main.js",
     "build:ssr": "ng build && ng run durgasakha-frontend:server",
+    "serve:ssr": "node dist/durgasakha-frontend/server/main.js",
     "prerender": "ng run durgasakha-frontend:prerender"
   },
   "private": true,
@@ -25,13 +25,13 @@
     "@angular/router": "^16.0.0",
     "@ngneat/cashew": "^3.0.0",
     "@nguniversal/express-engine": "^16.2.0",
-    "express": "^4.15.2",
+    "express": "^4.21.1",
     "primeicons": "^7.0.0",
     "primeng": "^16.3.1",
     "rxjs": "~7.8.0",
     "ts-cacheable": "^1.0.10",
     "tslib": "^2.3.0",
-    "zone.js": "~0.13.0"
+    "zone.js": "^0.13.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.0.2",
@@ -53,9 +53,9 @@
     "typescript": "~5.0.2"
   },
   "styles": [
-  "node_modules/primeicons/primeicons.css",
-  "node_modules/primeng/resources/themes/saga-blue/theme.css",
-  "node_modules/primeng/resources/primeng.min.css",
-  "src/styles.css"
-]
+    "node_modules/primeicons/primeicons.css",
+    "node_modules/primeng/resources/themes/saga-blue/theme.css",
+    "node_modules/primeng/resources/primeng.min.css",
+    "src/styles.css"
+  ]
 }
