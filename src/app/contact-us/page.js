@@ -1,6 +1,11 @@
+import Navbar from "../components/navbar/navbar";
+
 export default function ContactUs() {
     return (
-      <div>Contact Us</div>
+      <div>
+        <Navbar page={6}/>
+        Contact Us
+        </div>
     );
   }
   

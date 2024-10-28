@@ -1,6 +1,11 @@
+import Navbar from "../components/navbar/navbar";
+
 export default function Donate() {
     return (
-      <div>Donate </div>
+      <div>
+        <Navbar page={0}/>
+        Donate
+        </div>
     );
   }
   

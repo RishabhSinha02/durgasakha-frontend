@@ -1,8 +1,10 @@
-import Link from 'next/link';
+import Navbar from "./components/navbar/navbar";
+
 export default function Home() {
   return (
-    <div>Hello
-      <Link href="/about-us">About Us</Link>
+    <div className="home">
+      <Navbar page={1}/>
+      Home
     </div>
   );
 }
