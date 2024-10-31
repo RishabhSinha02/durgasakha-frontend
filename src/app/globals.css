@@ -12,3 +12,8 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.footer-logo img {
+  width: 200px;  /* Set your desired width */
+  height: auto;  /* Maintains aspect ratio */
+}

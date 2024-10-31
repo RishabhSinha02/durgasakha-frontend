@@ -1,10 +1,9 @@
-import Navbar from "./components/navbar/navbar";
+import { CustomCarousel } from "./components/home/carousel";
 
 export default function Home() {
   return (
     <div className="home">
-      <Navbar page={1}/>
-      Home
+      <CustomCarousel />
     </div>
   );
 }
