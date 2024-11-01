@@ -1,0 +1,9 @@
+.nav-links {
+    @apply border-l-2 border-primary pl-4 hover:text-secondary font-bold;
+}
+
+
+.footer-logo img {
+    width: 280px;  /* Set your desired width */
+    height: auto;  /* Maintains aspect ratio */
+}

@@ -5,15 +5,12 @@
 :root {
   --background: #F7F7F7;
   --foreground: #171717;
+  --primary: theme('colors.primary');
+  --secondary: theme('colors.secondary');
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.footer-logo img {
-  width: 200px;  /* Set your desired width */
-  height: auto;  /* Maintains aspect ratio */
 }
