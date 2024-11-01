@@ -1,4 +1,4 @@
-import { CustomCarousel } from "./components/Carousel/Carousel"
+import { CustomCarousel } from "./components/carousel/Carousel"
 
 export default function Home() {
   return (

@@ -1,8 +1,8 @@
 import localFont from "next/font/local";
 import { Poppins } from 'next/font/google'
 import "./globals.css";
-import CustomNavbar from "./components/Navbar/Navbar";
-import CustomFooter from "./components/Footer/Footer";
+import CustomNavbar from "./components/navbar/Navbar";
+import CustomFooter from "./components/footer/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
