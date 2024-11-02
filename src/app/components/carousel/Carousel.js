@@ -11,7 +11,7 @@ export function CustomCarousel() {
       subtitle : "We're a travel company driven by a mission to explore responsibly and make a difference. Join us in our journey to travel with heart and leave a positive impact.",
     },
     {
-      imageSrc: "https://flowbite.com/docs/images/carousel/carousel-2.svg",
+      imageSrc: "/nature.jpg",
       title: "Hello World",
       subtitle: "hello world",
     },
@@ -32,13 +32,15 @@ export function CustomCarousel() {
       <Carousel slide={false} className={styles['carousel-no-rounded']}>
         {carouselData.map((item, index)=>(
           <div key={index} className="relative h-full">
-            <Image src={item.imageSrc} alt="..." layout="fill" objectFit="cover" />
-            <div className="absolute inset-0 flex flex-col items-left justify-center bg-black bg-opacity-40 pl-6 lg:pl-20">
-              <h2 className="text-4xl md:text-7xl font-bold text-white">{item.title}</h2>
+            <Image src={item.imageSrc} alt="..." fill={true} style={{
+              objectFit: "cover",
+            }} />
+            <div className="absolute inset-0 flex flex-col items-left justify-center pl-6 lg:pl-20">
+              <h2 className="max-w-4xl text-4xl md:text-7xl font-bold text-white">{item.title}</h2>
               <p className="mt-2 text-sm md:text-lg text-white border-l-4 border-primary pl-4 max-w-sm md:max-w-xl">{item.subtitle}</p>
               <div className="flex flex-row space-x-4 pl-8 mt-4">
-                <Button className="rounded-full bg-secondary">Book Now</Button>
-                <Button className="rounded-full bg-white text-primary">View Treks</Button>
+                <Button className="rounded-full bg-secondary text-white">Book Now</Button>
+                <Button className="rounded-full bg-white text-primary hover:text-white">View Treks</Button>
               </div>
             </div>
           </div>

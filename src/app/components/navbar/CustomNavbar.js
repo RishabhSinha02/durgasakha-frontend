@@ -31,10 +31,18 @@ export default function CustomNavbar() {
                 <NavbarLink href="/about-us">
                     About
                 </NavbarLink>
-                <NavbarLink href="/upcoming-treks">Treks</NavbarLink>
-                <NavbarLink href="/upcoming-events">Events</NavbarLink>
-                <NavbarLink href="/gallery">Gallery</NavbarLink>
-                <NavbarLink href="/contact-us">Contact</NavbarLink>
+                <NavbarLink href="/upcoming-treks">
+                    Treks
+                </NavbarLink>
+                <NavbarLink href="/upcoming-events">
+                    Events
+                </NavbarLink>
+                <NavbarLink href="/gallery">
+                    Gallery
+                </NavbarLink>
+                <NavbarLink href="/contact-us">
+                    Contact
+                </NavbarLink>
             </NavbarCollapse>
         </Navbar>
     );
