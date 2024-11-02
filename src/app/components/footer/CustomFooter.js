@@ -49,24 +49,24 @@ export default function CustomFooter() {
                             <FooterTitle title="Important Links" className="text-primary"/>
                             <FooterLinkGroup col>
                                 <FooterLink href="#" className={styles['nav-links']}>Home</FooterLink>
-                                <FooterLink href="#" className={styles['nav-links']}>About</FooterLink>
-                                <FooterLink href="#" className={styles['nav-links']}>Upcoming Treks</FooterLink>
-                                <FooterLink href="#" className={styles['nav-links']}>Upcoming Events</FooterLink>
-                                <FooterLink href="#" className={styles['nav-links']}>Gallery</FooterLink>
+                                <FooterLink href="/about-us" className={styles['nav-links']}>About</FooterLink>
+                                <FooterLink href="/upcoming-treks" className={styles['nav-links']}>Upcoming Treks</FooterLink>
+                                <FooterLink href="/upcoming-events" className={styles['nav-links']}>Upcoming Events</FooterLink>
+                                <FooterLink href="/gallery" className={styles['nav-links']}>Gallery</FooterLink>
                             </FooterLinkGroup>
                             </div>
                             <div>
                             <FooterTitle title="Follow us" className="text-primary"/>
                             <FooterLinkGroup col>
-                                <FooterLink href="#" className={styles['nav-links']}>Github</FooterLink>
-                                <FooterLink href="#" className={styles['nav-links']}>Discord</FooterLink>
+                                <FooterLink href="#" className={styles['nav-links']}>Instagram</FooterLink>
+                                <FooterLink href="#" className={styles['nav-links']}>Facebook</FooterLink>
                             </FooterLinkGroup>
                             </div>
                             <div>
                             <FooterTitle title="Reach us" className="text-primary"/>
                             <FooterLinkGroup col>
-                                <FooterLink href="#" className={styles['nav-links']}>Contact us</FooterLink>
-                                <FooterLink href="#" className={styles['nav-links']}>Donate</FooterLink>
+                                <FooterLink href="/contact-us" className={styles['nav-links']}>Contact us</FooterLink>
+                                <FooterLink href="/donate" className={styles['nav-links']}>Donate</FooterLink>
                             </FooterLinkGroup>
                         </div>
                     </div>

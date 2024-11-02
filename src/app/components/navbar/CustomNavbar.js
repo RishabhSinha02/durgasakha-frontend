@@ -21,20 +21,20 @@ export default function CustomNavbar() {
                     </svg>
                     मराठी
                 </div>
-                <Button className="rounded-full">Donate Now</Button>
+                <Button className="rounded-full ">Donate Now</Button>
                 <NavbarToggle />
             </div>
             <NavbarCollapse>
-                <NavbarLink href="#" active>
+                <NavbarLink href="/" active>
                     Home
                 </NavbarLink>
-                <NavbarLink as={Link} href="#">
+                <NavbarLink href="/about-us">
                     About
                 </NavbarLink>
-                <NavbarLink href="#">Treks</NavbarLink>
-                <NavbarLink href="#">Events</NavbarLink>
-                <NavbarLink href="#">Gallery</NavbarLink>
-                <NavbarLink href="#">Contact</NavbarLink>
+                <NavbarLink href="/upcoming-treks">Treks</NavbarLink>
+                <NavbarLink href="/upcoming-events">Events</NavbarLink>
+                <NavbarLink href="/gallery">Gallery</NavbarLink>
+                <NavbarLink href="/contact-us">Contact</NavbarLink>
             </NavbarCollapse>
         </Navbar>
     );
