@@ -1,0 +1,3 @@
+.carousel-no-rounded > div {
+    border-radius: 0 !important;
+}
