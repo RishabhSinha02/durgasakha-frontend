@@ -12,7 +12,7 @@ export function Header({ background, title}) {
                         objectFit: "cover",
                     }} />
                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-red-600 bg-opacity-40">
-                    <h2 className="max-w-4xl text-4xl md:text-7xl font-bold text-white">{title}</h2>
+                    <h2 className="max-w-4xl text-5xl sm:text-6xl md:text-7xl font-bold text-white text-center">{title}</h2>
                 </div>
             </div>
         </div>
