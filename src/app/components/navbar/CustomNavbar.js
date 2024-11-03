@@ -21,7 +21,9 @@ export default function CustomNavbar() {
                     </svg>
                     मराठी
                 </div>
-                <Button className="rounded-full ">Donate Now</Button>
+                <Link href="/donate">
+                    <button className="rounded-full bg-secondary text-white px-4 py-2">Donate Now</button>
+                </Link>
                 <NavbarToggle />
             </div>
             <NavbarCollapse>
