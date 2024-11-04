@@ -136,7 +136,7 @@ export default function Home() {
         Experience the Joy of Giving Back While Exploring the World
           </p>
           <p className="mt-4 text-sm md:text-lg font-semibold text-justify max-w-7xl">
-          At Durgasakha, we believe that travel is not just about sightseeing; it's also about giving back to the places we visit. Our volunteer program offers you the opportunity to immerse yourself in diverse cultures while making a meaningful impact on local communities and the environment.
+          At Durgasakha, we believe that travel is not just about sightseeing; it&apos;s also about giving back to the places we visit. Our volunteer program offers you the opportunity to immerse yourself in diverse cultures while making a meaningful impact on local communities and the environment.
           </p>
         </div>
 
