@@ -4,7 +4,6 @@ import {
     FooterCopyright,
     FooterDivider,
     FooterIcon,
-    FooterLink,
     FooterLinkGroup,
     FooterTitle,
   } from "flowbite-react";
@@ -48,25 +47,25 @@ export default function CustomFooter() {
                         <div>
                             <FooterTitle title="Important Links" className="text-primary"/>
                             <FooterLinkGroup col>
-                                <FooterLink href="#" className={styles['nav-links']}>Home</FooterLink>
-                                <FooterLink href="/about-us" className={styles['nav-links']}>About</FooterLink>
-                                <FooterLink href="/upcoming-treks" className={styles['nav-links']}>Upcoming Treks</FooterLink>
-                                <FooterLink href="/upcoming-events" className={styles['nav-links']}>Upcoming Events</FooterLink>
-                                <FooterLink href="/gallery" className={styles['nav-links']}>Gallery</FooterLink>
+                                <Link href="#" className={styles['nav-links']}>Home</Link>
+                                <Link href="/about-us" className={styles['nav-links']}>About</Link>
+                                <Link href="/upcoming-treks" className={styles['nav-links']}>Upcoming Treks</Link>
+                                <Link href="/upcoming-events" className={styles['nav-links']}>Upcoming Events</Link>
+                                <Link href="/gallery" className={styles['nav-links']}>Gallery</Link>
                             </FooterLinkGroup>
                             </div>
                             <div>
                             <FooterTitle title="Follow us" className="text-primary"/>
                             <FooterLinkGroup col>
-                                <FooterLink href="#" className={styles['nav-links']}>Instagram</FooterLink>
-                                <FooterLink href="#" className={styles['nav-links']}>Facebook</FooterLink>
+                                <Link href="#" className={styles['nav-links']}>Instagram</Link>
+                                <Link href="#" className={styles['nav-links']}>Facebook</Link>
                             </FooterLinkGroup>
                             </div>
                             <div>
                             <FooterTitle title="Reach us" className="text-primary"/>
                             <FooterLinkGroup col>
-                                <FooterLink href="/contact-us" className={styles['nav-links']}>Contact us</FooterLink>
-                                <FooterLink href="/donate" className={styles['nav-links']}>Donate</FooterLink>
+                                <Link href="/contact-us" className={styles['nav-links']}>Contact us</Link>
+                                <Link href="/donate" className={styles['nav-links']}>Donate</Link>
                             </FooterLinkGroup>
                         </div>
                     </div>
