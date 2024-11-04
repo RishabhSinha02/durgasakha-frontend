@@ -4,6 +4,7 @@ import {
     FooterCopyright,
     FooterDivider,
     FooterIcon,
+    FooterLink,
     FooterLinkGroup,
     FooterTitle,
   } from "flowbite-react";
@@ -20,6 +21,7 @@ export default function CustomFooter() {
                 <div className="grid w-full justify-between gap-4 sm:flex sm:justify-between md:grid-cols-1 items-center">
                     <div className="flex flex-col gap-8">
                         <FooterBrand
+                            as={Link}
                             href="/"
                             src="/footer/durgasakha-logo-footer.png"
                             alt="Durgasakha"
@@ -47,38 +49,38 @@ export default function CustomFooter() {
                         <div>
                             <FooterTitle title="Important Links" className="text-primary"/>
                             <FooterLinkGroup col>
-                                <Link href="#" className={styles['nav-links']}>Home</Link>
-                                <Link href="/about-us" className={styles['nav-links']}>About</Link>
-                                <Link href="/upcoming-treks" className={styles['nav-links']}>Upcoming Treks</Link>
-                                <Link href="/upcoming-events" className={styles['nav-links']}>Upcoming Events</Link>
-                                <Link href="/gallery" className={styles['nav-links']}>Gallery</Link>
+                                <FooterLink as={Link} href="/" className={styles['nav-links']}>Home</FooterLink>
+                                <FooterLink as={Link} href="/about-us" className={styles['nav-links']}>About</FooterLink>
+                                <FooterLink as={Link} href="/upcoming-treks" className={styles['nav-links']}>Upcoming Treks</FooterLink>
+                                <FooterLink as={Link} href="/upcoming-events" className={styles['nav-links']}>Upcoming Events</FooterLink>
+                                <FooterLink as={Link} href="/gallery" className={styles['nav-links']}>Gallery</FooterLink>
                             </FooterLinkGroup>
-                            </div>
-                            <div>
+                        </div>
+                        <div>
                             <FooterTitle title="Follow us" className="text-primary"/>
                             <FooterLinkGroup col>
-                                <Link href="#" className={styles['nav-links']}>Instagram</Link>
-                                <Link href="#" className={styles['nav-links']}>Facebook</Link>
+                                <FooterLink as={Link} href="#" className={styles['nav-links']}>Instagram</FooterLink>
+                                <FooterLink as={Link} href="#" className={styles['nav-links']}>Facebook</FooterLink>
                             </FooterLinkGroup>
-                            </div>
-                            <div>
+                        </div>
+                        <div>
                             <FooterTitle title="Reach us" className="text-primary"/>
                             <FooterLinkGroup col>
-                                <Link href="/contact-us" className={styles['nav-links']}>Contact us</Link>
-                                <Link href="/donate" className={styles['nav-links']}>Donate</Link>
+                                <FooterLink as={Link} href="/contact-us" className={styles['nav-links']}>Contact us</FooterLink>
+                                <FooterLink as={Link} href="/donate" className={styles['nav-links']}>Donate</FooterLink>
                             </FooterLinkGroup>
                         </div>
                     </div>
                 </div>
                 <FooterDivider />
                 <div className="w-full sm:flex sm:items-center sm:justify-between">
-                <FooterCopyright href="#" by="Durgasakha" year={2024} className="text-secondary"/>
+                <FooterCopyright as={Link} href="#" by="Durgasakha" year={2024} className="text-secondary"/>
                 <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-                    <FooterIcon href="#" icon={BsFacebook} className="text-primary"/>
-                    <FooterIcon href="#" icon={BsInstagram} className="text-primary"/>
-                    <FooterIcon href="#" icon={BsTwitter} className="text-primary"/>
-                    <FooterIcon href="#" icon={BsGithub} className="text-primary"/>
-                    <FooterIcon href="#" icon={BsDribbble} className="text-primary"/>
+                    <FooterIcon as={Link} href="#" icon={BsFacebook} className="text-primary"/>
+                    <FooterIcon as={Link} href="#" icon={BsInstagram} className="text-primary"/>
+                    <FooterIcon as={Link} href="#" icon={BsTwitter} className="text-primary"/>
+                    <FooterIcon as={Link} href="#" icon={BsGithub} className="text-primary"/>
+                    <FooterIcon as={Link} href="#" icon={BsDribbble} className="text-primary"/>
                 </div>
                 </div>
             </div>

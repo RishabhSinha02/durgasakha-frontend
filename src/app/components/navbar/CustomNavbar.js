@@ -27,22 +27,22 @@ export default function CustomNavbar() {
                 <NavbarToggle />
             </div>
             <NavbarCollapse>
-                <NavbarLink href="/" active>
+                <NavbarLink as={Link} href="/">
                     Home
                 </NavbarLink>
-                <NavbarLink href="/about-us">
+                <NavbarLink as={Link} href="/about-us">
                     About
                 </NavbarLink>
-                <NavbarLink href="/upcoming-treks">
+                <NavbarLink as={Link} href="/upcoming-treks">
                     Treks
                 </NavbarLink>
-                <NavbarLink href="/upcoming-events">
+                <NavbarLink as={Link} href="/upcoming-events">
                     Events
                 </NavbarLink>
-                <NavbarLink href="/gallery">
+                <NavbarLink as={Link} href="/gallery">
                     Gallery
                 </NavbarLink>
-                <NavbarLink href="/contact-us">
+                <NavbarLink as={Link} href="/contact-us">
                     Contact
                 </NavbarLink>
             </NavbarCollapse>
