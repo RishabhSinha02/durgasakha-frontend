@@ -37,7 +37,7 @@ export function CustomCarousel() {
             }} />
             <div className="absolute inset-0 flex flex-col items-left justify-center pl-6 lg:pl-20">
               <h2 className="max-w-4xl text-4xl md:text-7xl font-bold text-white">{item.title}</h2>
-              <p className="mt-2 text-sm md:text-lg text-white border-l-4 border-secondary pl-4 max-w-sm md:max-w-xl">{item.subtitle}</p>
+              <p className="mt-3 text-sm md:text-lg text-white border-l-4 border-secondary pl-4 max-w-sm md:max-w-xl">{item.subtitle}</p>
               <div className="flex flex-row space-x-4 pl-8 mt-4">
                 <Button className="rounded-full bg-secondary text-white">Book Now</Button>
                 <Button className="rounded-full bg-white text-primary hover:text-white">View Treks</Button>
