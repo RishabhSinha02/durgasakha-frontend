@@ -2,6 +2,7 @@ import { CustomCarousel } from "./components/carousel/Carousel";
 import HomeCard from "./components/home/homeCard";
 import StarRating from "./components/home/starRating";
 import TestimonialSlider from "./components/home/testimonialSlider";
+import Image from "next/image";
 
 export default function Home() {
   const features = [
@@ -19,21 +20,21 @@ export default function Home() {
         <div className="welcome-image">
           <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] flex justify-center items-center">
             <div className="absolute top-0 left-2 md:left-4 w-36 h-28 md:w-48 md:h-36 lg:w-56 lg:h-48 overflow-hidden">
-              <img
+              <Image
                 src="nature.jpg"
                 alt="Top Left"
                 className="object-cover w-full h-full rounded-md shadow-lg"
               />
             </div>
             <div className="relative w-48 h-64 md:w-64 md:h-80 lg:w-72 lg:h-96 z-10 overflow-hidden">
-              <img
+              <Image
                 src="nature.jpg"
                 alt="Center"
                 className="object-cover w-full h-full rounded-md shadow-lg"
               />
             </div>
             <div className="absolute bottom-0 right-2 md:right-4 w-36 h-28 md:w-48 md:h-36 lg:w-56 lg:h-48 overflow-hidden">
-              <img
+              <Image
                 src="nature.jpg"
                 alt="Bottom Right"
                 className="object-cover w-full h-full rounded-md shadow-lg"
@@ -141,7 +142,7 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center">
-        <img
+        <Image
                 src="nature.jpg"
                 alt="Top Left"
                 className="object-cover w-full h-full self-center shadow-lg"

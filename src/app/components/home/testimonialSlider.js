@@ -1,6 +1,8 @@
 "use client";
+
 import React, { useState, useEffect, useCallback } from 'react';
 import StarRating from './starRating';
+import Image from 'next/image';
 
 const TestimonialSlider = () => {
     const testimonials = [
@@ -127,7 +129,7 @@ const TestimonialSlider = () => {
                     <div className="bg-white rounded-lg shadow p-6 h-full">
                       <div className="flex items-center gap-4 mb-4">
                         <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
-                          <img
+                          <Image
                             src="profileRishabh.png"
                             alt={testimonial.name}
                             className="w-full h-full object-cover"

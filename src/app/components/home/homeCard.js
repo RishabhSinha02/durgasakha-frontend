@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function HomeCard({
     title,
     subtitle,
@@ -12,7 +14,7 @@ export default function HomeCard({
     return (
       <div className="trek-card bg-white shadow-md rounded-lg overflow-hidden">
         <div className="relative flex justify-center items-center">
-          <img src={image} className="h-[286px] w-full object-cover" alt={`${title} cover`} />
+          <Image src={image} className="h-[286px] w-full object-cover" alt={`${title} cover`} />
         </div>
         <div className="trek-details p-4 flex flex-col gap-1 md:p-6">
           <p className="lg:text-[20px] md:text-base font-semibold text-gray-600">
