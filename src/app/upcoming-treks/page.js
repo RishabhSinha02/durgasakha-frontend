@@ -1,7 +1,6 @@
 "use client";
 import DifficultySelector from "../components/upcoming-treks/difficultySelector";
 import TrekCard from "../components/upcoming-treks/trekCard";
-import Link from 'next/link';
 
 export default function UpcomingTreks() {
   const handleDifficultyChange = (difficulty) => {
@@ -19,8 +18,6 @@ export default function UpcomingTreks() {
     { name: "Aconcagua" },
     { name: "Rinjani" }
   ];
-  
-  const buttons = ['button1', 'button2', 'button3'];
   return (
     <div className="p-10 md:p-16 md:pb-12 md:pt-12 space-y-10">
       <div className="grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-1 gap-4">

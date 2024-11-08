@@ -1,11 +1,14 @@
+'use client';
+import { useParams } from 'next/navigation';
 import { Header } from '../components/header/Header';
 
 const Layout = ({ children }) => {
+    const { id } = useParams();
     return (
         <div>
             <Header 
                 background="/header.png" 
-                title="Upcoming Events"/>
+                title={id?id:"Upcoming Events"}/>
             <main>
                 {children}
             </main>
