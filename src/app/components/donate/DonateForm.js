@@ -34,7 +34,7 @@ export function DonateForm() {
                 <div className="mb-2 block">
                     <Label htmlFor="name" value="Donor Details" className="text-primary text-2xl sm:text-3xl font-bold"/>
                 </div>
-                <div className="flex flex-row gap-8 justify-between">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 justify-between">
                     <TextInput id="name" type="name" placeholder="Full Name" className="w-full" required />
                     <TextInput id="email" type="email" placeholder="Email Address" className="w-full" required />
                 </div>
