@@ -5,7 +5,7 @@ import TrekCard from "../components/upcoming-treks/trekCard";
 export default function UpcomingTreks() {
   const handleDifficultyChange = (difficulty) => {
     console.log('Selected difficulty:', difficulty);
-    // Handle the change, e.g. make API call
+    // For Api Call
   };
   return (
     <div className="p-10 md:p-16 md:pb-12 md:pt-12 space-y-10">
@@ -36,6 +36,10 @@ export default function UpcomingTreks() {
           </div>
         </div>
       </div>
+
+
+
+
       <div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
           <TrekCard />
@@ -49,6 +53,10 @@ export default function UpcomingTreks() {
           <TrekCard />
         </div>
       </div>
+
+
+
+
     </div>
   );
 }

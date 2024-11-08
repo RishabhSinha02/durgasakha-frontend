@@ -27,7 +27,7 @@ const DifficultySelector = ({ initialValue = 'easy', onChange = () => {} }) => {
             flex items-center gap-2 px-2 py-1 rounded-full w-full lg:text-md md:text-sm sm:text-[10px] text-[12px]
             ${selectedDifficulty === difficulty.id 
               ? 'bg-secondary text-white' 
-              : 'bg-gray-100 hover:bg-gray-150'}
+              : 'bg-gray-100 hover:bg-gray-300 hover:bg-gray-150'}
             transition-colors duration-200
             flex justify-between
           `}
