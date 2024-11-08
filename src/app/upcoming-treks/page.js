@@ -1,12 +1,26 @@
 "use client";
 import DifficultySelector from "../components/upcoming-treks/difficultySelector";
 import TrekCard from "../components/upcoming-treks/trekCard";
+import Link from 'next/link';
 
 export default function UpcomingTreks() {
   const handleDifficultyChange = (difficulty) => {
     console.log('Selected difficulty:', difficulty);
     // For Api Call
   };
+  const treks = [
+    { name: "Everest" },
+    { name: "Annapurna" },
+    { name: "Kilimanjaro" },
+    { name: "Makalu" },
+    { name: "Elbrus" },
+    { name: "Fuji" },
+    { name: "Denali" },
+    { name: "Aconcagua" },
+    { name: "Rinjani" }
+  ];
+  
+  const buttons = ['button1', 'button2', 'button3'];
   return (
     <div className="p-10 md:p-16 md:pb-12 md:pt-12 space-y-10">
       <div className="grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-1 gap-4">
@@ -42,17 +56,17 @@ export default function UpcomingTreks() {
 
       <div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
-          <TrekCard />
-          <TrekCard />
-          <TrekCard />
-          <TrekCard />
-          <TrekCard />
-          <TrekCard />
-          <TrekCard />
-          <TrekCard />
-          <TrekCard />
+          {treks.map((trek)=>(
+            <div key={trek.name}> {/* Move key here */}
+            <TrekCard id={trek.name} />
+          </div>
+          ))}
         </div>
       </div>
+
+
+      <div>
+    </div>
 
 
 

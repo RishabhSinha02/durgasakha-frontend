@@ -1,13 +1,16 @@
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const TrekCard = ({
+    id,
     type = "Mountain Trek",
     trekName = "Tringlewadi Trek",
     date = "12 March 2024",
     location = "Mumbai",
     description = "Where Adventure Meets Purpose! We're thrilled to have you here. At Durgasakha, we're more thrilled to have you here. At Durgasakha, we're more",
     price = "1499.00",
-    imageUrl = "nature.jpg",
+    imageUrl = "/nature.jpg",
     href = "#",
 }) => {
     return (
@@ -15,17 +18,19 @@ const TrekCard = ({
             {/* Background Image Section */}
             <div className="relative h-[300px]">
                 <div className='h-full w-full bg-black'>
-                <img
-                    src={imageUrl}
-                    alt={type}
-                    className="object-cover h-full w-full opacity-50"
-                />
+                    <Image
+                        src={imageUrl}
+                        alt={type}
+                        className="object-cover h-full w-full opacity-50"
+                        width={600}        
+                        height={400}
+                    />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent">
                     <h3 className="p-6 text-md font-semibold text-white">{type}</h3>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h2 className="text-3xl font-bold text-white">{trekName}</h2>
+                    <h2 className="text-3xl font-bold text-white">{id}</h2>
                 </div>
             </div>
 
@@ -39,8 +44,8 @@ const TrekCard = ({
                 <p className="mb-6 text-sm text-gray-600">{description}</p>
 
                 <div className="flex items-center justify-between">
-                    <a
-                        href={href}
+                    <Link
+                        href={`upcoming-treks/${id}`}
                         className="flex items-center gap-2 rounded-full bg-[#D84E4E] px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-[#C23E3E]"
                     >
                         Join Now
@@ -59,7 +64,7 @@ const TrekCard = ({
                                 strokeLinejoin="round"
                             />
                         </svg>
-                    </a>
+                    </Link>
                     <div className="text-2xl font-bold">
                         Rs. {price}
                     </div>
