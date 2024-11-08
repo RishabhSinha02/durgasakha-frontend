@@ -130,9 +130,11 @@ const TestimonialSlider = () => {
                       <div className="flex items-center gap-4 mb-4">
                         <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
                           <Image
-                            src="profileRishabh.png"
+                            src="/profileRishabh.png"
                             alt={testimonial.name}
                             className="w-full h-full object-cover"
+                            width={150}
+                            height={150}
                           />
                         </div>
                         <div>

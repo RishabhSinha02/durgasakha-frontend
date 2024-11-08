@@ -21,23 +21,29 @@ export default function Home() {
           <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] flex justify-center items-center">
             <div className="absolute top-0 left-2 md:left-4 w-36 h-28 md:w-48 md:h-36 lg:w-56 lg:h-48 overflow-hidden">
               <Image
-                src="nature.jpg"
+                src="/nature.jpg"
                 alt="Top Left"
                 className="object-cover w-full h-full rounded-md shadow-lg"
+                width={200}
+                height={200}
               />
             </div>
             <div className="relative w-48 h-64 md:w-64 md:h-80 lg:w-72 lg:h-96 z-10 overflow-hidden">
               <Image
-                src="nature.jpg"
+                src="/nature.jpg"
                 alt="Center"
                 className="object-cover w-full h-full rounded-md shadow-lg"
+                width={200}
+                height={200}
               />
             </div>
             <div className="absolute bottom-0 right-2 md:right-4 w-36 h-28 md:w-48 md:h-36 lg:w-56 lg:h-48 overflow-hidden">
               <Image
-                src="nature.jpg"
+                src="/nature.jpg"
                 alt="Bottom Right"
                 className="object-cover w-full h-full rounded-md shadow-lg"
+                width={200}
+                height={200}
               />
             </div>
           </div>
@@ -90,9 +96,9 @@ export default function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 
-          <HomeCard title="Tringlewadi Trek" subtitle="Mountain Trek" organisers="Rishabh Sinha" date="12 March 2024" image="nature.jpg" />
-          <HomeCard title="Tringlewadi Trek" subtitle="Mountain Trek" organisers="Rishabh Sinha" date="12 March 2024" image="nature.jpg" />
-          <HomeCard title="Tringlewadi Trek" subtitle="Mountain Trek" organisers="Rishabh Sinha" date="12 March 2024" image="nature.jpg" />
+          <HomeCard title="Tringlewadi Trek" subtitle="Mountain Trek" organisers="Rishabh Sinha" date="12 March 2024" image="/nature.jpg" />
+          <HomeCard title="Tringlewadi Trek" subtitle="Mountain Trek" organisers="Rishabh Sinha" date="12 March 2024" image="/nature.jpg" />
+          <HomeCard title="Tringlewadi Trek" subtitle="Mountain Trek" organisers="Rishabh Sinha" date="12 March 2024" image="/nature.jpg" />
 
         </div>
         <div className="text-white flex justify-end">
@@ -111,9 +117,9 @@ export default function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 
-          <HomeCard title="Vidya School" subtitle="School Kit Distribution" organisers="Rishabh Sinha" date="12 March 2024" image="nature.jpg" />
-          <HomeCard title="Vidya School" subtitle="School Kit Distribution" organisers="Rishabh Sinha" date="12 March 2024" image="nature.jpg" />
-          <HomeCard title="Vidya School" subtitle="School Kit Distribution" organisers="Rishabh Sinha" date="12 March 2024" image="nature.jpg" />
+          <HomeCard title="Vidya School" subtitle="School Kit Distribution" organisers="Rishabh Sinha" date="12 March 2024" image="/event.png" />
+          <HomeCard title="Vidya School" subtitle="School Kit Distribution" organisers="Rishabh Sinha" date="12 March 2024" image="/event.png" />
+          <HomeCard title="Vidya School" subtitle="School Kit Distribution" organisers="Rishabh Sinha" date="12 March 2024" image="/event.png" />
 
         </div>
         <div className="flex justify-end">
@@ -126,27 +132,27 @@ export default function Home() {
         </div>
       </section>
 
-
-
-      <section className="volunteer p-6 md:p-16 space-y-10 grid sm:grid-cols-1 md:grid-cols-2 gap-36 bg-[#EBEBEB]">
-        <div>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 md:mb-10">
-        Volunteer with Durgasakha
-        </h1>
-        <p className="mt-2 text-sm md:text-lg border-l-4 text-secondary font-bold border-secondary pl-4 md:pl-8 text-justify max-w-7xl">
-        Experience the Joy of Giving Back While Exploring the World
+      <section className="volunteer p-6 md:p-16 space-y-10 grid sm:grid-cols-1 lg:grid-cols-2 lg:gap-36 bg-[#EBEBEB]">
+        <div className="flex flex-col justify-center">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 md:mb-10">
+          Volunteer with Durgasakha
+          </h1>
+          <p className="mt-2 text-sm md:text-lg border-l-4 text-secondary font-bold border-secondary pl-4 md:pl-8 text-justify max-w-7xl">
+            Experience the Joy of Giving Back While Exploring the World
           </p>
           <p className="mt-4 text-sm md:text-lg font-semibold text-justify max-w-7xl">
-          At Durgasakha, we believe that travel is not just about sightseeing; it&apos;s also about giving back to the places we visit. Our volunteer program offers you the opportunity to immerse yourself in diverse cultures while making a meaningful impact on local communities and the environment.
+            At Durgasakha, we believe that travel is not just about sightseeing; it&apos;s also about giving back to the places we visit. Our volunteer program offers you the opportunity to immerse yourself in diverse cultures while making a meaningful impact on local communities and the environment.
           </p>
         </div>
 
         <div className="flex justify-center">
         <Image
-                src="nature.jpg"
-                alt="Top Left"
-                className="object-cover w-full h-full self-center shadow-lg"
-              />
+          src="/nature.jpg"
+          alt="Top Left"
+          className="object-cover w-full h-full self-center shadow-lg"
+          width={500}
+          height={500}
+        />
         </div>
       </section>
 
