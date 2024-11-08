@@ -13,10 +13,9 @@ export default function Home() {
   ];
   return (
     <div className="home">
-
       <CustomCarousel />
-
-      <section className="welcome p-6 md:p-16 space-y-10 grid sm:grid-cols-1 md:grid-cols-2 gap-4">
+      
+      <section className="welcome p-6 md:p-16 space-y-10 grid sm:grid-cols-1 md:grid-cols-2 gap-4 items-center">
         <div className="welcome-image">
           <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] flex justify-center items-center">
             <div className="absolute top-0 left-2 md:left-4 w-36 h-28 md:w-48 md:h-36 lg:w-56 lg:h-48 overflow-hidden">
@@ -156,16 +155,12 @@ export default function Home() {
         </div>
       </section>
 
-
       <section className="testimonial p-6 md:p-16 space-y-10">
-  <div className="text-center mb-16">
-    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 md:mb-10">What our Trekkers say about us</h1>
-  </div>
-  <TestimonialSlider />
-</section>
-
-
-
+        <div className="text-center mb-16">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 md:mb-10">What our Trekkers say about us</h1>
+        </div>
+        <TestimonialSlider />
+      </section>
     </div>
   );
 }

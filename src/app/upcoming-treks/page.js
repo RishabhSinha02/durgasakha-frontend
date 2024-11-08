@@ -10,12 +10,9 @@ export default function UpcomingTreks() {
   return (
     <div className="p-10 md:p-16 md:pb-12 md:pt-12 space-y-10">
       <div className="grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-1 gap-4">
-
         <div className="card border border-gray-200 rounded-xl bg-white">
           <h1 className="text-xl md:text-xl lg:text-2xl font-bold p-4 text-primary">Search</h1>
           <div>
-
-
             <div className="flex mb-8">
               <div className="relative w-full mx-4">
                 <input type="search" id="location-search" className="w-full z-20 text-md border-0 p-4 text-gray-900 bg-gray-200 rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Search Treks" />
@@ -39,28 +36,19 @@ export default function UpcomingTreks() {
           </div>
         </div>
       </div>
-
-
-
-
-<div>
-  <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
-    <TrekCard />
-    <TrekCard />
-    <TrekCard />
-    <TrekCard />
-    <TrekCard />
-    <TrekCard />
-    <TrekCard />
-    <TrekCard />
-    <TrekCard />
-
-  </div>
-</div>
-
-
-
-
+      <div>
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
+          <TrekCard />
+          <TrekCard />
+          <TrekCard />
+          <TrekCard />
+          <TrekCard />
+          <TrekCard />
+          <TrekCard />
+          <TrekCard />
+          <TrekCard />
+        </div>
+      </div>
     </div>
   );
 }
