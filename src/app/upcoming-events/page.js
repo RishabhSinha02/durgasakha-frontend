@@ -15,7 +15,7 @@ export default function UpcomingEvents() {
     { name: "Rally" }
   ];
   return (
-    <div className="p-10 md:p-16 md:pb-12 md:pt-12 space-y-10">
+    <div className="p-4 md:p-16 md:pb-12 md:pt-12 space-y-10">
 
       <div className="grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-1 gap-4">
         <div className="card border border-gray-200 rounded-xl bg-white">
@@ -39,7 +39,7 @@ export default function UpcomingEvents() {
             <h1 className="text-xl md:text-xl lg:text-2xl font-bold p-4 text-primary"> Past Events</h1>
             <Link
               href={'/past-events'}
-              className="flex items-center gap-2 rounded-full bg-secondary px-4 text-sm m-3 font-semibold text-white transition-all hover:bg-[#C23E3E]"
+              className="flex md:text-sm items-center gap-2 rounded-full bg-secondary px-4 text-xs m-3 font-semibold text-white transition-all hover:bg-[#C23E3E]"
             >
               See More
               <svg
@@ -67,13 +67,13 @@ export default function UpcomingEvents() {
                   <Image src="/event.png" alt="event" width={80} height={80} className="rounded-full" />
                 </div>
                 <div>
-                  <div className="text-xl font-bold text-primary">School Kit Distribution</div>
+                  <div className="md:text-xl text-base font-bold text-primary">School Kit Distribution</div>
                   <div className="flex items-center gap-2"><div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 0.5C4 0.223858 3.77614 0 3.5 0C3.22386 0 3 0.223858 3 0.5V1H2C0.895431 1 0 1.89543 0 3V4H16V3C16 1.89543 15.1046 1 14 1H13V0.5C13 0.223858 12.7761 0 12.5 0C12.2239 0 12 0.223858 12 0.5V1H4V0.5Z" fill="#7D4555" />
                     <path d="M16 14V5H0V14C0 15.1046 0.895431 16 2 16H14C15.1046 16 16 15.1046 16 14ZM8.5 8.5V10H10C10.2761 10 10.5 10.2239 10.5 10.5C10.5 10.7761 10.2761 11 10 11H8.5V12.5C8.5 12.7761 8.27614 13 8 13C7.72386 13 7.5 12.7761 7.5 12.5V11H6C5.72386 11 5.5 10.7761 5.5 10.5C5.5 10.2239 5.72386 10 6 10H7.5V8.5C7.5 8.22386 7.72386 8 8 8C8.27614 8 8.5 8.22386 8.5 8.5Z" fill="#7D4555" />
                   </svg>
                   </div>
-                    <div>12 March 2024</div>
+                    <div className="md:text-sm text-xs">12 March 2024</div>
                   </div>
                 </div>
               </div>
@@ -83,13 +83,13 @@ export default function UpcomingEvents() {
                   <Image src="/event.png" alt="event" width={80} height={80} className="rounded-full" />
                 </div>
                 <div>
-                  <div className="text-xl font-bold text-primary">School Kit Distribution</div>
+                  <div className="md:text-xl text-base font-bold text-primary">School Kit Distribution</div>
                   <div className="flex items-center gap-2"><div><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 0.5C4 0.223858 3.77614 0 3.5 0C3.22386 0 3 0.223858 3 0.5V1H2C0.895431 1 0 1.89543 0 3V4H16V3C16 1.89543 15.1046 1 14 1H13V0.5C13 0.223858 12.7761 0 12.5 0C12.2239 0 12 0.223858 12 0.5V1H4V0.5Z" fill="#7D4555" />
                     <path d="M16 14V5H0V14C0 15.1046 0.895431 16 2 16H14C15.1046 16 16 15.1046 16 14ZM8.5 8.5V10H10C10.2761 10 10.5 10.2239 10.5 10.5C10.5 10.7761 10.2761 11 10 11H8.5V12.5C8.5 12.7761 8.27614 13 8 13C7.72386 13 7.5 12.7761 7.5 12.5V11H6C5.72386 11 5.5 10.7761 5.5 10.5C5.5 10.2239 5.72386 10 6 10H7.5V8.5C7.5 8.22386 7.72386 8 8 8C8.27614 8 8.5 8.22386 8.5 8.5Z" fill="#7D4555" />
                   </svg>
                   </div>
-                    <div>12 March 2024</div>
+                    <div className="md:text-sm text-xs">12 March 2024</div>
                   </div>
                 </div>
               </div>
