@@ -1,7 +1,6 @@
 // src/app/upcoming-treks/[id]/page.js
 'use client';
 
-import Itinerary from '@/app/components/upcoming-treks/itinerary';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 

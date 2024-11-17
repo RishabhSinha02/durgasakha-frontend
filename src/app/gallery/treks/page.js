@@ -1,7 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const GalleryTrek = () => {
-    const repeatArray = [1, 2, 3];
+    const repeatArray = [1, 2, 3, 4];
     const repeatSection = [1, 2, 3];
 
     return (
@@ -10,20 +11,22 @@ const GalleryTrek = () => {
                 <div key={index}>
                     <div className="flex justify-between items-center">
                         <div className="flex gap-6 items-center">
-                            <div className="text-primary font-bold text-3xl">Tringlewadi Trek</div>
-                            <div className="text-gray-600 font-semibold text-lg">20 Aug 2024</div>
+                            <div className="text-primary font-bold text-lg md:text-3xl sm:text-lg">Tringlewadi Trek</div>
+                            <div className="text-gray-600 font-semibold text-sm md:text-lg sm:text-sm">20 Aug 2024</div>
                         </div>
                         <div>
-                            <button className="flex items-center gap-2 border border-black px-4 py-2 rounded-full">View All
-                                <svg width="16" height="16" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fillRule="evenodd" clipRule="evenodd" d="M20.7204 10.7779C21.0932 10.2388 21.0932 9.36466 20.7204 8.82551L14.9931 0.54203C14.6204 0.00287783 14.016 0.0028778 13.6432 0.54203C13.2704 1.08118 13.2704 1.95531 13.6432 2.49446L17.741 8.42115L0.954546 8.42115C0.427367 8.42115 3.53701e-07 9.03925 3.27835e-07 9.80173C3.0197e-07 10.5642 0.427367 11.1823 0.954546 11.1823L17.741 11.1823L13.6432 17.109C13.2704 17.6481 13.2704 18.5223 13.6432 19.0614C14.016 19.6006 14.6204 19.6006 14.9931 19.0614L20.7204 10.7779Z" fill="black" />
-                                </svg>
-                            </button>
+                            <Link href={`/gallery/treks/${'Tringlewadi'}`}>
+                                <button className="flex items-center text-sm md:text-lg sm:text-sm gap-2 border border-black hover:border-primary hover:text-primary px-2 py-2 md:px-4 md:py-2 sm:px-2 sm:py-2 rounded-full">View All
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-4 md:size-5 sm:size-4">
+                                        <path fillRule="evenodd" d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z" clipRule="evenodd" />
+                                    </svg>
+                                </button>
+                            </Link>
                         </div>
                     </div>
-                    <div className='grid grid-cols-3 my-8 gap-8'>
+                    <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 my-8'>
                         {repeatArray.map((innerItem, innerIndex) => (
-                            <div key={innerIndex} className="relative h-[300px]">
+                            <div key={innerIndex} className="relative h-[150px] md:h-[300px] sm:h-[150px]">
                                 <div className='h-full w-full'>
                                     <Image
                                         src="/nature.jpg"
