@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google'
 import "./globals.css";
 import CustomNavbar from "./components/navbar/CustomNavbar";
 import CustomFooter from "./components/footer/CustomFooter";
+import ScrollToTopButton from "./components/scrollToTop/scrollToTop";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,6 +35,9 @@ export default function RootLayout({ children }) {
         <CustomNavbar />
           {children}
         <CustomFooter />
+        <div>
+          <ScrollToTopButton />
+        </div>
       </body>
     </html>
   );
