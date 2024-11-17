@@ -11,10 +11,12 @@
   "dependencies": {
     "flowbite-react": "^0.10.2",
     "latest-version": "^9.0.0",
+    "lightgallery": "^2.8.1",
     "next": "^15.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "rimraf": "^4.3.1"
+    "rimraf": "^4.3.1",
+    "sass": "^1.81.0"
   },
   "devDependencies": {
     "eslint": "^9.13.0",
