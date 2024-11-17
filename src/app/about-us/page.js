@@ -3,17 +3,17 @@ import { MemberProfile } from "../components/member-profile/MemberProfile";
 export default function AboutUs() {
   const members = [
     { name: "Om Khandu Avhad", imageSrc: "/image-4578.jpg", bio: "Computer engineer loves to swim and explore mountains" },
-    { name: "Jane Doe", imageSrc: "/user.png", bio: "Software developer with a passion for open source" },
-    { name: "John Smith", imageSrc: "/user.png", bio: "Full-stack developer and tech enthusiast" },
-    { name: "Jane Smith", imageSrc: "/user.png", bio: "UI/UX designer with a love for minimalism" },
-    { name: "John Doe", imageSrc: "/user.png", bio: "DevOps engineer and cloud specialist" },
-    { name: "Jane Doe", imageSrc: "/user.png", bio: "Data scientist and AI researcher" },
-    { name: "John Smith", imageSrc: "/user.png", bio: "Backend developer and database expert" },
-    { name: "Jane Smith", imageSrc: "/user.png", bio: "Frontend developer and JavaScript guru" },
-    { name: "John Doe", imageSrc: "/user.png", bio: "Mobile app developer and tech blogger" },
-    { name: "Jane Doe", imageSrc: "/user.png", bio: "Cybersecurity analyst and ethical hacker" },
-    { name: "John Smith", imageSrc: "/user.png", bio: "Game developer and VR enthusiast" },
-    { name: "Jane Smith", imageSrc: "/user.png", bio: "Project manager and agile coach" },
+    { name: "Jane Doe", imageSrc: "/image-4578.jpg", bio: "Software developer with a passion for open source" },
+    { name: "John Smith", imageSrc: "/image-4578.jpg", bio: "Full-stack developer and tech enthusiast" },
+    { name: "Jane Smith", imageSrc: "/image-4578.jpg", bio: "UI/UX designer with a love for minimalism" },
+    { name: "John Doe", imageSrc: "/image-4578.jpg", bio: "DevOps engineer and cloud specialist" },
+    { name: "Jane Doe", imageSrc: "/image-4578.jpg", bio: "Data scientist and AI researcher" },
+    { name: "John Smith", imageSrc: "/image-4578.jpg", bio: "Backend developer and database expert" },
+    { name: "Jane Smith", imageSrc: "/image-4578.jpg", bio: "Frontend developer and JavaScript guru" },
+    { name: "John Doe", imageSrc: "/image-4578.jpg", bio: "Mobile app developer and tech blogger" },
+    { name: "Jane Doe", imageSrc: "/image-4578.jpg", bio: "Cybersecurity analyst and ethical hacker" },
+    { name: "John Smith", imageSrc: "/image-4578.jpg", bio: "Game developer and VR enthusiast" },
+    { name: "Jane Smith", imageSrc: "/image-4578.jpg", bio: "Project manager and agile coach" },
   ];
 
   return (

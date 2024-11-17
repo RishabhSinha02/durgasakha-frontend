@@ -16,22 +16,22 @@ export function MemberProfile({ imageSrc, name, bio}) {
                     {/* Social Icons positioned on right border */}
                     <div className="absolute w-full h-full">
                         {/* Top Right icon */}
-                        <div className="absolute top-0 -right-0">
+                        <div className="absolute top-0 -right-2">
                             <BsInstagram className="w-8 h-8 text-primary hover:scale-110 transition-transform bg-opacity-0"/>
                         </div>
                         
                         {/* Right Top-Middle icon */}
-                        <div className="absolute top-12 -right-7">
+                        <div className="absolute top-12 -right-9">
                             <BsFacebook className="w-8 h-8 text-primary hover:scale-110 transition-transform" />
                         </div>
                         
                         {/* Right Bottom-Middle icon */}
-                        <div className="absolute top-24 -right-8">
+                        <div className="absolute top-24 -right-10">
                             <BsLinkedin className="w-8 h-8 text-primary hover:scale-110 transition-transform" />
                         </div>
 
                         {/* Bottom Right icon */}
-                        <div className="absolute bottom-4 -right-2">
+                        <div className="absolute bottom-4 -right-4">
                             <BsTwitter className="w-8 h-8 text-primary hover:scale-110 transition-transform" />
                         </div>
                     </div>
