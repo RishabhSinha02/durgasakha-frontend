@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const PastCard = ({
+const PastEventCard = ({
     id, type, date, organisedBy, imageUrl, instagramLink, facebookLink, youtubeLink, twitterLink, trekName
 }) => {
     return (
@@ -81,7 +81,7 @@ const PastCard = ({
 
                 <div className="flex items-center justify-between mt-4">
                     <Link
-                        href={`/past-treks/${id}`}
+                        href={`/past-events/${id}`}
                         className="flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-[#C23E3E]"
                     >
                         See Details
@@ -92,4 +92,4 @@ const PastCard = ({
     );
 };
 
-export default PastCard;
+export default PastEventCard;

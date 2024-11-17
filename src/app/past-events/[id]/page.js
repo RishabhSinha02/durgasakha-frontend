@@ -5,7 +5,7 @@ import Itinerary from '@/app/components/upcoming-treks/itinerary';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 
-export default function PastTrekDetailPage() {
+export default function PastEventDetailPage() {
     const { id } = useParams(); // Get the dynamic ID from the URL
     const repeatArray = [1, 2, 3, 4];
 

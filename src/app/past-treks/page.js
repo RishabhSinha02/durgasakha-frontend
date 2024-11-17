@@ -1,4 +1,4 @@
-import PastCard from "../components/pastCard/pastCard";
+import PastTrekCard from "../components/upcoming-treks/pastTrekCard";
 
 export default function PastTreks() {
   const treks = [
@@ -116,7 +116,7 @@ export default function PastTreks() {
     <div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
         {treks.map((trek) => (
-          <PastCard
+          <PastTrekCard
             key={trek.id}
             id={trek.id}
             trekName={trek.trekName}
