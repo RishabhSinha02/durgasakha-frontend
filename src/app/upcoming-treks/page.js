@@ -19,7 +19,7 @@ export default function UpcomingTreks() {
     { name: "Rinjani" }
   ];
   return (
-    <div className="p-10 md:p-16 md:pb-12 md:pt-12 space-y-10">
+    <div className="p-4 md:p-16 md:pb-12 md:pt-12 space-y-10">
       <div className="grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-1 gap-4">
         <div className="card border border-gray-200 rounded-xl bg-white">
           <h1 className="text-xl md:text-xl lg:text-2xl font-bold p-4 text-primary">Search</h1>

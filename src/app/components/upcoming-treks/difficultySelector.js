@@ -35,10 +35,10 @@ const DifficultySelector = ({ initialValue = 'easy', onChange = () => {} }) => {
           <span className="font-medium p-3">{difficulty.label}</span>
           <div className={`
             rounded-full bg-secondary
-            flex items-center justify-center text-white font-extrabold
+            flex items-center justify-center font-extrabold
             ${selectedDifficulty === difficulty.id 
                 ? 'bg-white text-black w-10 h-10' 
-                : 'bg-secondary w-10 h-10'}
+                : 'bg-secondary text-white w-10 h-10'}
           `}>
             {difficulty.count}
           </div>
