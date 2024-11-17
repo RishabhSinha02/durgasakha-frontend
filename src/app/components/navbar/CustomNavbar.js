@@ -15,12 +15,16 @@ export default function CustomNavbar() {
 
     const isTrekActive = () => {
         const trekRoutes = ['/upcoming-treks', '/past-treks'];
-        return trekRoutes.some(route => pathname === route);
+        return trekRoutes.some(route => pathname.startsWith(route));
     };
 
     const isEventActive = () => {
         const eventRoutes = ['/upcoming-events', '/past-events'];
-        return eventRoutes.some(route => pathname === route);
+        return eventRoutes.some(route => pathname.startsWith(route));
+    };
+
+    const isGalleryActive = () => {
+        return pathname.startsWith('/gallery');
     };
 
     const handleDropdownClick = (name) => (e) => {
@@ -162,7 +166,7 @@ export default function CustomNavbar() {
                 <NavbarLink 
                     href="/gallery" 
                     as={Link}
-                    className={isActive('/gallery')}
+                    className={isGalleryActive() ? 'text-primary font-bold' : ''}
                 >
                     Gallery
                 </NavbarLink>
