@@ -42,7 +42,7 @@ export default function CustomNavbar() {
                 color="failure"
                 icon={HiInformationCircle}
                 onDismiss={() => {
-                    alert('Website Under Development!');
+                    alert('Website Under Development! Are you sure you want to dismiss this alert?');
                     setShowAlert(false);
                 }}
                 rounded
