@@ -3,14 +3,19 @@ import HomeCard from "./components/home/homeCard";
 import StarRating from "./components/home/starRating";
 import TestimonialSlider from "./components/home/testimonialSlider";
 import Image from "next/image";
+import { getTrek, getTreks } from "./services/trek";
 
-export default function Home() {
+export default async function Home() {
   const features = [
     "Adventure with Purpose",
     "Expert Guidance",
     "Personalized Experience",
     "Positive Impact",
   ];
+
+  const treks = await getTreks();
+  console.log(treks);
+
   return (
     <div className="home">
       <CustomCarousel />
