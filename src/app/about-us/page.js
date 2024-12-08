@@ -1,8 +1,12 @@
 import { MemberProfile } from "../components/member-profile/MemberProfile";
-import { getMembers } from "../services/team";
+import { API_URL } from "../config/api";
+
+export const revalidate = 120;
 
 export default async function AboutUs() {
-  const members = await getMembers();
+  let data = await fetch(`${API_URL}/api/core/members`);
+  let members = await data.json();
+
   return (
     <div>
       <div className="bg-white p-10 md:p-16 md:pb-24 md:pt-24 space-y-10">
