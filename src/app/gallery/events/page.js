@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { API_URL } from "@/app/config/api";
 
+export const revalidate = 120;
+
 export default async function GalleryEvent() {
   let events = await fetch(`${API_URL}/api/event/gallery`).then((res) =>
     res.json()

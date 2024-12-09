@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { API_URL } from "@/app/config/api";
 
+export const revalidate = 120;
+
 export default async function GalleryTrek() {
   let treks = await fetch(`${API_URL}/api/trek/gallery`).then((res) =>
     res.json()
@@ -14,10 +16,14 @@ export default async function GalleryTrek() {
           <div className="flex justify-between items-center">
             <div className="flex gap-6 items-center">
               <div className="text-primary font-bold text-lg md:text-3xl sm:text-lg">
-                Tringlewadi Trek
+                {trek.name}
               </div>
               <div className="text-gray-600 font-semibold text-sm md:text-lg sm:text-sm">
-                20 Aug 2024
+                {new Date(trek.start_date).toLocaleDateString("en-GB", {
+                  day: "numeric",
+                  month: "short",
+                  year: "numeric",
+                })}
               </div>
             </div>
             <div>

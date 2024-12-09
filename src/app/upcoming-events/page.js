@@ -3,6 +3,8 @@ import Image from "next/image";
 import UpcomingEventCard from "../components/upcoming-events/upcomingEventCard";
 import { API_URL } from "../config/api";
 
+export const revalidate = 120;
+
 export default async function UpcomingEvents() {
   let data = await fetch(`${API_URL}/api/event/upcoming`);
   let events = await data.json();
