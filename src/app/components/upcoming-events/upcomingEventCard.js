@@ -28,7 +28,7 @@ const UpcomingEventCard = ({ event }) => {
       <div className="p-6">
         <div className="mb-6 flex justify-between">
           <div className="text-sm font-bold">
-            {new Date(event.start_date).toLocaleDateString("en-US", {
+            {new Date(event.start_date).toLocaleDateString("en-GB", {
               day: "numeric",
               month: "short",
               year: "numeric",

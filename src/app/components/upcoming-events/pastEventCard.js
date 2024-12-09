@@ -57,7 +57,7 @@ const PastEventCard = ({ event }) => {
               </svg>
             </div>
             <div className="text-sm">
-              {new Date(event.start_date).toLocaleDateString("en-US", {
+              {new Date(event.start_date).toLocaleDateString("en-GB", {
                 day: "numeric",
                 month: "short",
                 year: "numeric",
