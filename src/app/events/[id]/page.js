@@ -6,30 +6,32 @@ export const revalidate = 120; // revalidate every 2 minutes
 
 export const dynamicParams = true; // enable dynamic params
 
-export async function fetchAllEvents() {
-  let events = [];
-  let page = 1;
-  let hasMore = true;
+// Commenting out the below code as vercels build time is exceeding the limit
+// The below code is used to generate static paths for all the events and this runs at build time
+// export async function fetchAllEvents() {
+//   let events = [];
+//   let page = 1;
+//   let hasMore = true;
 
-  while (hasMore) {
-    const response = await fetch(`${API_URL}/api/event/all?page=${page}`);
-    const data = await response.json();
-    events = events.concat(data.results);
-    hasMore = data.next !== null;
-    page += 1;
-  }
-  
-  return events;
-}
+//   while (hasMore) {
+//     const response = await fetch(`${API_URL}/api/event/all?page=${page}`);
+//     const data = await response.json();
+//     events = events.concat(data.results);
+//     hasMore = data.next !== null;
+//     page += 1;
+//   }
 
-export async function generateStaticParams() {
-  const events = await fetchAllEvents();
-  return events.map((event) => ({
-    params: {
-      id: event.id.toString(),
-    },
-  }));
-}
+//   return events;
+// }
+
+// export async function generateStaticParams() {
+//   const events = await fetchAllEvents();
+//   return events.map((event) => ({
+//     params: {
+//       id: event.id.toString(),
+//     },
+//   }));
+// }
 
 export default async function EventDetail({ params }) {
   const { id } = await params;
