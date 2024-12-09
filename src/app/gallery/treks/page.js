@@ -47,7 +47,7 @@ export default async function GalleryTrek() {
             </div>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 my-8">
-            {trek.gallery.map((item, innerIndex) => (
+            {trek.gallery.slice(0,4).map((item, innerIndex) => (
               <div
                 key={innerIndex}
                 className="relative h-[150px] md:h-[300px] sm:h-[150px]"
