@@ -1,6 +1,8 @@
 import PastEventCard from "../components/upcoming-events/pastEventCard";
 import { API_URL } from "../config/api";
 
+export const revalidate = 120;
+
 export default async function PastEvents() {
   let data = await fetch(`${API_URL}/api/event/past`);
   let events = await data.json();

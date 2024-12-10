@@ -7,6 +7,8 @@ import Image from "next/image";
 import { API_URL } from "./config/api";
 import Link from "next/link";
 
+export const revalidate = 120;
+
 export default async function Home() {
   const features = [
     "Adventure with Purpose",
