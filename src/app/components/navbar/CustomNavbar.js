@@ -10,7 +10,7 @@ import { Alert } from "flowbite-react";
 export default function CustomNavbar() {
     const pathname = usePathname();
     const [openDropdown, setOpenDropdown] = useState(null);
-    const [showAlert, setShowAlert] = useState(true);
+    const [showAlert, setShowAlert] = useState(false);
 
     const isActive = (path) => {
         return pathname === path ? 'text-primary font-bold' : '';

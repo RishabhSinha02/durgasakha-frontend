@@ -11,6 +11,18 @@ export default function Home() {
     "Personalized Experience",
     "Positive Impact",
   ];
+
+  const upcomingEvents = [
+    {
+      title: "Shahapur School",
+      subtitle: "School Kit Distribution",
+      date: "13 July 2025",
+      image: "/events/13th-july-event.jpeg",
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+    }
+  ]
+
   return (
     <div className="home">
       <CustomCarousel />
@@ -88,7 +100,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="upcoming-treks p-6 md:p-16 space-y-10 bg-black">
+      {/* <section className="upcoming-treks p-6 md:p-16 space-y-10 bg-black">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-10">
           Upcoming Treks
         </h1>
@@ -107,7 +119,7 @@ export default function Home() {
             </svg>
           </button>
         </div>
-      </section>
+      </section> */}
 
       <section className="upcoming-treks p-6 md:p-16 space-y-10">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 md:mb-10">
@@ -115,18 +127,23 @@ export default function Home() {
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-
-          <HomeCard title="Vidya School" subtitle="School Kit Distribution" organisers="Rishabh Sinha" date="12 March 2024" image="/event.png" />
-          <HomeCard title="Vidya School" subtitle="School Kit Distribution" organisers="Rishabh Sinha" date="12 March 2024" image="/event.png" />
-          <HomeCard title="Vidya School" subtitle="School Kit Distribution" organisers="Rishabh Sinha" date="12 March 2024" image="/event.png" />
-
+          {upcomingEvents.map((event, index) => (
+            <HomeCard
+              key={index}
+              title={event.title}
+              subtitle={event.subtitle}
+              date={event.date}
+              image={event.image}
+              facebook={event.facebook}
+              instagram={event.instagram}
+            />
+          ))}
         </div>
         <div className="flex justify-end">
           <button className="flex items-center gap-2 border border-black px-4 py-2 rounded-full">View All
             <svg width="16" height="16" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" clipRule="evenodd" d="M20.7204 11.6143C21.0932 11.0751 21.0932 10.201 20.7204 9.66185L14.9931 1.37836C14.6204 0.839212 14.016 0.839212 13.6432 1.37836C13.2704 1.91751 13.2704 2.79165 13.6432 3.3308L17.741 9.25748L0.954546 9.25748C0.427367 9.25748 3.53701e-07 9.87559 3.27835e-07 10.6381C3.0197e-07 11.4005 0.427367 12.0186 0.954546 12.0186L17.741 12.0186L13.6432 17.9453C13.2704 18.4845 13.2704 19.3586 13.6432 19.8978C14.016 20.4369 14.6204 20.4369 14.9931 19.8978L20.7204 11.6143Z" fill="black" />
             </svg>
-
           </button>
         </div>
       </section>
