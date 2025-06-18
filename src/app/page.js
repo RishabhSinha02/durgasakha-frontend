@@ -20,41 +20,41 @@ export default function Home() {
       image: "/events/13th-july-event.jpeg",
       facebook: "https://facebook.com",
       instagram: "https://instagram.com",
-    }
-  ]
+    },
+  ];
 
   return (
     <div className="home">
       <CustomCarousel />
-      
+
       <section className="welcome p-6 md:p-16 space-y-10 grid sm:grid-cols-1 md:grid-cols-2 gap-4 items-center">
         <div className="welcome-image">
           <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] flex justify-center items-center">
             <div className="absolute top-0 left-2 md:left-4 w-36 h-28 md:w-48 md:h-36 lg:w-56 lg:h-48 overflow-hidden">
               <Image
-                src="/nature.jpg"
+                src="/box1.jpg"
                 alt="Top Left"
                 className="object-cover w-full h-full rounded-md shadow-lg"
-                width={200}
-                height={200}
+                width={400}
+                height={400}
               />
             </div>
             <div className="relative w-48 h-64 md:w-64 md:h-80 lg:w-72 lg:h-96 z-10 overflow-hidden">
               <Image
-                src="/nature.jpg"
+                src="/box2.jpg"
                 alt="Center"
                 className="object-cover w-full h-full rounded-md shadow-lg"
-                width={200}
-                height={200}
+                width={400}
+                height={400}
               />
             </div>
             <div className="absolute bottom-0 right-2 md:right-4 w-36 h-28 md:w-48 md:h-36 lg:w-56 lg:h-48 overflow-hidden">
               <Image
-                src="/nature.jpg"
+                src="/box3.jpg"
                 alt="Bottom Right"
                 className="object-cover w-full h-full rounded-md shadow-lg"
-                width={200}
-                height={200}
+                width={400}
+                height={400}
               />
             </div>
           </div>
@@ -89,10 +89,10 @@ export default function Home() {
             ))}
           </div>
           <p className="mt-2 text-sm md:text-lg border-l-4 border-secondary pl-4 md:pl-8 text-justify max-w-7xl">
-            Where Adventure Meets Purpose! We&apos;re thrilled to have you here. At
-            Durgasakha, we&apos;re more than just a travel company. We&apos;re a community
-            of adventurers committed to exploring the world responsibly and
-            making a positive impact along the way.
+            Where Adventure Meets Purpose! We&apos;re thrilled to have you here.
+            At Durgasakha, we&apos;re more than just a travel company.
+            We&apos;re a community of adventurers committed to exploring the
+            world responsibly and making a positive impact along the way.
           </p>
           <button className="self-start border border-1 bg-white text-primary font-bold px-4 py-2 rounded-3xl">
             Learn More
@@ -140,9 +140,21 @@ export default function Home() {
           ))}
         </div>
         <div className="flex justify-end">
-          <button className="flex items-center gap-2 border border-black px-4 py-2 rounded-full">View All
-            <svg width="16" height="16" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fillRule="evenodd" clipRule="evenodd" d="M20.7204 11.6143C21.0932 11.0751 21.0932 10.201 20.7204 9.66185L14.9931 1.37836C14.6204 0.839212 14.016 0.839212 13.6432 1.37836C13.2704 1.91751 13.2704 2.79165 13.6432 3.3308L17.741 9.25748L0.954546 9.25748C0.427367 9.25748 3.53701e-07 9.87559 3.27835e-07 10.6381C3.0197e-07 11.4005 0.427367 12.0186 0.954546 12.0186L17.741 12.0186L13.6432 17.9453C13.2704 18.4845 13.2704 19.3586 13.6432 19.8978C14.016 20.4369 14.6204 20.4369 14.9931 19.8978L20.7204 11.6143Z" fill="black" />
+          <button className="flex items-center gap-2 border border-black px-4 py-2 rounded-full">
+            View All
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 21 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M20.7204 11.6143C21.0932 11.0751 21.0932 10.201 20.7204 9.66185L14.9931 1.37836C14.6204 0.839212 14.016 0.839212 13.6432 1.37836C13.2704 1.91751 13.2704 2.79165 13.6432 3.3308L17.741 9.25748L0.954546 9.25748C0.427367 9.25748 3.53701e-07 9.87559 3.27835e-07 10.6381C3.0197e-07 11.4005 0.427367 12.0186 0.954546 12.0186L17.741 12.0186L13.6432 17.9453C13.2704 18.4845 13.2704 19.3586 13.6432 19.8978C14.016 20.4369 14.6204 20.4369 14.9931 19.8978L20.7204 11.6143Z"
+                fill="black"
+              />
             </svg>
           </button>
         </div>
@@ -151,30 +163,36 @@ export default function Home() {
       <section className="volunteer p-6 md:p-16 space-y-10 grid sm:grid-cols-1 lg:grid-cols-2 lg:gap-36 bg-[#EBEBEB]">
         <div className="flex flex-col justify-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 md:mb-10">
-          Volunteer with Durgasakha
+            Volunteer with Durgasakha
           </h1>
           <p className="mt-2 text-sm md:text-lg border-l-4 text-secondary font-bold border-secondary pl-4 md:pl-8 text-justify max-w-7xl">
             Experience the Joy of Giving Back While Exploring the World
           </p>
           <p className="mt-4 text-sm md:text-lg font-semibold text-justify max-w-7xl">
-            At Durgasakha, we believe that travel is not just about sightseeing; it&apos;s also about giving back to the places we visit. Our volunteer program offers you the opportunity to immerse yourself in diverse cultures while making a meaningful impact on local communities and the environment.
+            At Durgasakha, we believe that travel is not just about sightseeing;
+            it&apos;s also about giving back to the places we visit. Our
+            volunteer program offers you the opportunity to immerse yourself in
+            diverse cultures while making a meaningful impact on local
+            communities and the environment.
           </p>
         </div>
 
         <div className="flex justify-center">
-        <Image
-          src="/nature.jpg"
-          alt="Top Left"
-          className="object-cover w-full h-full self-center shadow-lg"
-          width={500}
-          height={500}
-        />
+          <Image
+            src="/nature.jpg"
+            alt="Top Left"
+            className="object-cover w-full h-full self-center shadow-lg"
+            width={500}
+            height={500}
+          />
         </div>
       </section>
 
       <section className="testimonial p-6 md:p-16 space-y-10">
         <div className="text-center mb-16">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 md:mb-10">What our Trekkers say about us</h1>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 md:mb-10">
+            What our Trekkers say about us
+          </h1>
         </div>
         <TestimonialSlider />
       </section>
