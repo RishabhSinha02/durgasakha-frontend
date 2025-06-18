@@ -11,7 +11,7 @@ export function MemberProfile({ imageSrc, name, bio}) {
                     fill
                     className="rounded-full object-cover hover:bg-black hover:bg-opacity-40"	
                 />
-                <div className="absolute inset-0 rounded-full bg-black opacity-0 group-hover:opacity-60 transition-opacity duration-300 flex items-center justify-center">
+                <div className="absolute inset-0 rounded-full bg-black opacity-0 group-hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
                     <span className="text-white text-center line-clamp-5 p-1">{bio}</span>
                     {/* Social Icons positioned on right border */}
                 </div>
