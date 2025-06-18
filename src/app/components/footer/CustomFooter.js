@@ -99,7 +99,11 @@ export default function CustomFooter() {
             <div>
               <FooterTitle title="Follow us" className="text-primary" />
               <FooterLinkGroup col>
-                <FooterLink as={Link} href="#" className={styles["nav-links"]}>
+                <FooterLink
+                  as={Link}
+                  href="https://www.instagram.com/shree_durgasakha_trust/"
+                  className={styles["nav-links"]}
+                >
                   Instagram
                 </FooterLink>
                 <FooterLink
@@ -144,34 +148,16 @@ export default function CustomFooter() {
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <FooterIcon
               as={Link}
-              href="https://www.facebook.com/share/1AbTBJrGjd/?mibextid=wwXIfr"
-              icon={BsFacebook}
-              className="text-primary"
-            />
-            {/* <FooterIcon
-              as={Link}
-              href="#"
+              href="https://www.instagram.com/shree_durgasakha_trust/"
               icon={BsInstagram}
               className="text-primary"
             />
             <FooterIcon
               as={Link}
-              href="#"
-              icon={BsTwitter}
+              href="https://www.facebook.com/share/1AbTBJrGjd/?mibextid=wwXIfr"
+              icon={BsFacebook}
               className="text-primary"
             />
-            <FooterIcon
-              as={Link}
-              href="#"
-              icon={BsGithub}
-              className="text-primary"
-            />
-            <FooterIcon
-              as={Link}
-              href="#"
-              icon={BsDribbble}
-              className="text-primary"
-            /> */}
           </div>
         </div>
       </div>
