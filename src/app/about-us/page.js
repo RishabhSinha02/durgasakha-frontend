@@ -68,7 +68,7 @@ export default function AboutUs() {
           </h1>
           <p className="mt-2 text-sm md:text-lg text-justify max-w-8xl">
             <strong>Durgasakha</strong> is dedicated to the preservation of
-            Sahyadri's forts, fostering environmental awareness, and uplifting
+            Sahyadri&apos;s forts, fostering environmental awareness, and uplifting
             rural communities through education. Our mission is built on three
             key pillars:
           </p>
@@ -76,7 +76,7 @@ export default function AboutUs() {
           <ul className="list-disc pl-4 md:pl-8 mt-4 space-y-3 text-sm md:text-lg text-justify max-w-8xl">
             <li>
               <strong>Fort Conservation & Cleanliness:</strong> We protect the
-              Sahyadri region's heritage through awareness drives and
+              Sahyadri region&apos;s heritage through awareness drives and
               cleanliness campaigns, keeping historic forts free from pollution.
             </li>
             <li>
@@ -86,7 +86,7 @@ export default function AboutUs() {
             </li>
             <li>
               <strong>Educational Support & Empowerment:</strong> For over 15
-              years, we've provided school kits to 2,500+ rural students and
+              years, we&apos;ve provided school kits to 2,500+ rural students and
               facilitated educational adoption programs for higher studies.
             </li>
           </ul>
