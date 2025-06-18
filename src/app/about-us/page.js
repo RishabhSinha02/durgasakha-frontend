@@ -42,6 +42,11 @@ export default function AboutUs() {
       imageSrc: "/about-us/members/rakesh-jadhav.jpg",
       bio: "Working as a Store Incharge in Technova electrical works since 2019",
     },
+    {
+      name: "Abhijeet Changdeo Kale",
+      imageSrc: "/about-us/members/abhijeet-kale.jpeg",
+      bio: "Safety Professional",
+    },
   ];
 
   return (
@@ -68,9 +73,9 @@ export default function AboutUs() {
           </h1>
           <p className="mt-2 text-sm md:text-lg text-justify max-w-8xl">
             <strong>Durgasakha</strong> is dedicated to the preservation of
-            Sahyadri&apos;s forts, fostering environmental awareness, and uplifting
-            rural communities through education. Our mission is built on three
-            key pillars:
+            Sahyadri&apos;s forts, fostering environmental awareness, and
+            uplifting rural communities through education. Our mission is built
+            on three key pillars:
           </p>
 
           <ul className="list-disc pl-4 md:pl-8 mt-4 space-y-3 text-sm md:text-lg text-justify max-w-8xl">
@@ -86,8 +91,8 @@ export default function AboutUs() {
             </li>
             <li>
               <strong>Educational Support & Empowerment:</strong> For over 15
-              years, we&apos;ve provided school kits to 2,500+ rural students and
-              facilitated educational adoption programs for higher studies.
+              years, we&apos;ve provided school kits to 2,500+ rural students
+              and facilitated educational adoption programs for higher studies.
             </li>
           </ul>
 
