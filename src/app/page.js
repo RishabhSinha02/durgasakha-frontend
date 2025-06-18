@@ -89,10 +89,9 @@ export default function Home() {
             ))}
           </div>
           <p className="mt-2 text-sm md:text-lg border-l-4 border-secondary pl-4 md:pl-8 text-justify max-w-7xl">
-            Where Adventure Meets Purpose! We&apos;re thrilled to have you here.
-            At Durgasakha, we&apos;re more than just a travel company.
-            We&apos;re a community of adventurers committed to exploring the
-            world responsibly and making a positive impact along the way.
+            Where Adventure Meets Purpose! We&apos;re a community of adventurers
+            committed to exploring the world responsibly and making a positive
+            impact along the way.
           </p>
           <button className="self-start border border-1 bg-white text-primary font-bold px-4 py-2 rounded-3xl">
             Learn More

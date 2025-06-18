@@ -1,6 +1,7 @@
 import { Button, Carousel } from "flowbite-react";
 import Image from "next/image";
 import styles from "./Carousel.module.css";
+import Link from "next/link";
 
 export function CustomCarousel() {
   const carouselData = [
@@ -54,9 +55,11 @@ export function CustomCarousel() {
                 <Button className="rounded-full bg-secondary text-white">
                   Book Now
                 </Button>
-                <Button className="rounded-full bg-white text-primary hover:text-white">
-                  View Treks
-                </Button>
+                <Link href="/upcoming-treks">
+                  <Button className="rounded-full bg-white text-primary hover:text-white">
+                    View Treks
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

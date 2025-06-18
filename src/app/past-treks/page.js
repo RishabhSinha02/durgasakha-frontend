@@ -114,7 +114,7 @@ export default function PastTreks() {
 
   return (
     <div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
+      {/* <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
         {treks.map((trek) => (
           <PastTrekCard
             key={trek.id}
@@ -130,6 +130,11 @@ export default function PastTreks() {
             twitterLink={trek.twitterLink}
           />
         ))}
+      </div> */}
+      <div className="flex flex-col items-center justify-center py-16">
+        <h2 className="text-3xl font-bold mb-4 text-primary">No Past Treks Yet!</h2>
+        <p className="text-lg text-gray-600 mb-2">Stay tuned for updates on our amazing trekking adventures.</p>
+        <p className="text-md text-gray-500">Follow us on social media to catch highlights from our previous events.</p>
       </div>
     </div>
   );

@@ -116,7 +116,7 @@ export default function PastEvents() {
 
   return (
     <div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
+      {/* <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
         {events.map((events) => (
           <PastEventCard
             key={events.id}
@@ -132,6 +132,10 @@ export default function PastEvents() {
             twitterLink={events.twitterLink}
           />
         ))}
+      </div> */}
+      <div className="text-center mt-16">
+        <h2 className="text-2xl font-semibold mb-4 text-primary">No past events to display yet!</h2>
+        <p className="text-gray-600">Please check back later for updates on our exciting past events.</p>
       </div>
     </div>
   );
