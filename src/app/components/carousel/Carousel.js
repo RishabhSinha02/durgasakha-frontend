@@ -12,7 +12,7 @@ export function CustomCarousel() {
         "Durgasakha is a passionate community of trekkers and explorers dedicated to promoting responsible travel and cultural heritage.",
     },
     {
-      imageSrc: "/carousel4.jpg",
+      imageSrc: "/events/18june2023-donation-event/image-10.jpeg",
       title: "Our Mission",
       subtitle:
         "We strive to create memorable trekking experiences while preserving nature and empowering local communities.",
@@ -33,7 +33,7 @@ export function CustomCarousel() {
 
   return (
     <div className="h-96 md:h-[600px]">
-      <Carousel slide={false} className={styles["carousel-no-rounded"]}>
+      <Carousel slide={true} className={styles["carousel-no-rounded"]}>
         {carouselData.map((item, index) => (
           <div key={index} className="relative h-full">
             <Image

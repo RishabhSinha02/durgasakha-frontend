@@ -1,7 +1,9 @@
-'use client'
+"use client";
 
 import { DonateForm } from "../components/donate/DonateForm";
-import { EventCard } from "../components/donate/EventCard";
+import { useEffect, useState } from "react";
+import PastEventCard from "../components/upcoming-events/pastEventCard";
+import Link from "next/link";
 
 export default function Donate() {
   const bankDetails = [
@@ -15,6 +17,19 @@ export default function Donate() {
     navigator.clipboard.writeText(text);
     // You can add a toast notification here if needed
   };
+
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    fetch("/events.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const sortedData = data
+          .sort((a, b) => new Date(b.start_date) - new Date(a.start_date))
+          .slice(0, 2); // Limit to only 2 events
+        setEvents(sortedData);
+      });
+  }, []);
 
   return (
     <div className="flex flex-col w-full">
@@ -69,8 +84,18 @@ export default function Donate() {
                       className="ml-4 p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
                       title="Copy to clipboard"
                     >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                        />
                       </svg>
                     </button>
                   </div>
@@ -80,7 +105,7 @@ export default function Donate() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center mb-10 gap-8 mt-8">
+      <div className="flex flex-col items-center mb-10 gap-8 mt-8 p-4 md:p-0">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center">
           <h1 className="text-3xl sm:text-3xl md:text-5xl text-primary font-bold md:text-right p-4 md:p-20 max-w-lg">
             Our Social Works
@@ -92,8 +117,39 @@ export default function Donate() {
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-8">
-          <EventCard />
-          <EventCard />
+          {/* <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 mt-8"> */}
+          {events.map((event) => (
+            <PastEventCard
+              key={event.id}
+              id={event.slug} // Use slug as ID if navigating to /past-events/[slug]
+              eventName={event.name}
+              type={"Past Event"} // or event.type if you add it
+              date={new Date(event.start_date).toDateString()}
+              imageUrl={event.cover_image || "/default.png"}
+              venue={event.venue}
+            />
+          ))}
+        </div>
+        <div className="flex justify-end">
+          <Link href="/past-events" scroll={true}>
+            <button className="flex items-center gap-2 border border-black hover:border-primary hover:text-primary px-4 py-2 rounded-full">
+              View All
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 21 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M20.7204 11.6143C21.0932 11.0751 21.0932 10.201 20.7204 9.66185L14.9931 1.37836C14.6204 0.839212 14.016 0.839212 13.6432 1.37836C13.2704 1.91751 13.2704 2.79165 13.6432 3.3308L17.741 9.25748L0.954546 9.25748C0.427367 9.25748 3.53701e-07 9.87559 3.27835e-07 10.6381C3.0197e-07 11.4005 0.427367 12.0186 0.954546 12.0186L17.741 12.0186L13.6432 17.9453C13.2704 18.4845 13.2704 19.3586 13.6432 19.8978C14.016 20.4369 14.6204 20.4369 14.9931 19.8978L20.7204 11.6143Z"
+                  fill="black"
+                />
+              </svg>
+            </button>
+          </Link>
         </div>
       </div>
     </div>

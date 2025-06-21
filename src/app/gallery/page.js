@@ -1,79 +1,51 @@
-import GalleryAllCard from '../components/gallery/galleryAllCard';
-
-const GalleryData = [
-    {
-        "title": "Everest Mountain",
-        "imageUrl": "/event.png"
-    },
-    {
-        "title": "Kilimanjaro Expedition",
-        "imageUrl": "/event.png"
-    },
-    {
-        "title": "Amazon Jungle Trek",
-        "imageUrl": "/event.png"
-    },
-    {
-        "title": "Sahara Desert Adventure",
-        "imageUrl": "/event.png"
-    },
-    {
-        "title": "Rocky Mountain Hike",
-        "imageUrl": "/event.png"
-    },
-    {
-        "title": "Grand Canyon Exploration",
-        "imageUrl": "/event.png"
-    },
-    {
-        "title": "Great Wall of China Tour",
-        "imageUrl": "/event.png"
-    },
-    {
-        "title": "Patagonia Wilderness Journey",
-        "imageUrl": "/event.png"
-    },
-    {
-        "title": "Swiss Alps Ski Trip",
-        "imageUrl": "/event.png"
-    },
-    {
-        "title": "New Zealand Hiking Tour",
-        "imageUrl": "/event.png"
-    },
-    {
-        "title": "Machu Picchu Exploration",
-        "imageUrl": "/event.png"
-    },
-    {
-        "title": "Andes Mountain Expedition",
-        "imageUrl": "/event.png"
-    },
-    {
-        "title": "Iceland Volcano Tour",
-        "imageUrl": "/event.png"
-    },
-    {
-        "title": "African Safari Adventure",
-        "imageUrl": "/event.png"
-    },
-    {
-        "title": "Himalayas Base Camp Trek",
-        "imageUrl": "/event.png"
-    }
-];
-
+"use client";
+import { useEffect, useState } from "react";
+import GalleryAllCard from "../components/gallery/galleryAllCard";
 
 export default function Gallery() {
+  const [galleryData, setGalleryData] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const [eventsRes, treksRes] = await Promise.all([
+        fetch("/events.json"),
+        fetch("/treks.json"),
+      ]);
+      const [events, treks] = await Promise.all([
+        eventsRes.json(),
+        treksRes.json(),
+      ]);
+      // Combine and map to a common structure
+      const eventCards = events.map((event) => ({
+        title: event.name,
+        imageUrl: event.cover_image,
+        date: event.start_date,
+        type: "events",
+        slug: event.slug,
+      }));
+      const trekCards = treks.map((trek) => ({
+        title: trek.name,
+        imageUrl: trek.cover_image,
+        date: trek.start_date,
+        type: "treks",
+        slug: trek.slug,
+      }));
+      setGalleryData([...eventCards, ...trekCards]);
+    }
+    fetchData();
+  }, []);
+
   return (
-    <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8'>
-      {GalleryData.map((item, index) => (
-                <GalleryAllCard 
-                    key={index} 
-                    title={item.title} 
-                    imageUrl={item.imageUrl} 
-                />
-            ))}
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
+      {galleryData.map((item, index) => (
+        <GalleryAllCard
+          key={index}
+          title={item.title}
+          imageUrl={item.imageUrl}
+          type={item.type}
+          slug={item.slug}
+        />
+      ))}
     </div>
   );
 }

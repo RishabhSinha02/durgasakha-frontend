@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomeCard({
+  id,
   title,
   subtitle,
   date,
@@ -44,7 +46,7 @@ export default function HomeCard({
                 fill="#D8423F"
               />
             </svg>
-            <span className="text-gray-600 sm:text-md md:text-lg">{date}</span>
+            <span className="text-gray-600 text-sm md:text-lg">{date}</span>
           </div>
         </div>
         <div className="flex gap-4 mt-4 text-gray-600">
@@ -89,6 +91,13 @@ export default function HomeCard({
               />
             </svg>
           </a>
+          <Link
+            href={`upcoming-events/${id}`}
+            className="text-lg font-semibold text-primary underline cursor-pointer"
+            scroll={false}
+          >
+            Know More
+          </Link>
         </div>
       </div>
     </div>

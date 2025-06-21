@@ -1,141 +1,172 @@
-// src/app/upcoming-treks/[id]/page.js
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useParams } from 'next/navigation';
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Itinerary from "@/app/components/upcoming-treks/itinerary";
+import Link from "next/link";
 
-export default function EventDetail() {
-  const { id } = useParams(); // Get the dynamic ID from the URL
+export default function EventDetailPage() {
+  const { id } = useParams();
+  const [eventObj, setEventObj] = useState(null);
 
-  const trekObj = {
+  useEffect(() => {
+    fetch("/upcoming-events.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const found = data.find((event) => event.slug === id);
+        setEventObj(found);
+      });
+  }, [id]);
 
-    "id": 1,
-    "images": [
-      {
-        "image": "/nature.jpg"
-      },
-      {
-        "image": "/hero.png"
-      }
-    ],
-    "itinerary": [
-      {
-        "title": "6am",
-        "subtitle": "morning",
-        "description": "utho"
-      },
-      {
-        "title": "7pm",
-        "subtitle": "reach",
-        "description": "chalo"
-      }
-    ],
-    "gallery": [],
-    "name": "Irshalgad Trek",
-    "venue": "Khopoli",
-    "start_date": "2024-10-27T06:00:00+05:30",
-    "end_date": "2024-10-27T18:00:00+05:30",
-    "level": "Moderate",
-    "price": "1200.00",
-    "overview": "Embark on an epic journey through the majestic Himalayas with Durgasakha. Our Himalayan Trek is a once-in-a-lifetime adventure that promises breathtaking views, exhilarating experiences, and unforgettable memories. Traverse rugged mountain trails, explore ancient villages, and immerse yourself in the rich culture and natural beauty of this iconic region.",
-    "highlights": "Embark on an epic journey through the majestic Himalayas with Durgasakha. Our Himalayan Trek is a once-in-a-lifetime adventure that promises breathtaking views, exhilarating experiences, and unforgettable memories. Traverse rugged mountain trails, explore ancient villages, and immerse yourself in the rich culture and natural beauty of this iconic region.",
-    "things_to_carry": "Embark on an epic journey through the majestic Himalayas with Durgasakha. Our Himalayan Trek is a once-in-a-lifetime adventure that promises breathtaking views, exhilarating experiences, and unforgettable memories. Traverse rugged mountain trails, explore ancient villages, and immerse yourself in the rich culture and natural beauty of this iconic region.",
-    "what_is_included": "Embark on an epic journey through the majestic Himalayas with Durgasakha. Our Himalayan Trek is a once-in-a-lifetime adventure that promises breathtaking views, exhilarating experiences, and unforgettable memories. Traverse rugged mountain trails, explore ancient villages, and immerse yourself in the rich culture and natural beauty of this iconic region.",
-    "what_is_not_included": "Embark on an epic journey through the majestic Himalayas with Durgasakha. Our Himalayan Trek is a once-in-a-lifetime adventure that promises breathtaking views, exhilarating experiences, and unforgettable memories. Traverse rugged mountain trails, explore ancient villages, and immerse yourself in the rich culture and natural beauty of this iconic region.",
-    "cover_image": "http://localhost:8000/media/trek/cover/legal.png",
-    "facebook_post_link": null,
-    "instagram_post_link": null,
-    "twitter_post_link": null,
-    "youtube_post_link": null,
-    "created_at": "2024-10-23T01:34:19.296151+05:30",
-    "updated_at": "2024-10-23T01:36:48.179981+05:30"
-  }
-
-
+  if (!eventObj) return <div className="p-6">Loading...</div>;
 
   return (
-    <div className="card lg:m-16 md:m-8 sm:m-4 m-4 lg:p-12 md:p-8 sm:p-4 p-4 flex flex-col gap-16 rounded-xl bg-white h-full border-gray-200 border">
+    <div className="card lg:p-12 md:p-8 sm:p-4 p-4 flex flex-col gap-16 rounded-xl bg-white h-full border-gray-200 border">
       <div className="grid lg:grid-cols-8 md:grid-cols-1 grid-cols-1 gap-16">
-        <div className="lg:h-[458px] md:h-[358px] h-[200px] lg:col-span-5 md:col-span-1 col-span-1" style={{ position: "relative" }}>
+        <div className="lg:h-[458px] md:h-[358px] h-[200px] lg:col-span-5 md:col-span-1 col-span-1 relative">
           <Image
-            src={trekObj.images[1].image}
-            alt=""
+            src={eventObj.cover_image}
+            alt={eventObj.name}
             fill
             style={{ objectFit: "cover" }}
           />
         </div>
-        <div className='lg:col-span-3 md:col-span-1 col-span-1'>
+        <div className="lg:col-span-3 md:col-span-1 col-span-1">
           <table className="table-auto text-left w-full">
             <tbody>
               <tr>
                 <th className="font-bold">Venue</th>
-                <td className="px-4 py-2">{id}</td>
+                <td className="px-4 py-2">{eventObj.venue}</td>
               </tr>
               <tr>
-                <th className=" font-bold">Date</th>
+                <th className="font-bold">Date</th>
                 <td className="px-4 py-2">
-                  {`${trekObj.start_date.split('T')[0]} - ${trekObj.end_date.split('T')[0]}`}
+                  {eventObj.start_date.split("T")[0]}
                 </td>
               </tr>
               <tr>
-                <th className=" font-bold">Duration</th>
+                <th className="font-bold">Duration</th>
                 <td className="px-4 py-2">
-                  {`${Math.floor((new Date(trekObj.end_date) - new Date(trekObj.start_date)) / (1000 * 60 * 60 * 24))} days ${Math.floor(((new Date(trekObj.end_date) - new Date(trekObj.start_date)) % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))} hours`}
+                  {`${Math.floor(
+                    (new Date(eventObj.end_date) -
+                      new Date(eventObj.start_date)) /
+                      (1000 * 60 * 60 * 24)
+                  )} days`}
                 </td>
               </tr>
               <tr>
-                <th className=" font-bold">Event Category</th>
-                <td className="px-4 py-2">Trek</td>
+                <th className="font-bold">Event Category</th>
+                <td className="px-4 py-2">Event</td>
               </tr>
               <tr>
-                <th className=" font-bold">Organiser</th>
+                <th className="font-bold">Organiser</th>
                 <td className="px-4 py-2">Durga Sakha</td>
               </tr>
               <tr>
-                <th className=" font-bold">Phone</th>
-                <td className="px-4 py-2">1234567890</td>
+                <th className="font-bold">Phone</th>
+                <td className="px-4 py-2">+91 97735 37532</td>
               </tr>
               <tr>
-                <th className=" font-bold">Email</th>
-                <td className="px-4 py-2">info@durgasakha.com</td>
+                <th className="font-bold">Email</th>
+                <td className="px-4 py-2">durgasakha@gmail.com</td>
               </tr>
               <tr>
                 <td colSpan="2" className="px-4 pt-12 text-center">
-                  <button className="bg-secondary text-white px-8 py-2 rounded-full font-bold">Donate Now</button>
+                  <Link href="/donate">
+                    <button className="bg-secondary text-white px-8 py-2 rounded-full font-bold">
+                      Donate Now
+                    </button>
+                  </Link>
                 </td>
               </tr>
             </tbody>
           </table>
-
-
         </div>
       </div>
 
-      <div>
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">Overview</h1>
-        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
-          {trekObj.overview}
-        </p>
-      </div>
+      <Section title="Overview" content={eventObj.overview} />
+      <Section title="Highlights" content={eventObj.highlights} />
 
+      {eventObj.images && eventObj.images.length > 0 && (
+        <div>
+          <div className="flex justify-between items-center">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
+              Photos
+            </h1>
+            <div>
+              <Link href={`/gallery/events/${eventObj.slug}`}>
+                <button className="flex items-center text-sm md:text-lg sm:text-sm gap-2 border border-black hover:border-primary hover:text-primary px-2 py-2 md:px-4 md:py-2 sm:px-2 sm:py-2 rounded-full">
+                  View All
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="size-4 md:size-5 sm:size-4"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M3 10a.75.75 0 0 1 .75-.75h10.638L10.23 5.29a.75.75 0 1 1 1.04-1.08l5.5 5.25a.75.75 0 0 1 0 1.08l-5.5 5.25a.75.75 0 1 1-1.04-1.08l4.158-3.96H3.75A.75.75 0 0 1 3 10Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 my-8">
+            {eventObj.images.slice(0, 4).map((imgObj, idx) => (
+              <div
+                key={idx}
+                className="relative h-[150px] md:h-[200px] sm:h-[150px]"
+              >
+                <Image
+                  src={imgObj.image}
+                  alt={`Image ${idx + 1}`}
+                  className="object-cover h-full w-full rounded-lg"
+                  width={600}
+                  height={400}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
-      <div>
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">Highlights</h1>
-        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
-          {trekObj.highlights}
-        </p>
-      </div>
+      {eventObj.itinerary && eventObj.itinerary.length > 0 && (
+        <div>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
+            Itinerary
+          </h1>
+          <div className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
+            <Itinerary itinerary={eventObj.itinerary} />
+          </div>
+        </div>
+      )}
 
+      {eventObj.things_to_carry && (
+        <Section title="Things to Carry" content={eventObj.things_to_carry} />
+      )}
+      <Section
+        title="Join Us"
+        content="Be a Part of Something Meaningful.
+                    At Durga Sakha, we believe in the power of community and the joy of shared experiences. Whether you're passionate about treks, cultural events, or social impact — there's a place for you here.
 
-      <div>
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">Join Us</h1>
-        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
-          {trekObj.overview}
-        </p>
-      </div>
-
-
+                    Join us in creating memories, building connections, and making a difference — one event at a time."
+      />
     </div>
+  );
+}
 
+function Section({ title, content }) {
+  return (
+    <div>
+      <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
+        {title}
+      </h1>
+      <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
+        {content}
+      </p>
+    </div>
   );
 }

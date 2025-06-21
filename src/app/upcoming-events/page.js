@@ -1,21 +1,37 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import UpcomingEventCard from "../components/upcoming-events/upcomingEventCard";
+import { useEffect, useState } from "react";
 
 export default function UpcomingEvents() {
-  const socialEvents = [
-    {
-      title: "Shahapur School",
-      description: "School Kit Distribution",
-      date: "13 July 2025",
-      imageUrl: "/events/13th-july-event.jpeg",
-      location: "Shahapur, Maharashtra",
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-    },
-  ];
+  const [events, setEvents] = useState([]);
+
+  const [pastEvents, setPastEvents] = useState([]);
+
+  useEffect(() => {
+    fetch("/upcoming-events.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const sortedData = data.sort(
+          (a, b) => new Date(b.start_date) - new Date(a.start_date)
+        );
+        setEvents(sortedData);
+      });
+
+    fetch("/events.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const sortedData = data.sort(
+          (a, b) => new Date(b.start_date) - new Date(a.start_date)
+        );
+        setPastEvents(sortedData);
+      });
+  }, []);
+
   return (
-    <div className="p-4 md:p-16 md:pb-12 md:pt-12 space-y-10">
+    <div className="space-y-10">
       {/* <div className="grid lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-1 gap-4">
         <div className="card border border-gray-200 rounded-xl bg-white">
           <h1 className="text-xl md:text-xl lg:text-2xl font-bold p-4 text-primary">
@@ -165,22 +181,44 @@ export default function UpcomingEvents() {
         </div>
       </div> */}
 
-      <div>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
-          {socialEvents.map((event) => (
-            <div key={event.name}>
-              <UpcomingEventCard
-                title={event.title}
-                description={event.description}
-                date={event.date}
-                location={event.location}
-                imageUrl={event.imageUrl}
-                href={event.href}
-              />
-            </div>
+      {events.length > 0 ? (
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 mt-8">
+          {events.map((event) => (
+            <UpcomingEventCard
+              key={event.id}
+              id={event.slug}
+              title={event.name}
+              location={event.venue}
+              date={new Date(event.start_date).toDateString()}
+              imageUrl={event.cover_image || "/default.png"}
+              venue={event.venue}
+            />
           ))}
         </div>
-      </div>
+      ) : (
+        <div className="p-6">No upcoming events found.</div>
+      )}
+
+      {pastEvents.length > 0 && (
+        <div className="mt-10">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
+            Past Events
+          </h1>
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
+            {pastEvents.map((event) => (
+              <UpcomingEventCard
+                key={event.id}
+                id={event.slug}
+                title={event.name}
+                location={event.venue}
+                date={new Date(event.start_date).toDateString()}
+                imageUrl={event.cover_image || "/default.png"}
+                venue={event.venue}
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

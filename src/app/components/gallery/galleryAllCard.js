@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-const GalleryAllCard = ({title, imageUrl}) => {
+const GalleryAllCard = ({title, imageUrl, type, slug}) => {
     return (
         <div>
             <div className="relative max-full overflow-hidden rounded-lg bg-white shadow-lg">
@@ -19,8 +19,15 @@ const GalleryAllCard = ({title, imageUrl}) => {
                 </div>
 
                 {/* Content Section */}
-                <div className="p-6">
-                    <div className="text-sm font-bold">{title}</div>
+                <div className="flex flex-row justify-between">
+                    <div className="p-6">
+                        <div className="text-sm font-bold">{title}</div>
+                    </div>
+                    <Link href={`/gallery/${type}/${slug}`}>
+                        <div className="p-6">
+                            <div className="text-sm font-bold text-primary">View More</div>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>

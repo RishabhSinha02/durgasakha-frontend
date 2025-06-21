@@ -3,6 +3,7 @@ import HomeCard from "./components/home/homeCard";
 import StarRating from "./components/home/starRating";
 import TestimonialSlider from "./components/home/testimonialSlider";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const features = [
@@ -14,6 +15,7 @@ export default function Home() {
 
   const upcomingEvents = [
     {
+      slug: "july-donation-event",
       title: "Shahapur School",
       subtitle: "School Kit Distribution",
       date: "13 July 2025",
@@ -93,9 +95,11 @@ export default function Home() {
             committed to exploring the world responsibly and making a positive
             impact along the way.
           </p>
-          <button className="self-start border border-1 bg-white text-primary font-bold px-4 py-2 rounded-3xl">
-            Learn More
-          </button>
+          <Link href="/about-us">
+            <button className="self-start border border-1 bg-white text-primary font-bold px-4 py-2 rounded-3xl">
+              Learn More
+            </button>
+          </Link>
         </div>
       </section>
 
@@ -129,6 +133,7 @@ export default function Home() {
           {upcomingEvents.map((event, index) => (
             <HomeCard
               key={index}
+              id={event.slug}
               title={event.title}
               subtitle={event.subtitle}
               date={event.date}
@@ -139,23 +144,25 @@ export default function Home() {
           ))}
         </div>
         <div className="flex justify-end">
-          <button className="flex items-center gap-2 border border-black px-4 py-2 rounded-full">
-            View All
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 21 21"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M20.7204 11.6143C21.0932 11.0751 21.0932 10.201 20.7204 9.66185L14.9931 1.37836C14.6204 0.839212 14.016 0.839212 13.6432 1.37836C13.2704 1.91751 13.2704 2.79165 13.6432 3.3308L17.741 9.25748L0.954546 9.25748C0.427367 9.25748 3.53701e-07 9.87559 3.27835e-07 10.6381C3.0197e-07 11.4005 0.427367 12.0186 0.954546 12.0186L17.741 12.0186L13.6432 17.9453C13.2704 18.4845 13.2704 19.3586 13.6432 19.8978C14.016 20.4369 14.6204 20.4369 14.9931 19.8978L20.7204 11.6143Z"
-                fill="black"
-              />
-            </svg>
-          </button>
+          <Link href={`/upcoming-events`} scroll={false}>
+            <button className="flex items-center gap-2 border border-black hover:border-primary hover:text-primary px-4 py-2 rounded-full">
+              View All
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 21 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M20.7204 11.6143C21.0932 11.0751 21.0932 10.201 20.7204 9.66185L14.9931 1.37836C14.6204 0.839212 14.016 0.839212 13.6432 1.37836C13.2704 1.91751 13.2704 2.79165 13.6432 3.3308L17.741 9.25748L0.954546 9.25748C0.427367 9.25748 3.53701e-07 9.87559 3.27835e-07 10.6381C3.0197e-07 11.4005 0.427367 12.0186 0.954546 12.0186L17.741 12.0186L13.6432 17.9453C13.2704 18.4845 13.2704 19.3586 13.6432 19.8978C14.016 20.4369 14.6204 20.4369 14.9931 19.8978L20.7204 11.6143Z"
+                  fill="black"
+                />
+              </svg>
+            </button>
+          </Link>
         </div>
       </section>
 
