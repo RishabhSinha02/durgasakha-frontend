@@ -19,7 +19,7 @@ export default function Home() {
       title: "Shahapur School",
       subtitle: "School Kit Distribution",
       date: "13 July 2025",
-      image: "/events/13th-july-event.jpeg",
+      image: "/events/july-donation-event/image-1.jpeg",
       facebook: "https://facebook.com",
       instagram: "https://instagram.com",
     },

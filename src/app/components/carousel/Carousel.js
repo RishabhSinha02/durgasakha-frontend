@@ -10,24 +10,40 @@ export function CustomCarousel() {
       title: "Discover Your Next Adventure with Durgasakha",
       subtitle:
         "Durgasakha is a passionate community of trekkers and explorers dedicated to promoting responsible travel and cultural heritage.",
+      button1: "Donate Now",
+      button1_link: "/donate",
+      button2: "View Treks",
+      button2_link: "/upcoming-treks",
     },
     {
       imageSrc: "/events/18june2023-donation-event/image-10.jpeg",
       title: "Our Mission",
       subtitle:
         "We strive to create memorable trekking experiences while preserving nature and empowering local communities.",
+      button1: "Know More",
+      button1_link: "/about-us",
+      button2: "Join Us",
+      button2_link: "/contact-us",
     },
     {
       imageSrc: "/carousel3.jpg",
       title: "Our Values",
       subtitle:
         "Integrity, sustainability, and inclusivity guide every journey we organize and every story we share.",
+      button1: "Explore Values",
+      button1_link: "/about-us",
+      button2: "Get Involved",
+      button2_link: "/contact-us",
     },
     {
       imageSrc: "/carousel4.jpg",
       title: "Join Our Journey",
       subtitle:
         "Become part of a movement that celebrates adventure, learning, and positive impact through travel.",
+      button1: "Join Us",
+      button1_link: "/about-us",
+      button2: "Upcoming Treks",
+      button2_link: "/upcoming-treks",
     },
   ];
 
@@ -52,12 +68,14 @@ export function CustomCarousel() {
                 {item.subtitle}
               </p>
               <div className="flex flex-row space-x-4 pl-8 mt-4">
-                <Button className="rounded-full bg-secondary text-white">
-                  Book Now
-                </Button>
-                <Link href="/upcoming-treks">
+                <Link href={item.button1_link}>
+                  <Button className="rounded-full bg-secondary text-white">
+                    {item.button1}
+                  </Button>
+                </Link>
+                <Link href={item.button2_link}>
                   <Button className="rounded-full bg-white text-primary hover:text-white">
-                    View Treks
+                    {item.button2}
                   </Button>
                 </Link>
               </div>
