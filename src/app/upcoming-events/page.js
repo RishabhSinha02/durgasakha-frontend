@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import UpcomingEventCard from "../components/upcoming-events/upcomingEventCard";
+import PastEventCard from "../components/upcoming-events/pastEventCard";
 import { useEffect, useState } from "react";
 
 export default function UpcomingEvents() {
@@ -206,14 +207,13 @@ export default function UpcomingEvents() {
           </h1>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
             {pastEvents.map((event) => (
-              <UpcomingEventCard
+              <PastEventCard
                 key={event.id}
                 id={event.slug}
-                title={event.name}
-                location={event.venue}
+                eventName={event.name}
+                venue={event.venue}
                 date={new Date(event.start_date).toDateString()}
                 imageUrl={event.cover_image || "/default.png"}
-                venue={event.venue}
               />
             ))}
           </div>

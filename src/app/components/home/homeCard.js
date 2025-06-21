@@ -94,7 +94,7 @@ export default function HomeCard({
           <Link
             href={`upcoming-events/${id}`}
             className="text-lg font-semibold text-primary underline cursor-pointer"
-            scroll={false}
+            scroll={true}
           >
             Know More
           </Link>

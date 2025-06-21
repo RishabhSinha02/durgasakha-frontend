@@ -144,7 +144,7 @@ export default function Home() {
           ))}
         </div>
         <div className="flex justify-end">
-          <Link href={`/upcoming-events`} scroll={false}>
+          <Link href={`/upcoming-events`}>
             <button className="flex items-center gap-2 border border-black hover:border-primary hover:text-primary px-4 py-2 rounded-full">
               View All
               <svg

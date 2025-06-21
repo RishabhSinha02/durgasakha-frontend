@@ -12,7 +12,7 @@ const PastEventCard = ({
                 <div className='h-full w-full bg-black'>
                     <Image
                         src={imageUrl}
-                        alt={type}
+                        alt={id}
                         className="object-cover h-full w-full opacity-50"
                         width={600}
                         height={400}
@@ -44,6 +44,7 @@ const PastEventCard = ({
                     <Link
                         href={`/past-events/${id}`}
                         className="flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-[#C23E3E]"
+                        scroll={true}
                     >
                         See Details
                     </Link>
