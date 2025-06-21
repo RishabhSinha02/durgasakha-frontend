@@ -178,7 +178,7 @@ export default function Home() {
 
         <div className="flex justify-center">
           <Image
-            src="/nature.jpg"
+            src="/team.jpeg"
             alt="Top Left"
             className="object-cover w-full h-full self-center shadow-lg"
             width={500}
