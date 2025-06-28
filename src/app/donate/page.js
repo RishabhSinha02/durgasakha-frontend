@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function Donate() {
   const bankDetails = [
     { label: "Bank Name", value: "Saraswat Bank" },
-    { label: "Account Name", value: "Shri Durgsakha Charitable Trust" },
+    { label: "Account Name", value: "Shree Durgsakha Charitable Trust" },
     { label: "Account Number", value: "403209100000076" },
     { label: "IFSC Code", value: "SRCB0000403" },
   ];
