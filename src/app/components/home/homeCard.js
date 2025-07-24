@@ -9,6 +9,7 @@ export default function HomeCard({
   image,
   facebook,
   instagram,
+  type
 }) {
   return (
     <div className="trek-card bg-white shadow-md rounded-lg overflow-hidden">
@@ -92,7 +93,7 @@ export default function HomeCard({
             </svg>
           </a>
           <Link
-            href={`upcoming-events/${id}`}
+            href={`upcoming-${type}s/${id}`}
             className="text-lg font-semibold text-primary underline cursor-pointer"
             scroll={true}
           >

@@ -13,17 +13,20 @@ export default function Home() {
     "Positive Impact",
   ];
 
-  const upcomingEvents = [
+  const upcomingTreks = [
     {
-      slug: "july-donation-event",
-      title: "Shahapur School",
-      subtitle: "School Kit Distribution",
-      date: "13 July 2025",
-      image: "/events/july-donation-event/image-1.jpeg",
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
+      slug: "rohida-27-july-2025",
+      title: "Rohida Trek",
+      subtitle: "Mountain Trek",
+      date: "27 July 2025",
+      image: "/treks/rohida-27-july-2025/image-1.jpeg",
+      facebook: "https://www.facebook.com/share/1AbTBJrGjd/?mibextid=wwXIfr",
+      instagram: "https://www.instagram.com/shree_durgasakha_trust/",
+      type: "trek",
     },
   ];
+
+  const upcomingEvents = [];
 
   return (
     <div className="home">
@@ -103,61 +106,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <section className="upcoming-treks p-6 md:p-16 space-y-10 bg-black">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-10">
+      <section className="upcoming-treks p-6 md:p-16 space-y-10 bg-[#EBEBEB]">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 md:mb-10">
           Upcoming Treks
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-
-          <HomeCard title="Tringlewadi Trek" subtitle="Mountain Trek" organisers="Rishabh Sinha" date="12 March 2024" image="/nature.jpg" />
-          <HomeCard title="Tringlewadi Trek" subtitle="Mountain Trek" organisers="Rishabh Sinha" date="12 March 2024" image="/nature.jpg" />
-          <HomeCard title="Tringlewadi Trek" subtitle="Mountain Trek" organisers="Rishabh Sinha" date="12 March 2024" image="/nature.jpg" />
-
-        </div>
-        <div className="text-white flex justify-end">
-          <button className="flex items-center gap-2 border border-white px-4 py-2 rounded-full">View All
-            <svg width="16" height="16" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fillRule="evenodd" clipRule="evenodd" d="M20.7204 10.7779C21.0932 10.2388 21.0932 9.36466 20.7204 8.82551L14.9931 0.54203C14.6204 0.00287783 14.016 0.0028778 13.6432 0.54203C13.2704 1.08118 13.2704 1.95531 13.6432 2.49446L17.741 8.42115L0.954546 8.42115C0.427367 8.42115 3.53701e-07 9.03925 3.27835e-07 9.80173C3.0197e-07 10.5642 0.427367 11.1823 0.954546 11.1823L17.741 11.1823L13.6432 17.109C13.2704 17.6481 13.2704 18.5223 13.6432 19.0614C14.016 19.6006 14.6204 19.6006 14.9931 19.0614L20.7204 10.7779Z" fill="white" />
-            </svg>
-          </button>
-        </div>
-      </section> */}
-
-      <section className="upcoming-treks p-6 md:p-16 space-y-10">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 md:mb-10">
-          Upcoming Events
-        </h1>
-
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {upcomingEvents.map((event, index) => (
+          {upcomingTreks.map((trek, index) => (
             <HomeCard
               key={index}
-              id={event.slug}
-              title={event.title}
-              subtitle={event.subtitle}
-              date={event.date}
-              image={event.image}
-              facebook={event.facebook}
-              instagram={event.instagram}
+              id={trek.slug}
+              type={trek.type}
+              title={trek.title}
+              subtitle={trek.subtitle}
+              date={trek.date}
+              image={trek.image}
+              facebook={trek.facebook}
+              instagram={trek.instagram}
             />
           ))}
         </div>
-        <div className="flex justify-end">
-          <Link href={`/upcoming-events`}>
-            <button className="flex items-center gap-2 border border-black hover:border-primary hover:text-primary px-4 py-2 rounded-full">
+        <div className="text-black flex justify-end">
+          <Link href={`/upcoming-treks`}>
+            <button className="flex items-center gap-2 border border-black px-4 py-2 rounded-full">
               View All
               <svg
                 width="16"
                 height="16"
-                viewBox="0 0 21 21"
+                viewBox="0 0 21 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
-                  d="M20.7204 11.6143C21.0932 11.0751 21.0932 10.201 20.7204 9.66185L14.9931 1.37836C14.6204 0.839212 14.016 0.839212 13.6432 1.37836C13.2704 1.91751 13.2704 2.79165 13.6432 3.3308L17.741 9.25748L0.954546 9.25748C0.427367 9.25748 3.53701e-07 9.87559 3.27835e-07 10.6381C3.0197e-07 11.4005 0.427367 12.0186 0.954546 12.0186L17.741 12.0186L13.6432 17.9453C13.2704 18.4845 13.2704 19.3586 13.6432 19.8978C14.016 20.4369 14.6204 20.4369 14.9931 19.8978L20.7204 11.6143Z"
+                  d="M20.7204 10.7779C21.0932 10.2388 21.0932 9.36466 20.7204 8.82551L14.9931 0.54203C14.6204 0.00287783 14.016 0.0028778 13.6432 0.54203C13.2704 1.08118 13.2704 1.95531 13.6432 2.49446L17.741 8.42115L0.954546 8.42115C0.427367 8.42115 3.53701e-07 9.03925 3.27835e-07 9.80173C3.0197e-07 10.5642 0.427367 11.1823 0.954546 11.1823L17.741 11.1823L13.6432 17.109C13.2704 17.6481 13.2704 18.5223 13.6432 19.0614C14.016 19.6006 14.6204 19.6006 14.9931 19.0614L20.7204 10.7779Z"
                   fill="black"
                 />
               </svg>
@@ -165,6 +148,50 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      {upcomingEvents.length > 0 && (
+        <section className="upcoming-treks p-6 md:p-16 space-y-10">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 md:mb-10">
+            Upcoming Events
+          </h1>
+
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {upcomingEvents.map((event, index) => (
+              <HomeCard
+                key={index}
+                id={event.slug}
+                title={event.title}
+                subtitle={event.subtitle}
+                date={event.date}
+                image={event.image}
+                facebook={event.facebook}
+                instagram={event.instagram}
+              />
+            ))}
+          </div>
+          <div className="flex justify-end">
+            <Link href={`/upcoming-events`}>
+              <button className="flex items-center gap-2 border border-black hover:border-primary hover:text-primary px-4 py-2 rounded-full">
+                View All
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M20.7204 11.6143C21.0932 11.0751 21.0932 10.201 20.7204 9.66185L14.9931 1.37836C14.6204 0.839212 14.016 0.839212 13.6432 1.37836C13.2704 1.91751 13.2704 2.79165 13.6432 3.3308L17.741 9.25748L0.954546 9.25748C0.427367 9.25748 3.53701e-07 9.87559 3.27835e-07 10.6381C3.0197e-07 11.4005 0.427367 12.0186 0.954546 12.0186L17.741 12.0186L13.6432 17.9453C13.2704 18.4845 13.2704 19.3586 13.6432 19.8978C14.016 20.4369 14.6204 20.4369 14.9931 19.8978L20.7204 11.6143Z"
+                    fill="black"
+                  />
+                </svg>
+              </button>
+            </Link>
+          </div>
+        </section>
+      )}
 
       <section className="volunteer p-6 md:p-16 space-y-10 grid sm:grid-cols-1 lg:grid-cols-2 lg:gap-36 bg-[#EBEBEB]">
         <div className="flex flex-col justify-center">

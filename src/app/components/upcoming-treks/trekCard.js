@@ -4,14 +4,13 @@ import Link from 'next/link';
 
 const TrekCard = ({
     id,
-    type = "Mountain Trek",
-    trekName = "Tringlewadi Trek",
-    date = "12 March 2024",
-    location = "Mumbai",
-    description = "Where Adventure Meets Purpose! We're thrilled to have you here. At Durgasakha, we're more thrilled to have you here. At Durgasakha, we're more",
-    price = "1499.00",
-    imageUrl = "/nature.jpg",
-    href = "#",
+    type,
+    trekName,
+    date,
+    location,
+    description,
+    price,
+    imageUrl,
 }) => {
     return (
         <div className="relative max-full overflow-hidden rounded-lg bg-white shadow-lg">
@@ -30,7 +29,7 @@ const TrekCard = ({
                     <h3 className="p-6 text-md font-semibold text-white">{type}</h3>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h2 className="text-3xl font-bold text-white">{id}</h2>
+                    <h2 className="text-3xl font-bold text-white">{trekName}</h2>
                 </div>
             </div>
 
