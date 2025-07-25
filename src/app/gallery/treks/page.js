@@ -9,7 +9,12 @@ const GalleryTrek = () => {
     useEffect(() => {
         fetch('/treks.json')
             .then(res => res.json())
-            .then(data => setTreks(data));
+            .then(data => {
+                const sortedData = data.sort(
+                    (a, b) => new Date(b.start_date) - new Date(a.start_date)
+                );
+                setTreks(sortedData);
+            });
     }, []);
 
     return (

@@ -30,7 +30,11 @@ export default function Gallery() {
         type: "treks",
         slug: trek.slug,
       }));
-      setGalleryData([...eventCards, ...trekCards]);
+      const combinedData = [...eventCards, ...trekCards];
+      const sortedData = combinedData.sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+      );
+      setGalleryData(sortedData);
     }
     fetchData();
   }, []);
