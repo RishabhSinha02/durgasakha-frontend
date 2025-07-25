@@ -30,7 +30,7 @@ export default function ContactUs() {
           title="Location"
           subtitle="Durgasakha Charitable Trust Cosmos County CASA, B Wing, flat no 1C, Ovla GB Road, Thane (west) – 400615"
           callToActionText="Find us here"
-          callToActionLink="mailto:info@durgasakha.com"
+          callToActionLink="mailto:durgasakha@gmail.com"
         />
       </div>
     </div>

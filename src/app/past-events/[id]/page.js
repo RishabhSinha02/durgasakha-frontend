@@ -45,7 +45,7 @@ export default function PastEventDetailPage() {
                   {eventObj.start_date.split("T")[0]}
                 </td>
               </tr>
-              <tr>
+              {/* <tr>
                 <th className="font-bold">Duration</th>
                 <td className="px-4 py-2">
                   {`${Math.floor(
@@ -54,14 +54,14 @@ export default function PastEventDetailPage() {
                       (1000 * 60 * 60 * 24)
                   )} days`}
                 </td>
-              </tr>
+              </tr> */}
               <tr>
                 <th className="font-bold">Event Category</th>
                 <td className="px-4 py-2">Event</td>
               </tr>
               <tr>
                 <th className="font-bold">Organiser</th>
-                <td className="px-4 py-2">Durga Sakha</td>
+                <td className="px-4 py-2">Durgasakha</td>
               </tr>
               <tr>
                 <th className="font-bold">Phone</th>
