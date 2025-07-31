@@ -12,7 +12,7 @@ export default async function PastTreks() {
       <div>
         <Header background="/header.png" title="Past Treks" />
       </div>
-      <div className="p-10 pb-6 pt-6 md:p-16 md:pb-12 md:pt-12 sm:p-10 sm:pb-6 sm:pt-6 space-y-10">
+      <div className="p-4 pb-6 pt-6 md:p-16 md:pb-12 md:pt-12 sm:p-10 sm:pb-6 sm:pt-6 space-y-10">
         {treks.length === 0 ? (
           <div className="text-center text-gray-500 py-12">
             No upcoming treks found.
