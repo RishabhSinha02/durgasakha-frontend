@@ -16,9 +16,9 @@ const PastEventCard = ({ event }) => {
             height={400}
           />
         </div>
-        {/* <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent">
-                    <h3 className="p-6 text-md font-semibold text-white">{type}</h3>
-                </div> */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent">
+                    <h3 className="p-6 text-md font-semibold text-white">{event.venue}</h3>
+                </div>
         <div className="absolute bottom-0 left-0 right-0 p-6">
           <h2 className="text-3xl font-bold text-white">{event.name}</h2>
         </div>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { API_URL } from "../../config/api";
 import { Header } from "../../components/header/Header";
+import Link from "next/link";
 
 export const revalidate = 120; // revalidate every 2 minutes
 
@@ -132,14 +133,15 @@ export default async function EventDetail({ params }) {
                 Photos
               </h1>
               <div>
-                {/* // TODO: Add Link */}
-                <button className="bg-secondary text-white px-8 py-2 rounded-full font-bold">
-                  See Photos
-                </button>
+                <Link href={`/gallery/events/${event.id}`}>
+                  <button className="bg-secondary text-white px-8 py-2 rounded-full font-bold">
+                    See Photos
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 my-8">
-              {event.gallery.map((item, index) => (
+              {event.gallery.slice(0,4).map((item, index) => (
                 <div
                   key={index}
                   className="relative h-[150px] md:h-[200px] sm:h-[150px]"
