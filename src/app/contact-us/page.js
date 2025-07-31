@@ -14,23 +14,23 @@ export default function ContactUs() {
         <ContactCard
           icon={<MdOutlineEmail size={50} />}
           title="Email Address"
-          subtitle="info@durgasakha.com"
+          subtitle="durgasakha@gmail.com"
           callToActionText="Send Email"
-          callToActionLink="mailto:info@durgasakha.com"
+          callToActionLink="mailto:durgasakha@gmail.com"
         />
         <ContactCard
           icon={<BsTelephone size={50} />}
           title="Phone Number"
-          subtitle="+91 1234567890"
+          subtitle="+91 97735 37532"
           callToActionText="Call us now"
-          callToActionLink="tel:+911234567890"
+          callToActionLink="tel:+919773537532"
         />
         <ContactCard
           icon={<IoLocationOutline size={50} />}
           title="Location"
           subtitle="Durgasakha Charitable Trust Cosmos County CASA, B Wing, flat no 1C, Ovla GB Road, Thane (west) – 400615"
           callToActionText="Find us here"
-          callToActionLink="mailto:info@durgasakha.com"
+          callToActionLink="mailto:durgasakha@gmail.com"
         />
       </div>
     </div>
