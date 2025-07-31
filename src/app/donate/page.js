@@ -58,7 +58,7 @@ export default async function Donate() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
           {events.map((event) => (
-            <PastEventCard event={event} />
+            <PastEventCard key={event.id} event={event} />
           ))}
         </div>
         <div className="flex justify-center w-full">
