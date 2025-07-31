@@ -165,8 +165,8 @@ export default async function PastTrekDetailPage({ params }) {
         </h1>
         <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
           Be a Part of Something Meaningful. At Durgasakha, we believe in the
-          power of community and the joy of shared experiences. Whether you're
-          passionate about treks, cultural events, or social impact — there's a
+          power of community and the joy of shared experiences. Whether you&apos;re
+          passionate about treks, cultural events, or social impact — there&apos;s a
           place for you here. Join us in creating memories, building
           connections, and making a difference — one event at a time.
         </p>
