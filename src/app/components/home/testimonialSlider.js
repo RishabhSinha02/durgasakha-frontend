@@ -6,56 +6,56 @@ import Image from 'next/image';
 
 const TestimonialSlider = () => {
     const testimonials = [
-        {
-          id: 1,
-          name: 'Rishabh',
-          role: 'Traveller',
-          rating: 2.5,
-          comment: 'Durgasakha made my trek unforgettable! From stunning vistas to thoughtful cultural experiences, every moment was magical. Can\'t wait to join them again!',
-          title: 'It was a very good experience'
-        },
-        {
-          id: 2,
-          name: 'Rishabh',
-          role: 'Traveller',
-          rating: 4,
-          comment: 'Durgasakha made my trek unforgettable! From stunning vistas to thoughtful cultural experiences, every moment was magical. Can\'t wait to join them again!',
-          title: 'It was a very good experience'
-        },
-        {
-            id: 3,
-            name: 'Rishabh',
-            role: 'Traveller',
-            rating: 4,
-            comment: 'Durgasakha made my trek unforgettable! From stunning vistas to thoughtful cultural experiences, every moment was magical. Can\'t wait to join them again!',
-            title: 'It was a very good experience'
-          },
-          {
-            id: 4,
-            name: 'Rishabh',
-            role: 'Traveller',
-            rating: 4,
-            comment: 'Durgasakha made my trek unforgettable! From stunning vistas to thoughtful cultural experiences, every moment was magical. Can\'t wait to join them again!',
-            title: 'It was a very good experience'
-          },
-          {
-            id: 5,
-            name: 'Rishabh',
-            role: 'Traveller',
-            rating: 4,
-            comment: 'Durgasakha made my trek unforgettable! From stunning vistas to thoughtful cultural experiences, every moment was magical. Can\'t wait to join them again!',
-            title: 'It was a very good experience'
-          },
-          {
-            id: 6,
-            name: 'Rishabh',
-            role: 'Traveller',
-            rating: 4,
-            comment: 'Durgasakha made my trek unforgettable! From stunning vistas to thoughtful cultural experiences, every moment was magical. Can\'t wait to join them again!',
-            title: 'It was a very good experience'
-          },
-        // Add more testimonials as needed for testing
-      ];
+      {
+        id: 1,
+        name: 'Aarav Patel',
+        role: 'Traveller',
+        rating: 2.5,
+        comment: 'The guides were knowledgeable and friendly. I discovered so much about the local culture!',
+        title: 'Enriching and fun journey'
+      },
+      {
+        id: 2,
+        name: 'Sneha Kulkarni',
+        role: 'Traveller',
+        rating: 4,
+        comment: 'A seamless experience from start to finish. The trek was well-organized and safe.',
+        title: 'Well organized adventure'
+      },
+      {
+        id: 3,
+        name: 'Vikram Singh',
+        role: 'Traveller',
+        rating: 4,
+        comment: 'Breathtaking views and great company. I made memories for a lifetime!',
+        title: 'Memorable trek'
+      },
+      {
+        id: 4,
+        name: 'Priya Deshmukh',
+        role: 'Traveller',
+        rating: 4,
+        comment: 'Loved the attention to detail and the delicious food. Highly recommended!',
+        title: 'Amazing hospitality'
+      },
+      {
+        id: 5,
+        name: 'Rahul Joshi',
+        role: 'Traveller',
+        rating: 4,
+        comment: 'Perfect blend of adventure and relaxation. Will definitely join again.',
+        title: 'Perfect getaway'
+      },
+      {
+        id: 6,
+        name: 'Meera Shah',
+        role: 'Traveller',
+        rating: 4,
+        comment: 'The team ensured everyone felt included and safe. Truly a wonderful experience.',
+        title: 'Inclusive and safe'
+      },
+      // Add more testimonials as needed for testing
+    ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -130,7 +130,7 @@ const TestimonialSlider = () => {
                       <div className="flex items-center gap-4 mb-4">
                         <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
                           <Image
-                            src="/profileRishabh.png"
+                            src="/profile.png"
                             alt={testimonial.name}
                             className="w-full h-full object-cover"
                             width={150}
@@ -141,9 +141,9 @@ const TestimonialSlider = () => {
                           <h3 className="text-lg font-semibold">{testimonial.name}</h3>
                           <p className="text-gray-600">{testimonial.role}</p>
                         </div>
-                        <div className="ml-auto">
+                        {/* <div className="ml-auto">
                           <StarRating rating={testimonial.rating} />
-                        </div>
+                        </div> */}
                       </div>
                       <h4 className="text-xl font-bold mb-2">{testimonial.title}</h4>
                       <p className="text-gray-700">{testimonial.comment}</p>
