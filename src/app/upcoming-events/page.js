@@ -161,14 +161,20 @@ export default async function UpcomingEvents() {
       </div>
 
       <div>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
-          {events.results.map((event) => (
-            <div key={event.id}>
-              {" "}
-              <UpcomingEventCard event={event} />
-            </div>
-          ))}
-        </div>
+        {events.results.length === 0 ? (
+          <div className="text-center text-gray-500 py-12">
+            No upcoming events.
+          </div>
+        ) : (
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
+            {events.results.map((event) => (
+              <div key={event.id}>
+                {" "}
+                <UpcomingEventCard event={event} />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

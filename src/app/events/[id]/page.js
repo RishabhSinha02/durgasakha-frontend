@@ -34,6 +34,22 @@ export const dynamicParams = true; // enable dynamic params
 //   }));
 // }
 
+export async function generateMetadata({ params }) {
+  const { id } = params;
+  const res = await fetch(`${API_URL}/api/event/${id}`);
+  const event = await res.json();
+
+  return {
+    title: `${event.name} | Shree Durgsakha Charitable Trust`,
+    description: event.overview?.slice(0, 150),
+    openGraph: {
+      title: `${event.name} | Shree Durgsakha Charitable Trust`,
+      description: event.overview,
+      images: event.cover_image,
+    },
+  };
+}
+
 export default async function EventDetail({ params }) {
   const { id } = await params;
   const event = await fetch(`${API_URL}/api/event/${id}`).then((res) =>
@@ -88,11 +104,11 @@ export default async function EventDetail({ params }) {
                 </tr>
                 <tr>
                   <th className=" font-bold">Phone</th>
-                  <td className="px-4 py-2">1234567890</td>
+                  <td className="px-4 py-2">+91 97735 37532</td>
                 </tr>
                 <tr>
                   <th className=" font-bold">Email</th>
-                  <td className="px-4 py-2">info@durgasakha.com</td>
+                  <td className="px-4 py-2">durgasakha@gmail.com</td>
                 </tr>
                 {new Date(event.start_date) > new Date() && (
                   <tr>
@@ -141,7 +157,7 @@ export default async function EventDetail({ params }) {
               </div>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 my-8">
-              {event.gallery.slice(0,4).map((item, index) => (
+              {event.gallery.slice(0, 4).map((item, index) => (
                 <div
                   key={index}
                   className="relative h-[150px] md:h-[200px] sm:h-[150px]"
