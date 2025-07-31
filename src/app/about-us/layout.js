@@ -4,7 +4,7 @@ const Layout = ({ children }) => {
     return (
         <div>
             <Header 
-                background="/header.png" 
+                background="/carousel/carousel-2.jpeg" 
                 title="About Us"/>
             <main>
                 {children}
