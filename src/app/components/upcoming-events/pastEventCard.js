@@ -9,7 +9,7 @@ const PastEventCard = ({ event }) => {
       <div className="relative h-[300px]">
         <div className="h-full w-full bg-black">
           <Image
-            src={event.cover_image}
+            src={event.event_image}
             alt={event.name}
             className="object-cover h-full w-full opacity-50"
             width={600}
