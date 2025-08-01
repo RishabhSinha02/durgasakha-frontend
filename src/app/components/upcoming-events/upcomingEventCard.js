@@ -62,7 +62,7 @@ const UpcomingEventCard = ({ event }) => {
             </svg>
           </Link>
           <Link
-            href={`events/${event.id}`}
+            href={`events/${event.uuid}`}
             className="text-lg font-semibold text-primary underline cursor-pointer"
           >
             Know More

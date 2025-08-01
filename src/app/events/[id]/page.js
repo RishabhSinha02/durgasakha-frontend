@@ -29,7 +29,7 @@ export const dynamicParams = true; // enable dynamic params
 //   const events = await fetchAllEvents();
 //   return events.map((event) => ({
 //     params: {
-//       id: event.id.toString(),
+//       id: event.uuid.toString(),
 //     },
 //   }));
 // }
@@ -149,7 +149,7 @@ export default async function EventDetail({ params }) {
                 Photos
               </h1>
               <div>
-                <Link href={`/gallery/events/${event.id}`}>
+                <Link href={`/gallery/events/${event.uuid}`}>
                   <button className="bg-secondary text-white px-8 py-2 rounded-full font-bold">
                     See Photos
                   </button>

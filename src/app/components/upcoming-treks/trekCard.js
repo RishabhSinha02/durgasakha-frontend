@@ -41,7 +41,7 @@ const TrekCard = ({ trek }) => {
 
         <div className="flex items-center justify-between">
           <Link
-            href={`upcoming-treks/${trek.id}`}
+            href={`upcoming-treks/${trek.uuid}`}
             className="flex items-center gap-2 rounded-full bg-[#D84E4E] px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-[#C23E3E]"
           >
             Join Now

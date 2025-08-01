@@ -27,7 +27,7 @@ export default async function GalleryEvent() {
               </div>
             </div>
             <div>
-              <Link href={`/gallery/events/${event.id}`}>
+              <Link href={`/gallery/events/${event.uuid}`}>
                 <button className="flex items-center text-sm md:text-lg sm:text-sm gap-2 border border-black hover:border-primary hover:text-primary px-2 py-2 md:px-4 md:py-2 sm:px-2 sm:py-2 rounded-full">
                   View All
                   <svg
@@ -47,7 +47,7 @@ export default async function GalleryEvent() {
             </div>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 my-8">
-            {event.gallery.slice(0,4).map((item, innerIndex) => (
+            {event.gallery.slice(0, 4).map((item, innerIndex) => (
               <div
                 key={innerIndex}
                 className="relative h-[150px] md:h-[300px] sm:h-[150px]"

@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function GalleryAllCard({ data }) {
   return (
     <div>
-      <Link href={`/gallery/${data.type}s/${data.id}`}>
+      <Link href={`/gallery/${data.type}s/${data.uuid}`}>
         <div className="relative max-full overflow-hidden rounded-lg bg-white shadow-lg">
           {/* Background Image Section */}
           <div className="relative h-[300px]">

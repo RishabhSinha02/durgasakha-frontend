@@ -112,7 +112,7 @@ export default async function Home() {
           <>
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {upcomingTreks.results.slice(0, 3).map((trek) => (
-                <HomeCardTrek key={trek.id} trek={trek} />
+                <HomeCardTrek key={trek.uuid} trek={trek} />
               ))}
             </div>
             <div className="text-white flex justify-end">
@@ -154,7 +154,7 @@ export default async function Home() {
           <>
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {upcomingEvents.results.slice(0, 3).map((event) => (
-                <HomeCardEvent key={event.id} event={event} />
+                <HomeCardEvent key={event.uuid} event={event} />
               ))}
             </div>
             <div className="flex justify-end">

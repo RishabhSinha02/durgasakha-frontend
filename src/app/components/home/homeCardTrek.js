@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export default function HomeCardTrek({ trek }) {
   return (
-    <Link href={`/upcoming-treks/${trek.id}`}>
+    <Link href={`/upcoming-treks/${trek.uuid}`}>
       <div className="trek-card bg-white shadow-md rounded-lg overflow-hidden">
         <div className="relative flex justify-center items-center">
           <Image
-            src={trek.images[0].image}
+            src={trek.cover_image}
             className="h-[286px] w-full object-cover"
             alt={`${trek.name} cover`}
             width={500}

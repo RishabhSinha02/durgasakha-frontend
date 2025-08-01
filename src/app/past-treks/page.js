@@ -21,8 +21,8 @@ export default async function PastTreks() {
           <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 mt-8">
             {treks.map((trek) => (
               <PastTrekCard
-                key={trek.id}
-                id={trek.id}
+                key={trek.uuid}
+                id={trek.uuid}
                 name={trek.name}
                 imageUrl={trek.cover_image}
                 venue={trek.venue}

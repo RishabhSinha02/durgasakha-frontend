@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HomeCardTrek({ event }) {
   return (
-    <Link href={`/events/${event.id}`}>
+    <Link href={`/events/${event.uuid}`}>
       <div className="trek-card bg-white shadow-md rounded-lg overflow-hidden">
         <div className="relative flex justify-center items-center">
           <Image

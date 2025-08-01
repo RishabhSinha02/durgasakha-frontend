@@ -17,8 +17,10 @@ const PastEventCard = ({ event }) => {
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent">
-                    <h3 className="p-6 text-md font-semibold text-white">{event.venue}</h3>
-                </div>
+          <h3 className="p-6 text-md font-semibold text-white">
+            {event.venue}
+          </h3>
+        </div>
         <div className="absolute bottom-0 left-0 right-0 p-6">
           <h2 className="text-3xl font-bold text-white">{event.name}</h2>
         </div>
@@ -127,7 +129,7 @@ const PastEventCard = ({ event }) => {
 
         <div className="flex items-center justify-between mt-4">
           <Link
-            href={`/events/${event.id}`}
+            href={`/events/${event.uuid}`}
             className="flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-[#C23E3E]"
           >
             See Details

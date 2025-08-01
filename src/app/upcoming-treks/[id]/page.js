@@ -33,7 +33,7 @@ export default async function TrekDetail({ params }) {
             style={{ position: "relative" }}
           >
             <Image
-              src={trekObj.images[0].image}
+              src={trekObj.cover_image}
               alt=""
               fill
               style={{ objectFit: "cover" }}

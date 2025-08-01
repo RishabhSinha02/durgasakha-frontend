@@ -2,7 +2,7 @@ import { API_URL } from "@/app/config/api";
 import GalleryLightbox from "../../../components/gallery/galleryLightBox"; // client component
 
 export default async function GalleryEventPhotos({ params }) {
-  const res = await fetch(`${API_URL}/api/event/${params.id}`, {
+  const res = await fetch(`${API_URL}/api/event/${params.uuid}`, {
     cache: "no-store", // SSR on every request (or use revalidate)
   });
 

@@ -11,7 +11,7 @@ export default async function PastEvents() {
     <div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8">
         {events.results.map((event) => (
-          <div key={event.id}>
+          <div key={event.uuid}>
             <PastEventCard event={event} />
           </div>
         ))}
