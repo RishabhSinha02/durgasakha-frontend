@@ -3,6 +3,8 @@ import { API_URL } from "@/app/config/api";
 import Image from "next/image";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({ params }) {
   const { id } = params;
   const res = await fetch(`${API_URL}/api/trek/${id}`);

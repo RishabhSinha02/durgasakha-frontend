@@ -3,6 +3,8 @@ import TrekCard from "../components/upcoming-treks/trekCard";
 import { API_URL } from "../config/api";
 import { Header } from "../components/header/Header";
 
+export const dynamic = "force-dynamic";
+
 export default async function UpcomingTreks({ searchParams }) {
   const resolvedSearchParams = await searchParams;
   const difficulty = resolvedSearchParams?.difficulty || "All";

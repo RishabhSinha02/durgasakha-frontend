@@ -1,5 +1,3 @@
-// app/gallery-event/[id]/GalleryLightbox.tsx
-
 "use client";
 
 import LightGallery from "lightgallery/react";

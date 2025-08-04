@@ -2,6 +2,8 @@ import PastTrekCard from "../components/upcoming-treks/pastTrekCard";
 import { API_URL } from "../config/api";
 import { Header } from "../components/header/Header";
 
+export const dynamic = "force-dynamic";
+
 export default async function PastTreks() {
   let data = await fetch(`${API_URL}/api/trek/past`);
   const result = await data.json();

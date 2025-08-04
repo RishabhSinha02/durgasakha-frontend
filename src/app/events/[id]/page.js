@@ -3,7 +3,8 @@ import { API_URL } from "../../config/api";
 import { Header } from "../../components/header/Header";
 import Link from "next/link";
 
-export const revalidate = 120; // revalidate every 2 minutes
+// export const revalidate = 120; // revalidate every 2 minutes
+export const dynamic = "force-dynamic";
 
 export const dynamicParams = true; // enable dynamic params
 

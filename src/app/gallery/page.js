@@ -1,7 +1,7 @@
 import GalleryAllCard from "../components/gallery/galleryAllCard";
 import { API_URL } from "../config/api";
 
-export const revalidate = 120;
+export const dynamic = "force-dynamic";
 
 export default async function Gallery() {
   const data = await fetch(`${API_URL}/api/core/gallery`).then((res) =>

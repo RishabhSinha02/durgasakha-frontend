@@ -2,19 +2,30 @@ import Itinerary from "@/app/components/upcoming-treks/itinerary";
 import Image from "next/image";
 import { API_URL } from "@/app/config/api";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({ params }) {
   const { id } = params;
   const res = await fetch(`${API_URL}/api/trek/${id}`);
   const trekObj = await res.json();
 
   return {
-    title: `${trekObj.name} | Durgasakha Treks`,
+    title: `${trekObj.name} – Adventure starts at ₹${trekObj.price} | Durgasakha Treks`,
     description: trekObj.overview?.slice(0, 150),
     openGraph: {
-      title: `${trekObj.name} | Durgasakha Treks`,
+      title: `${trekObj.name} – Adventure starts at ₹${trekObj.price} | Durgasakha Treks`,
       description: trekObj.overview,
       images: trekObj.cover_image,
+      url: `https://durgasakha.com/upcoming-treks/${id}`,
+      type: "website",
     },
+    other: {
+      "product:price:amount": trekObj.price,
+      "product:price:currency": "INR",
+      "product:availability": "in_stock",
+      "product:brand": "Durgasakha",
+      "product:category": "Trekking",
+    }
   };
 }
 

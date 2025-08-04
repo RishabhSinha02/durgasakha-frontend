@@ -1,7 +1,7 @@
 import PastEventCard from "../components/upcoming-events/pastEventCard";
 import { API_URL } from "../config/api";
 
-export const revalidate = 120;
+export const dynamic = "force-dynamic";
 
 export default async function PastEvents() {
   let data = await fetch(`${API_URL}/api/event/past`);

@@ -1,7 +1,7 @@
 import { MemberProfile } from "../components/member-profile/MemberProfile";
 import { API_URL } from "../config/api";
 
-export const revalidate = 120;
+export const dynamic = "force-dynamic";
 
 export default async function AboutUs() {
   let data = await fetch(`${API_URL}/api/core/members`);

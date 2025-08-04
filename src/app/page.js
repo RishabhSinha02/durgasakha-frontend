@@ -1,13 +1,12 @@
 import { CustomCarousel } from "./components/carousel/Carousel";
 import HomeCardTrek from "./components/home/homeCardTrek";
 import HomeCardEvent from "./components/home/homeCardEvent";
-import StarRating from "./components/home/starRating";
 import TestimonialSlider from "./components/home/testimonialSlider";
 import Image from "next/image";
 import { API_URL } from "./config/api";
 import Link from "next/link";
 
-export const revalidate = 120;
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const features = [

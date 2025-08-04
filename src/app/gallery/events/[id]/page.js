@@ -1,10 +1,11 @@
 import { API_URL } from "@/app/config/api";
 import GalleryLightbox from "../../../components/gallery/galleryLightBox"; // client component
 
+export const dynamic = "force-dynamic"; // Force dynamic rendering for this page
+
 export default async function GalleryEventPhotos({ params }) {
-  const res = await fetch(`${API_URL}/api/event/${params.uuid}`, {
-    cache: "no-store", // SSR on every request (or use revalidate)
-  });
+  const { id } = await params; // Extracting id from params
+  const res = await fetch(`${API_URL}/api/event/${params.id}`);
 
   if (!res.ok) {
     return <div>Failed to load event</div>;

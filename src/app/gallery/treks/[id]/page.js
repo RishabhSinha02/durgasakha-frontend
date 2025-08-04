@@ -1,54 +1,17 @@
-"use client";
-import { useParams } from "next/navigation";
-
-import { useState, useEffect } from "react";
-import { Spinner } from "flowbite-react";
-
-import LightGallery from "lightgallery/react";
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
-import "lightgallery/css/lg-thumbnail.css";
-import lgThumbnail from "lightgallery/plugins/thumbnail";
-import lgZoom from "lightgallery/plugins/zoom";
-
-import Image from "next/image";
 import { API_URL } from "@/app/config/api";
+import GalleryLightbox from "../../../components/gallery/galleryLightBox"; // client component
 
-const GalleryTrekPhotos = () => {
-  const { id } = useParams();
+export const dynamic = "force-dynamic"; // Force dynamic rendering for this page
 
-  const [trek, setTrek] = useState(null);
-  const [loading, setLoading] = useState(true);
+export default async function GalleryTrekPhotos({ params }) {
+  const { id } = await params; // Extracting id from params
+  const res = await fetch(`${API_URL}/api/trek/${id}`);
 
-  useEffect(() => {
-    async function fetchTrekData() {
-      try {
-        const res = await fetch(`${API_URL}/api/trek/${id}`);
-        if (res.status === 200) {
-          const trekData = await res.json();
-          setTrek(trekData);
-        }
-      } catch (e) {
-        console.log("Error fetching trek data", e);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchTrekData();
-  }, [id]);
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center">
-        <Spinner size="xl" color="warning" />
-      </div>
-    ); // Render loading state while fetching
-  }
-
-  if (!trek) {
+  if (!res.ok) {
     return <div>No trek data available</div>; // Handle case where no trek data is available
   }
+
+  const trek = await res.json();
 
   return (
     <div>
@@ -64,25 +27,9 @@ const GalleryTrekPhotos = () => {
           })}
         </div>
       </div>
-      <LightGallery
-        speed={500}
-        plugins={[lgThumbnail, lgZoom]}
-        elementClassNames="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 my-8"
-      >
-        {trek.gallery.map((item, innerIndex) => (
-          <a href={item.image} key={innerIndex}>
-            <Image
-              src={item.image}
-              alt={"Social Work"}
-              className="object-cover h-full w-full"
-              width={600}
-              height={400}
-            />
-          </a>
-        ))}
-      </LightGallery>
+
+      {/* Client component receives data from server */}
+      <GalleryLightbox gallery={trek.gallery} />
     </div>
   );
 };
-
-export default GalleryTrekPhotos;
