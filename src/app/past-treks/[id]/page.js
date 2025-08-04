@@ -113,7 +113,7 @@ export default async function PastTrekDetailPage({ params }) {
       <div>
         <div className="flex justify-between">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
-            Photos
+            Gallery
           </h1>
           <div>
             <Link href={`/gallery/treks/${trekObj.uuid}`}>

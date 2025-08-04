@@ -1,5 +1,6 @@
 import Itinerary from "@/app/components/upcoming-treks/itinerary";
 import Image from "next/image";
+import Link from "next/link";
 import { API_URL } from "@/app/config/api";
 import BankDetails from "@/app/components/donate/BankDetails";
 
@@ -132,6 +133,32 @@ export default async function TrekDetail({ params }) {
             {trekObj.highlights}
           </p>
         </div>
+
+        <div>
+        <div className="flex justify-between">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
+            Photos
+          </h1>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 my-8">
+          {trekObj.images.slice(0, 4).map((item, index) => (
+            <div
+              key={index}
+              className="relative h-[150px] md:h-[200px] sm:h-[150px]"
+            >
+              <div className="h-full w-full">
+                <Image
+                  src={item.image}
+                  alt={"Social Work"}
+                  className="object-cover h-full w-full"
+                  width={600}
+                  height={400}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
         <div>
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
