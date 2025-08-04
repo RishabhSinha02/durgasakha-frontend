@@ -129,7 +129,7 @@ export default async function EventDetail({ params }) {
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
             Overview
           </h1>
-          <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
+          <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl whitespace-pre-line">
             {event.overview}
           </p>
         </div>
@@ -138,7 +138,7 @@ export default async function EventDetail({ params }) {
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
             Highlights
           </h1>
-          <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
+          <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl whitespace-pre-line">
             {event.highlights}
           </p>
         </div>
@@ -182,8 +182,13 @@ export default async function EventDetail({ params }) {
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
             Join Us
           </h1>
-          <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
-            {event.overview}
+          <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl whitespace-pre-line">
+            Be a Part of Something Meaningful. At Durgasakha, we believe in the
+            power of community and the joy of shared experiences. Whether
+            you&apos;re passionate about treks, cultural events, or social
+            impact — there&apos;s a place for you here. Join us in creating
+            memories, building connections, and making a difference — one event
+            at a time.
           </p>
         </div>
       </div>

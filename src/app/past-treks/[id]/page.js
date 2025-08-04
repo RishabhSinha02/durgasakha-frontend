@@ -96,7 +96,7 @@ export default async function PastTrekDetailPage({ params }) {
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
           Overview
         </h1>
-        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
+        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl whitespace-pre-line">
           {trekObj.overview}
         </p>
       </div>
@@ -105,7 +105,7 @@ export default async function PastTrekDetailPage({ params }) {
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
           Highlights
         </h1>
-        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
+        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl whitespace-pre-line">
           {trekObj.highlights}
         </p>
       </div>
@@ -156,8 +156,26 @@ export default async function PastTrekDetailPage({ params }) {
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
           Things to Carry
         </h1>
-        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
+        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl whitespace-pre-line">
           {trekObj.things_to_carry}
+        </p>
+      </div>
+
+      <div>
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
+          What is Included
+        </h1>
+        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl whitespace-pre-line">
+          {trekObj.what_is_included}
+        </p>
+      </div>
+
+      <div>
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6  whitespace-pre-line">
+          What is Not Included
+        </h1>
+        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
+          {trekObj.what_is_not_included}
         </p>
       </div>
 
