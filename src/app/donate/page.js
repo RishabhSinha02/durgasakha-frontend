@@ -57,7 +57,7 @@ export default async function Donate() {
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
-          {events.map((event) => (
+          {events.slice(0,4).map((event) => (
             <PastEventCard key={event.uuid} event={event} />
           ))}
         </div>

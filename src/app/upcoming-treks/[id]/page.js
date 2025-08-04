@@ -1,6 +1,7 @@
 import Itinerary from "@/app/components/upcoming-treks/itinerary";
 import Image from "next/image";
 import { API_URL } from "@/app/config/api";
+import BankDetails from "@/app/components/donate/BankDetails";
 
 export const dynamic = "force-dynamic";
 
@@ -145,56 +146,8 @@ export default async function TrekDetail({ params }) {
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
             Payment Details
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-6 mt-1 text-xs sm:text-sm md:text-lg text-left max-w-7xl">
-            <div className="col-span-1 md:col-span-3">
-              <table className="w-full">
-                <tbody>
-                  <tr className="h-10">
-                    <th className="">Bank Name</th>
-                    <td className="px-4 py-2">XYZ Bank</td>
-                  </tr>
-                  <tr className="h-10">
-                    <th className="">Branch</th>
-                    <td className="px-4 py-2">XYZ Andheri West Branch</td>
-                  </tr>
-                  <tr className="h-10">
-                    <th className="">Account Holder Name</th>
-                    <td className="px-4 py-2">Rishabh Sinha</td>
-                  </tr>
-                  <tr className="h-10">
-                    <th className="">Account Number</th>
-                    <td className="px-4 py-2">1234567890</td>
-                  </tr>
-                  <tr className="h-10">
-                    <th className="">IFSC Code</th>
-                    <td className="px-4 py-2">XYZM0000123</td>
-                  </tr>
-                  <tr className="h-10">
-                    <td colSpan="2" className="py-2">
-                      Send us a screenshot of the payment.
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div className="flex flex-col text-center justify-center font-extrabold text-2xl text-gray-600">
-              OR
-            </div>
-            <div className="col-span-1 md:col-span-2 flex flex-col justify-center">
-              <div className="flex justify-center">
-                <Image
-                  src={
-                    "https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg"
-                  }
-                  alt=""
-                  height={200}
-                  width={200}
-                />
-              </div>
-              <div className="flex justify-center text-primary text-lg font-bold">
-                UPI QR Code
-              </div>
-            </div>
+          <div className="max-w-5xl flex flex-col items-center justify-center mx-auto">
+            <BankDetails  />
           </div>
         </div>
 
