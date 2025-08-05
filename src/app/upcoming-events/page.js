@@ -23,7 +23,7 @@ export default async function UpcomingEvents() {
                   type="search"
                   id="location-search"
                   className="w-full z-20 text-md border-0 p-4 text-gray-900 bg-gray-200 rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
-                  placeholder="Search Treks"
+                  placeholder="Search Events"
                 />
                 <button
                   type="submit"
