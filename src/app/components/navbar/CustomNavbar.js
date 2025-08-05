@@ -148,20 +148,22 @@ export default function CustomNavbar() {
                         </button>
                         {openDropdown === 'treks' && (
                             <div className="pl-4">
-                                <a
-                                    href="/upcoming-treks"
-                                    className="block py-2"
-                                    onClick={handleMobileDropdownNav('/upcoming-treks')}
-                                >
-                                    Upcoming Treks
-                                </a>
-                                <a
-                                    href="/past-treks"
-                                    className="block py-2"
-                                    onClick={handleMobileDropdownNav('/past-treks')}
-                                >
-                                    Past Treks
-                                </a>
+                                <Link href="/upcoming-treks" legacyBehavior>
+                                    <a
+                                        className="block py-2"
+                                        onClick={handleMobileDropdownNav('/upcoming-treks')}
+                                    >
+                                        Upcoming Treks
+                                    </a>
+                                </Link>
+                                <Link href="/past-treks" legacyBehavior>
+                                    <a
+                                        className="block py-2"
+                                        onClick={handleMobileDropdownNav('/past-treks')}
+                                    >
+                                        Past Treks
+                                    </a>
+                                </Link>
                             </div>
                         )}
 
@@ -173,20 +175,22 @@ export default function CustomNavbar() {
                         </button>
                         {openDropdown === 'events' && (
                             <div className="pl-4">
-                                <a
-                                    href="/upcoming-events"
-                                    className="block py-2"
-                                    onClick={handleMobileDropdownNav('/upcoming-events')}
-                                >
-                                    Upcoming Events
-                                </a>
-                                <a
-                                    href="/past-events"
-                                    className="block py-2"
-                                    onClick={handleMobileDropdownNav('/past-events')}
-                                >
-                                    Past Events
-                                </a>
+                                <Link href="/upcoming-events" legacyBehavior>
+                                    <a
+                                        className="block py-2"
+                                        onClick={handleMobileDropdownNav('/upcoming-events')}
+                                    >
+                                        Upcoming Events
+                                    </a>
+                                </Link>
+                                <Link href="/past-events" legacyBehavior>
+                                    <a
+                                        className="block py-2"
+                                        onClick={handleMobileDropdownNav('/past-events')}
+                                    >
+                                        Past Events
+                                    </a>
+                                </Link>
                             </div>
                         )}
                     </div>
