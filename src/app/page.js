@@ -202,6 +202,12 @@ export default async function Home() {
             diverse cultures while making a meaningful impact on local
             communities and the environment.
           </p>
+          <Link
+            href="/membership"
+            className="mt-6 self-start border border-primary bg-primary text-white font-bold px-6 py-2 rounded-3xl hover:bg-secondary transition"
+          >
+            Become a Member
+          </Link>
         </div>
 
         <div className="flex justify-center">

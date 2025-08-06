@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { API_URL } from "@/app/config/api";
 import BankDetails from "@/app/components/donate/BankDetails";
+import { formatDateTime } from "@/app/utils/format";
 
 export const dynamic = "force-dynamic";
 
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }) {
       "product:availability": "in_stock",
       "product:brand": "Durgasakha",
       "product:category": "Trekking",
-    }
+    },
   };
 }
 
@@ -38,7 +39,6 @@ export default async function TrekDetail({ params }) {
   );
 
   return (
-    <>
       <div className="card lg:m-16 md:m-8 sm:m-4 m-4 lg:p-12 md:p-8 sm:p-4 p-4 flex flex-col gap-16 rounded-xl bg-white h-full border-gray-200 border">
         <div className="grid lg:grid-cols-8 md:grid-cols-1 grid-cols-1 gap-16">
           <div
@@ -64,11 +64,15 @@ export default async function TrekDetail({ params }) {
                   <td className="px-4 py-2">{trekObj.venue}</td>
                 </tr>
                 <tr>
-                  <th className=" font-bold">Date</th>
+                  <th className=" font-bold">Starts</th>
                   <td className="px-4 py-2">
-                    {`${trekObj.start_date.split("T")[0]} - ${
-                      trekObj.end_date.split("T")[0]
-                    }`}
+                    {`${formatDateTime(trekObj.start_date)}`}
+                  </td>
+                </tr>
+                <tr>
+                  <th className=" font-bold">Ends</th>
+                  <td className="px-4 py-2">
+                    {`${formatDateTime(trekObj.end_date)}`}
                   </td>
                 </tr>
                 <tr>
@@ -91,8 +95,16 @@ export default async function TrekDetail({ params }) {
                   <td className="px-4 py-2">{trekObj.level}</td>
                 </tr>
                 <tr>
-                  <th className=" font-bold">Phone</th>
-                  <td className="px-4 py-2">+91 97735 37532</td>
+                  <th className=" font-bold whitespace-nowrap">Trek Lead</th>
+                  <td className="px-4 py-2">{trekObj.trek_lead}</td>
+                </tr>
+                <tr>
+                  <th className=" font-bold">Trek Lag</th>
+                  <td className="px-4 py-2">{trekObj.trek_lag}</td>
+                </tr>
+                <tr>
+                  <th className=" font-bold">Contact</th>
+                  <td className="px-4 py-2">{trekObj.contact_numbers}</td>
                 </tr>
                 <tr>
                   <th className=" font-bold">Email</th>
@@ -135,30 +147,30 @@ export default async function TrekDetail({ params }) {
         </div>
 
         <div>
-        <div className="flex justify-between">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
-            Photos
-          </h1>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 my-8">
-          {trekObj.images.slice(0, 4).map((item, index) => (
-            <div
-              key={index}
-              className="relative h-[150px] md:h-[200px] sm:h-[150px]"
-            >
-              <div className="h-full w-full">
-                <Image
-                  src={item.image}
-                  alt={"Social Work"}
-                  className="object-cover h-full w-full"
-                  width={600}
-                  height={400}
-                />
+          <div className="flex justify-between">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
+              Photos
+            </h1>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 my-8">
+            {trekObj.images.slice(0, 4).map((item, index) => (
+              <div
+                key={index}
+                className="relative h-[150px] md:h-[200px] sm:h-[150px]"
+              >
+                <div className="h-full w-full">
+                  <Image
+                    src={item.image}
+                    alt={"Social Work"}
+                    className="object-cover h-full w-full"
+                    width={600}
+                    height={400}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
         <div>
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
@@ -177,7 +189,7 @@ export default async function TrekDetail({ params }) {
             {trekObj.things_to_carry}
           </p>
         </div>
-        
+
         <div>
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
             What is Included
@@ -201,7 +213,20 @@ export default async function TrekDetail({ params }) {
             Payment Details
           </h1>
           <div className="max-w-5xl flex flex-col items-center justify-center mx-auto">
-            <BankDetails  />
+            <BankDetails />
+          </div>
+          <div className="mt-8 text-center">
+            <p className="text-lg font-semibold mb-4">
+              After completing your payment, please fill out this form to confirm your booking:
+            </p>
+            <Link
+              href={trekObj.booking_confirmation_form || "https://forms.gle/NKEMcDBqcvs3rXFm6"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-primary text-white px-6 py-2 rounded-full font-bold hover:bg-primary-dark transition"
+            >
+              Fill Booking Confirmation Form
+            </Link>
           </div>
         </div>
 
@@ -211,13 +236,13 @@ export default async function TrekDetail({ params }) {
           </h1>
           <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
             Be a Part of Something Meaningful. At Durgasakha, we believe in the
-            power of community and the joy of shared experiences. Whether you&apos;re
-            passionate about treks, cultural events, or social impact — there&apos;s
-            a place for you here. Join us in creating memories, building
-            connections, and making a difference — one event at a time.
+            power of community and the joy of shared experiences. Whether
+            you&apos;re passionate about treks, cultural events, or social
+            impact — there&apos;s a place for you here. Join us in creating
+            memories, building connections, and making a difference — one event
+            at a time.
           </p>
         </div>
       </div>
-    </>
   );
 }

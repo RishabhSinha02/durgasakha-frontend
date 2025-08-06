@@ -2,38 +2,13 @@ import Image from "next/image";
 import { API_URL } from "../../config/api";
 import { Header } from "../../components/header/Header";
 import Link from "next/link";
+import { formatDateTime } from "@/app/utils/format";
+
 
 // export const revalidate = 120; // revalidate every 2 minutes
 export const dynamic = "force-dynamic";
 
 export const dynamicParams = true; // enable dynamic params
-
-// Commenting out the below code as vercels build time is exceeding the limit
-// The below code is used to generate static paths for all the events and this runs at build time
-// export async function fetchAllEvents() {
-//   let events = [];
-//   let page = 1;
-//   let hasMore = true;
-
-//   while (hasMore) {
-//     const response = await fetch(`${API_URL}/api/event/all?page=${page}`);
-//     const data = await response.json();
-//     events = events.concat(data.results);
-//     hasMore = data.next !== null;
-//     page += 1;
-//   }
-
-//   return events;
-// }
-
-// export async function generateStaticParams() {
-//   const events = await fetchAllEvents();
-//   return events.map((event) => ({
-//     params: {
-//       id: event.uuid.toString(),
-//     },
-//   }));
-// }
 
 export async function generateMetadata({ params }) {
   const { id } = params;
@@ -83,11 +58,15 @@ export default async function EventDetail({ params }) {
                   <td className="px-4 py-2">{event.name}</td>
                 </tr>
                 <tr>
-                  <th className=" font-bold">Date</th>
+                  <th className=" font-bold">Starts</th>
                   <td className="px-4 py-2">
-                    {`${event.start_date.split("T")[0]} - ${
-                      event.end_date.split("T")[0]
-                    }`}
+                    {`${formatDateTime(event.start_date)}`}
+                  </td>
+                </tr>
+                <tr>
+                  <th className=" font-bold">Ends</th>
+                  <td className="px-4 py-2">
+                    {`${formatDateTime(event.end_date)}`}
                   </td>
                 </tr>
                 <tr>
@@ -104,8 +83,12 @@ export default async function EventDetail({ params }) {
                   </td>
                 </tr>
                 <tr>
-                  <th className=" font-bold">Phone</th>
-                  <td className="px-4 py-2">+91 97735 37532</td>
+                  <th className=" font-bold whitespace-nowrap">Event Coordinator</th>
+                  <td className="px-4 py-2">{event.event_coordinator}</td>
+                </tr>
+                <tr>
+                  <th className=" font-bold">Contact</th>
+                  <td className="px-4 py-2">{event.contact_numbers}</td>
                 </tr>
                 <tr>
                   <th className=" font-bold">Email</th>
@@ -141,6 +124,25 @@ export default async function EventDetail({ params }) {
           <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl whitespace-pre-line">
             {event.highlights}
           </p>
+        </div>
+
+        <div>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
+            Register for the Event
+          </h1>
+          <div className="mt-8 text-start">
+            <p className="text-lg font-semibold mb-4">
+              Please fill out this form to register for the event:
+            </p>
+            <Link
+              href={event.booking_confirmation_form || "https://forms.gle/NKEMcDBqcvs3rXFm6"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-primary text-white px-6 py-2 rounded-full font-bold hover:bg-primary-dark transition"
+            >
+              Fill Booking Confirmation Form
+            </Link>
+          </div>
         </div>
 
         {new Date(event.start_date) < new Date() && (

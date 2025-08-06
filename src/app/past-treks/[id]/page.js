@@ -2,6 +2,7 @@ import Itinerary from "@/app/components/upcoming-treks/itinerary";
 import { API_URL } from "@/app/config/api";
 import Image from "next/image";
 import Link from "next/link";
+import { formatDateTime } from "@/app/utils/format";
 
 export const dynamic = "force-dynamic";
 
@@ -53,11 +54,15 @@ export default async function PastTrekDetailPage({ params }) {
                 <td className="px-4 py-2">{trekObj.venue}</td>
               </tr>
               <tr>
-                <th className=" font-bold">Date</th>
+                <th className=" font-bold">Starts</th>
                 <td className="px-4 py-2">
-                  {`${trekObj.start_date.split("T")[0]} - ${
-                    trekObj.end_date.split("T")[0]
-                  }`}
+                  {`${formatDateTime(trekObj.start_date)}`}
+                </td>
+              </tr>
+              <tr>
+                <th className=" font-bold">Ends</th>
+                <td className="px-4 py-2">
+                  {`${formatDateTime(trekObj.end_date)}`}
                 </td>
               </tr>
               <tr>
@@ -80,8 +85,16 @@ export default async function PastTrekDetailPage({ params }) {
                 <td className="px-4 py-2">{trekObj.level}</td>
               </tr>
               <tr>
-                <th className=" font-bold">Phone</th>
-                <td className="px-4 py-2">+91 97735 37532</td>
+                <th className=" font-bold whitespace-nowrap">Trek Lead</th>
+                <td className="px-4 py-2">{trekObj.trek_lead}</td>
+              </tr>
+              <tr>
+                <th className=" font-bold">Trek Lag</th>
+                <td className="px-4 py-2">{trekObj.trek_lag}</td>
+              </tr>
+              <tr>
+                <th className=" font-bold">Contact</th>
+                <td className="px-4 py-2">{trekObj.contact_numbers}</td>
               </tr>
               <tr>
                 <th className=" font-bold">Email</th>
