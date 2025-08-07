@@ -135,7 +135,7 @@ export default async function EventDetail({ params }) {
               Please fill out this form to register for the event:
             </p>
             <Link
-              href={event.booking_confirmation_form || "https://forms.gle/NKEMcDBqcvs3rXFm6"}
+              href={event.booking_confirmation_form || "https://forms.gle/Bae128w5bLRceKHs5"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-primary text-white px-6 py-2 rounded-full font-bold hover:bg-primary-dark transition"

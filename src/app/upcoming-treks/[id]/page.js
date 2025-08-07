@@ -220,7 +220,7 @@ export default async function TrekDetail({ params }) {
               After completing your payment, please fill out this form to confirm your booking:
             </p>
             <Link
-              href={trekObj.booking_confirmation_form || "https://forms.gle/NKEMcDBqcvs3rXFm6"}
+              href={trekObj.booking_confirmation_form || "https://forms.gle/Bae128w5bLRceKHs5"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-primary text-white px-6 py-2 rounded-full font-bold hover:bg-primary-dark transition"

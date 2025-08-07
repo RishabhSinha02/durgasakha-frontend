@@ -16,7 +16,7 @@ export default function Itinerary({ itinerary }) {
                             <h3 className="font-bold text-xl text-secondary">{item.title}</h3>
                             <div className="flex flex-col gap-0">
                                 <p className="text-lg font-medium text-gray-900">{item.subtitle}</p>
-                                <p className="text-sm text-gray-600">{item.description}</p>
+                                <p className="text-sm text-gray-600 text-left">{item.description}</p>
                             </div>
                         </div>
                     </div>
