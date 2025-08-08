@@ -12,10 +12,10 @@ export async function generateMetadata({ params }) {
   const trekObj = await res.json();
 
   return {
-    title: `${trekObj.name} | Durgasakha Treks`,
+    title: `${trekObj.name} – ${formatDateTime(trekObj.start_date)} | Durgasakha Treks`,
     description: trekObj.overview?.slice(0, 150),
     openGraph: {
-      title: `${trekObj.name} | Durgasakha Treks`,
+      title: `${trekObj.name} – ${formatDateTime(trekObj.start_date)} | Durgasakha Treks`,
       description: trekObj.overview,
       images: trekObj.cover_image,
     },

@@ -16,10 +16,10 @@ export async function generateMetadata({ params }) {
   const event = await res.json();
 
   return {
-    title: `${event.name} | Shree Durgsakha Charitable Trust`,
+    title: `${event.name} – ${formatDateTime(event.start_date)} | Shree Durgsakha Charitable Trust`,
     description: event.overview?.slice(0, 150),
     openGraph: {
-      title: `${event.name} | Shree Durgsakha Charitable Trust`,
+      title: `${event.name} – ${formatDateTime(event.start_date)} | Shree Durgsakha Charitable Trust`,
       description: event.overview,
       images: event.cover_image,
     },
