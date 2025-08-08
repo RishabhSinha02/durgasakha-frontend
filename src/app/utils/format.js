@@ -8,6 +8,7 @@ function formatDateTime(dateString) {
     hour: "numeric",
     minute: "2-digit",
     hour12: true,
+    timeZone: "Asia/Kolkata", // Force IST
   };
   return date.toLocaleString("en-US", options);
 }
