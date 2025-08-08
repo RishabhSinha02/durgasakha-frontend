@@ -225,7 +225,7 @@ export default async function TrekDetail({ params }) {
               rel="noopener noreferrer"
               className="inline-block bg-primary text-white px-6 py-2 rounded-full font-bold hover:bg-primary-dark transition"
             >
-              Fill Booking Confirmation Form
+              Booking Confirmation Form
             </Link>
           </div>
         </div>
