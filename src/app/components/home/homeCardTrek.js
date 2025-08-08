@@ -19,7 +19,7 @@ export default function HomeCardTrek({ trek }) {
         </div>
       </div>
 
-      <div className="trek-details p-4 flex flex-col gap-1 md:p-6">
+      <div className="trek-details p-4 flex justify-between flex-col gap-1 md:p-6">
         <p className="lg:text-[20px] md:text-base font-semibold text-gray-600">
           {trek.venue}
         </p>
