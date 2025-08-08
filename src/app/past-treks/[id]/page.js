@@ -109,7 +109,7 @@ export default async function PastTrekDetailPage({ params }) {
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
           Overview
         </h1>
-        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl whitespace-pre-line">
+        <p className="mt-1 text-sm md:text-sm text-left max-w-7xl whitespace-pre-line">
           {trekObj.overview}
         </p>
       </div>
@@ -118,7 +118,7 @@ export default async function PastTrekDetailPage({ params }) {
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
           Highlights
         </h1>
-        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl whitespace-pre-line">
+        <p className="mt-1 text-sm md:text-sm text-left max-w-7xl whitespace-pre-line">
           {trekObj.highlights}
         </p>
       </div>
@@ -160,7 +160,7 @@ export default async function PastTrekDetailPage({ params }) {
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
           Itinerary
         </h1>
-        <div className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
+        <div className="mt-1 text-sm md:text-sm text-left max-w-7xl">
           <Itinerary itinerary={trekObj.itinerary} />
         </div>
       </div>
@@ -169,7 +169,7 @@ export default async function PastTrekDetailPage({ params }) {
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
           Things to Carry
         </h1>
-        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl whitespace-pre-line">
+        <p className="mt-1 text-sm md:text-sm text-left max-w-7xl whitespace-pre-line">
           {trekObj.things_to_carry}
         </p>
       </div>
@@ -178,7 +178,7 @@ export default async function PastTrekDetailPage({ params }) {
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
           What is Included
         </h1>
-        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl whitespace-pre-line">
+        <p className="mt-1 text-sm md:text-sm text-left max-w-7xl whitespace-pre-line">
           {trekObj.what_is_included}
         </p>
       </div>
@@ -187,7 +187,7 @@ export default async function PastTrekDetailPage({ params }) {
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6  whitespace-pre-line">
           What is Not Included
         </h1>
-        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
+        <p className="mt-1 text-sm md:text-sm text-left max-w-7xl">
           {trekObj.what_is_not_included}
         </p>
       </div>
@@ -196,7 +196,7 @@ export default async function PastTrekDetailPage({ params }) {
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
           Join Us
         </h1>
-        <p className="mt-1 text-sm md:text-sm text-justify max-w-7xl">
+        <p className="mt-1 text-sm md:text-sm text-left max-w-7xl">
           Be a Part of Something Meaningful. At Durgasakha, we believe in the
           power of community and the joy of shared experiences. Whether
           you&apos;re passionate about treks, cultural events, or social impact

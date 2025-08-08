@@ -89,7 +89,7 @@ export default async function Home() {
               </div>
             ))}
           </div>
-          <p className="mt-2 text-sm md:text-lg border-l-4 border-secondary pl-4 md:pl-8 text-justify max-w-7xl">
+          <p className="mt-2 text-sm md:text-lg border-l-4 border-secondary pl-4 md:pl-8 text-left max-w-7xl">
             Where Adventure Meets Purpose! We&apos;re thrilled to have you here.
             At Durgasakha, we&apos;re more than just a travel company.
             We&apos;re a community of adventurers committed to exploring the
@@ -192,10 +192,10 @@ export default async function Home() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6 md:mb-10">
             Volunteer with Durgasakha
           </h1>
-          <p className="mt-2 text-sm md:text-lg border-l-4 text-secondary font-bold border-secondary pl-4 md:pl-8 text-justify max-w-7xl">
+          <p className="mt-2 text-sm md:text-lg border-l-4 text-secondary font-bold border-secondary pl-4 md:pl-8 text-left max-w-7xl">
             Experience the Joy of Giving Back While Exploring the World
           </p>
-          <p className="mt-4 text-sm md:text-lg font-semibold text-justify max-w-7xl">
+          <p className="mt-4 text-sm md:text-lg font-semibold text-left max-w-7xl">
             At Durgasakha, we believe that travel is not just about sightseeing;
             it&apos;s also about giving back to the places we visit. Our
             volunteer program offers you the opportunity to immerse yourself in

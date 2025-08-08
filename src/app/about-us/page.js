@@ -14,7 +14,7 @@ export default async function AboutUs() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-10">
             About Durgasakha
           </h1>
-          <p className="mt-2 text-sm md:text-lg border-l-4 border-secondary pl-4 md:pl-8 text-justify max-w-8xl">
+          <p className="mt-2 text-sm md:text-lg border-l-4 border-secondary pl-4 md:pl-8 text-left max-w-8xl">
             Durgasakha is an NGO committed to preserving the forts of the
             Sahyadri region through cleanliness drives and awareness campaigns.
             With over 150 treks and 1,500+ participants, it promotes a strong
@@ -29,14 +29,14 @@ export default async function AboutUs() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-10">
             Our Mission
           </h1>
-          <p className="mt-2 text-sm md:text-lg text-justify max-w-8xl">
+          <p className="mt-2 text-sm md:text-lg text-left max-w-8xl">
             <strong>Durgasakha</strong> is dedicated to the preservation of
             Sahyadri&apos;s forts, fostering environmental awareness, and
             uplifting rural communities through education. Our mission is built
             on three key pillars:
           </p>
 
-          <ul className="list-disc pl-4 md:pl-8 mt-4 space-y-3 text-sm md:text-lg text-justify max-w-8xl">
+          <ul className="list-disc pl-4 md:pl-8 mt-4 space-y-3 text-sm md:text-lg text-left max-w-8xl">
             <li>
               <strong>Fort Conservation & Cleanliness:</strong> We protect the
               Sahyadri region&apos;s heritage through awareness drives and
@@ -54,7 +54,7 @@ export default async function AboutUs() {
             </li>
           </ul>
 
-          <p className="mt-4 text-sm md:text-lg text-justify max-w-8xl">
+          <p className="mt-4 text-sm md:text-lg text-left max-w-8xl">
             At Durgasakha, we believe in preserving the past, enriching the
             present, and empowering the future . Together, we create lasting
             impact through action, awareness, and shared responsibility.
