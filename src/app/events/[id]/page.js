@@ -98,7 +98,7 @@ export default async function EventDetail({ params }) {
                   <tr>
                     <td colSpan="2" className="px-4 pt-12 text-center">
                       <button className="bg-secondary text-white px-8 py-2 rounded-full font-bold">
-                        Donate Now
+                        Donate
                       </button>
                     </td>
                   </tr>

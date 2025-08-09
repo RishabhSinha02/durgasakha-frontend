@@ -11,7 +11,7 @@ export default function CustomNavbar() {
     const pathname = usePathname();
     const router = useRouter();
     const [openDropdown, setOpenDropdown] = useState(null);
-    const [showAlert, setShowAlert] = useState(true);
+    const [showAlert, setShowAlert] = useState(false);
 
     const isActive = (path) => {
         return pathname === path ? 'text-primary font-bold' : '';
@@ -116,7 +116,7 @@ export default function CustomNavbar() {
                 </NavbarBrand>
                 <div className="flex md:order-2 gap-4">
                     <Button as={Link} href="/donate" className="rounded-full bg-secondary">
-                        Donate Now
+                        Donate
                     </Button>
                     <NavbarToggle data-collapse-toggle="navbar-collapse" />
                 </div>

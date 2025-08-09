@@ -44,7 +44,7 @@ const UpcomingEventCard = ({ event }) => {
             href={`donate`}
             className="flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-[#C23E3E]"
           >
-            Donate Now
+            Donate
             <svg
               width="24"
               height="24"

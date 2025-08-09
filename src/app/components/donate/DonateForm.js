@@ -40,7 +40,7 @@ export function DonateForm() {
                 </div>
             </div>
             <div className="flex flex-col items-center w-full mt-8">
-                <Button type="submit" className="rounded-full max-w-sm">Donate Now</Button>
+                <Button type="submit" className="rounded-full max-w-sm">Donate</Button>
             </div>
         </form>
     )
