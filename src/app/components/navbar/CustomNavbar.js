@@ -164,7 +164,10 @@ export default function CustomNavbar() {
           <Dropdown
             label={
               <span>
-                🌐 Change Lang
+                <span className="md:inline hidden"><Image src="/language-switch.png" alt="Change Language" width={24} height={24} style={{ display: 'inline-block', verticalAlign: 'middle' }} /> Change Lang</span>
+                <span className="md:hidden">
+                  <Image src="/language-switch.png" alt="Change Language" width={24} height={24} style={{ display: 'inline-block', verticalAlign: 'middle' }} />
+                </span>
               </span>
             }
             inline
