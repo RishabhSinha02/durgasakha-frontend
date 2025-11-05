@@ -14,3 +14,31 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}
+
+/* Hide the footer widget */
+.goog-logo-link,
+.goog-te-gadget {
+  display: none !important;
+}
+
+/* Hide dropdown */
+.goog-te-combo {
+  display: none !important;
+}
+
+/* Hide Google Translate top bar iframe */
+iframe.skiptranslate {
+  display: none !important;
+}
+
+/* Prevent body from being pushed down */
+body {
+  top: 0px !important;
+}
