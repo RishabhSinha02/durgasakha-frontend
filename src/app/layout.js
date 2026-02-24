@@ -4,6 +4,7 @@ import "./globals.css";
 import CustomNavbar from "./components/navbar/CustomNavbar";
 import CustomFooter from "./components/footer/CustomFooter";
 import ScrollToTopButton from "./components/scrollToTop/scrollToTop";
+import GoogleTranslate from "./components/GoogleTranslate";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -56,6 +57,7 @@ export default function RootLayout({ children }) {
         <div>
           <ScrollToTopButton />
         </div>
+        <GoogleTranslate />
       </body>
     </html>
   );
