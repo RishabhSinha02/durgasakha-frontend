@@ -37,7 +37,7 @@ const TrekCard = ({ trek }) => {
           <div className="text-sm font-bold">{trek.venue}</div>
         </div>
 
-        <p className="mb-6 text-sm text-gray-600">{trek.overview}</p>
+        <p className="mb-6 text-sm text-gray-600 line-clamp-3">{trek.overview}</p>
 
         <div className="flex items-center justify-between">
           <Link
