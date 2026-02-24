@@ -13,4 +13,25 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  /* Prevent layout shift from Google Translate top offset */
+  top: 0 !important;
 }
+
+/* ── Hide Google Translate top banner & all injected UI ── */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover,
+.goog-te-gadget-icon,
+.goog-te-menu-frame {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* The div Google wraps around the banner */
+body > .skiptranslate {
+  display: none !important;
+}
+
