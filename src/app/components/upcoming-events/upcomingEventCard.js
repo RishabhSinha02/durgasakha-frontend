@@ -41,10 +41,10 @@ const UpcomingEventCard = ({ event }) => {
 
         <div className="flex items-center justify-between">
           <Link
-            href={`donate`}
-            className="flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-[#C23E3E]"
+            href={`upcoming-events/${event.uuid}`}
+            className="flex items-center gap-2 rounded-full bg-[#D84E4E] px-4 py-2 text-sm font-semibold text-white transition-all hover:bg-[#C23E3E]"
           >
-            Donate
+            Join Now
             <svg
               width="24"
               height="24"
@@ -62,10 +62,10 @@ const UpcomingEventCard = ({ event }) => {
             </svg>
           </Link>
           <Link
-            href={`events/${event.uuid}`}
-            className="text-lg font-semibold text-primary underline cursor-pointer"
+            href={`donate`}
+            className="text-lg font-semibold text-primary cursor-pointer"
           >
-            Know More
+            Donate
           </Link>
         </div>
       </div>
