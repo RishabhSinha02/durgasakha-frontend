@@ -90,6 +90,10 @@ export default async function PastTrekDetailPage({ params }) {
                   <th className=" font-bold">Email</th>
                   <td className="px-4 py-2">durgasakha@gmail.com</td>
                 </tr>
+                <tr>
+                  <th className=" font-bold">Fees</th>
+                  <td className="px-4 py-2">Rs. 600.00</td>
+                </tr>
                 {new Date(event.start_date) > new Date() && (
                   <tr>
                     <td colSpan="2" className="px-4 pt-12 text-center">
@@ -163,6 +167,9 @@ export default async function PastTrekDetailPage({ params }) {
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
             Payment Details
           </h1>
+          <p className="text-lg font-semibold mb-4">
+            Fees: Rs. 600.00
+          </p>
           <div className="max-w-5xl flex flex-col items-center left-center mx-auto">
             <EventBankDetails />
           </div>

@@ -37,7 +37,7 @@ const UpcomingEventCard = ({ event }) => {
           <div className="text-sm font-bold">{event.venue}</div>
         </div>
 
-        <p className="mb-6 text-sm text-gray-600">{event.overview}</p>
+        <p className="mb-6 text-sm text-gray-600 line-clamp-3">{event.overview}</p>
 
         <div className="flex items-center justify-between">
           <Link
@@ -61,12 +61,7 @@ const UpcomingEventCard = ({ event }) => {
               />
             </svg>
           </Link>
-          <Link
-            href={`donate`}
-            className="text-lg font-semibold text-primary cursor-pointer"
-          >
-            Donate
-          </Link>
+          <div className="text-2xl font-bold">Rs. 600.00</div>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function HomeCardTrek({ event }) {
+export default function HomeCardEvent({ event }) {
   return (
     <div className="trek-card bg-white shadow-md rounded-lg overflow-hidden">
       <div className="relative flex justify-center items-center">
@@ -12,6 +12,10 @@ export default function HomeCardTrek({ event }) {
           width={500}
           height={286}
         />
+        {/* Price overlay on bottom-right */}
+        <div className="absolute bottom-3 right-3 rounded-lg bg-white/90 px-4 py-2 text-md md:text-lg font-bold text-gray-900 shadow-md">
+          ₹{600}
+        </div>
       </div>
       <div className="trek-details p-4 flex flex-col gap-1 md:p-6">
         <p className="lg:text-[20px] md:text-base font-semibold text-gray-600">
