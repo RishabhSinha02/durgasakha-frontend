@@ -23,18 +23,27 @@ export default function CustomNavbar() {
     }, []);
 
     const switchLanguage = () => {
+        const hostname = window.location.hostname;
+        // Also compute root domain (strips leading "www." if present)
+        // e.g. www.durgasakha.org → durgasakha.org
+        const rootDomain = hostname.replace(/^www\./, '');
+
         if (isMarathi) {
-            // Switching back to English: DELETE the cookie entirely on all domain variants
-            // Setting to /en/en is unreliable on some deployments — removing it is the correct approach
+            // Switching back to English: DELETE the cookie on every domain variant
+            // Google Translate sets it on both www.durgasakha.org and .durgasakha.org
             const expiry = 'expires=Thu, 01 Jan 1970 00:00:00 UTC';
             document.cookie = `googtrans=; ${expiry}; path=/`;
-            document.cookie = `googtrans=; ${expiry}; path=/; domain=${window.location.hostname}`;
-            document.cookie = `googtrans=; ${expiry}; path=/; domain=.${window.location.hostname}`;
+            document.cookie = `googtrans=; ${expiry}; path=/; domain=${hostname}`;
+            document.cookie = `googtrans=; ${expiry}; path=/; domain=.${hostname}`;
+            document.cookie = `googtrans=; ${expiry}; path=/; domain=${rootDomain}`;
+            document.cookie = `googtrans=; ${expiry}; path=/; domain=.${rootDomain}`;
         } else {
             // Switching to Marathi: set the cookie on all domain variants
             document.cookie = `googtrans=/en/mr; path=/`;
-            document.cookie = `googtrans=/en/mr; path=/; domain=${window.location.hostname}`;
-            document.cookie = `googtrans=/en/mr; path=/; domain=.${window.location.hostname}`;
+            document.cookie = `googtrans=/en/mr; path=/; domain=${hostname}`;
+            document.cookie = `googtrans=/en/mr; path=/; domain=.${hostname}`;
+            document.cookie = `googtrans=/en/mr; path=/; domain=${rootDomain}`;
+            document.cookie = `googtrans=/en/mr; path=/; domain=.${rootDomain}`;
         }
         setIsMarathi(!isMarathi);
         window.location.reload();
