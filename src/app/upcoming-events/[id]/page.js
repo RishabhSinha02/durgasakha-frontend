@@ -178,7 +178,7 @@ export default async function PastTrekDetailPage({ params }) {
               After completing your payment, please fill out this form to confirm your booking:
             </p>
             <Link
-              href={event.booking_confirmation_form_link || "https://docs.google.com/forms/d/e/1FAIpQLSdi2o_7-vNUx4MP2p-ApB4ygRUChy88bc-PsoyXaKnpndYc4g/viewform?usp=preview"}
+              href={event.booking_confirmation_form_link || "https://forms.gle/VXt4zmVgKfG9kxqYA"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-primary text-white px-6 py-2 rounded-full font-bold hover:bg-primary-dark transition"
