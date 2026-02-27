@@ -23,10 +23,19 @@ export default function CustomNavbar() {
     }, []);
 
     const switchLanguage = () => {
-        const next = isMarathi ? '/en/en' : '/en/mr';
-        // Set cookie for both the current hostname and with no domain prefix
-        document.cookie = `googtrans=${next}; path=/`;
-        document.cookie = `googtrans=${next}; path=/; domain=${window.location.hostname}`;
+        if (isMarathi) {
+            // Switching back to English: DELETE the cookie entirely on all domain variants
+            // Setting to /en/en is unreliable on some deployments — removing it is the correct approach
+            const expiry = 'expires=Thu, 01 Jan 1970 00:00:00 UTC';
+            document.cookie = `googtrans=; ${expiry}; path=/`;
+            document.cookie = `googtrans=; ${expiry}; path=/; domain=${window.location.hostname}`;
+            document.cookie = `googtrans=; ${expiry}; path=/; domain=.${window.location.hostname}`;
+        } else {
+            // Switching to Marathi: set the cookie on all domain variants
+            document.cookie = `googtrans=/en/mr; path=/`;
+            document.cookie = `googtrans=/en/mr; path=/; domain=${window.location.hostname}`;
+            document.cookie = `googtrans=/en/mr; path=/; domain=.${window.location.hostname}`;
+        }
         setIsMarathi(!isMarathi);
         window.location.reload();
     };
