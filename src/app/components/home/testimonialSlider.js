@@ -1,68 +1,9 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
-import StarRating from "./starRating";
+import React, { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 
-const TestimonialSlider = () => {
-  const testimonials = [
-    {
-      uuid: 1,
-      name: "Aarav Patel",
-      role: "Traveller",
-      rating: 2.5,
-      comment:
-        "The guides were knowledgeable and friendly. I discovered so much about the local culture!",
-      title: "Enriching and fun journey",
-    },
-    {
-      uuid: 2,
-      name: "Sneha Kulkarni",
-      role: "Traveller",
-      rating: 4,
-      comment:
-        "A seamless experience from start to finish. The trek was well-organized and safe.",
-      title: "Well organized adventure",
-    },
-    {
-      uuid: 3,
-      name: "Vikram Singh",
-      role: "Traveller",
-      rating: 4,
-      comment:
-        "Breathtaking views and great company. I made memories for a lifetime!",
-      title: "Memorable trek",
-    },
-    {
-      uuid: 4,
-      name: "Priya Deshmukh",
-      role: "Traveller",
-      rating: 4,
-      comment:
-        "Loved the attention to detail and the delicious food. Highly recommended!",
-      title: "Amazing hospitality",
-    },
-    {
-      uuid: 5,
-      name: "Rahul Joshi",
-      role: "Traveller",
-      rating: 4,
-      comment:
-        "Perfect blend of adventure and relaxation. Will definitely join again.",
-      title: "Perfect getaway",
-    },
-    {
-      uuid: 6,
-      name: "Meera Shah",
-      role: "Traveller",
-      rating: 4,
-      comment:
-        "The team ensured everyone felt included and safe. Truly a wonderful experience.",
-      title: "Inclusive and safe",
-    },
-    // Add more testimonials as needed for testing
-  ];
-
+const TestimonialSlider = ({ testimonials = [] }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const totalSlides = Math.ceil(testimonials.length / 2);
@@ -92,27 +33,6 @@ const TestimonialSlider = () => {
     };
   }, [isPaused, nextSlide]);
 
-  //   const StarRating = ({ rating }) => {
-  //     return (
-  //       <div className="flex items-center">
-  //         {[1, 2, 3, 4, 5].map((star) => (
-  //           <svg
-  //             key={star}
-  //             className={`w-5 h-5 ${
-  //               star <= rating ? 'text-orange-400' : 'text-gray-300'
-  //             }`}
-  //             aria-hidden="true"
-  //             xmlns="http://www.w3.org/2000/svg"
-  //             fill="currentColor"
-  //             viewBox="0 0 22 20"
-  //           >
-  //             <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-  //           </svg>
-  //         ))}
-  //       </div>
-  //     );
-  //   };
-
   return (
     <div className="max-w-screen-xl mx-auto">
       <div
@@ -136,29 +56,23 @@ const TestimonialSlider = () => {
                     <div key={testimonial.uuid} className="w-full md:w-1/2">
                       <div className="bg-white rounded-lg shadow p-6 h-full">
                         <div className="flex items-center gap-4 mb-4">
-                          <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                          <div className="w-20 h-20 md:w-24 md:h-24 bg-gray-200 rounded-full overflow-hidden">
                             <Image
-                              src="/profile.png"
+                              src={testimonial.photo}
                               alt={testimonial.name}
                               className="w-full h-full object-cover"
-                              width={150}
-                              height={150}
+                              width={250}
+                              height={250}
                             />
                           </div>
                           <div>
-                            <h3 className="text-lg font-semibold">
+                            <h3 className="text-md md:text-lg font-semibold">
                               {testimonial.name}
                             </h3>
-                            <p className="text-gray-600">{testimonial.role}</p>
+                            <p className="text-sm md:text-md text-gray-600">{testimonial.role}</p>
                           </div>
-                          {/* <div className="ml-auto">
-                          <StarRating rating={testimonial.rating} />
-                        </div> */}
                         </div>
-                        <h4 className="text-xl font-bold mb-2">
-                          {testimonial.title}
-                        </h4>
-                        <p className="text-gray-700">{testimonial.comment}</p>
+                        <p className="text-sm md:text-lg text-gray-700">{testimonial.message}</p>
                       </div>
                     </div>
                   ))}

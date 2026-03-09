@@ -17,11 +17,15 @@ export default async function Home() {
   ];
 
   const upcomingTreks = await fetch(`${API_URL}/api/trek/upcoming`).then(
-    (res) => res.json()
+    (res) => res.json(),
   );
 
   const upcomingEvents = await fetch(`${API_URL}/api/event/upcoming`).then(
-    (res) => res.json()
+    (res) => res.json(),
+  );
+
+  const testimonials = await fetch(`${API_URL}/api/core/testimonials`).then(
+    (res) => res.json(),
   );
 
   return (
@@ -227,7 +231,7 @@ export default async function Home() {
             What our Trekkers say about us
           </h1>
         </div>
-        <TestimonialSlider />
+        <TestimonialSlider testimonials={testimonials} />
       </section>
     </div>
   );

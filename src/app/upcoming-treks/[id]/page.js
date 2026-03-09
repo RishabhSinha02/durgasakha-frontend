@@ -8,7 +8,7 @@ import { formatDateTime } from "@/app/utils/format";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }) {
-  const { id } = params;
+  const { id } = await params;
   const res = await fetch(`${API_URL}/api/trek/${id}`);
   const trekObj = await res.json();
 

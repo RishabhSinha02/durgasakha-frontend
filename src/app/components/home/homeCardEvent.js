@@ -14,7 +14,7 @@ export default function HomeCardEvent({ event }) {
         />
         {/* Price overlay on bottom-right */}
         <div className="absolute bottom-3 right-3 rounded-lg bg-white/90 px-4 py-2 text-md md:text-lg font-bold text-gray-900 shadow-md">
-          ₹{600}
+          ₹{event.event_fees}
         </div>
       </div>
       <div className="trek-details p-4 flex flex-col gap-1 md:p-6">

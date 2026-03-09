@@ -61,7 +61,7 @@ const UpcomingEventCard = ({ event }) => {
               />
             </svg>
           </Link>
-          <div className="text-2xl font-bold">Rs. 600.00</div>
+          <div className="text-2xl font-bold">Rs. {event.event_fees}</div>
         </div>
       </div>
     </div>

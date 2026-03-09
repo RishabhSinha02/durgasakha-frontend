@@ -4,11 +4,12 @@ import Link from "next/link";
 import { formatDateTime } from "@/app/utils/format";
 import { Header } from "../../components/header/Header";
 import EventBankDetails from "@/app/components/donate/EventBankDetails";
+import Itinerary from "@/app/components/upcoming-treks/itinerary";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }) {
-  const { id } = params;
+  const { id } = await params;
   const res = await fetch(`${API_URL}/api/event/${id}`);
   const event = await res.json();
 
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }) {
 export default async function PastTrekDetailPage({ params }) {
   const { id } = await params;
   const event = await fetch(`${API_URL}/api/event/${id}`).then((res) =>
-    res.json()
+    res.json(),
   );
   return (
     <>
@@ -70,16 +71,18 @@ export default async function PastTrekDetailPage({ params }) {
                   <td className="px-4 py-2">
                     {`${Math.floor(
                       (new Date(event.end_date) - new Date(event.start_date)) /
-                        (1000 * 60 * 60 * 24)
+                        (1000 * 60 * 60 * 24),
                     )} days ${Math.floor(
                       ((new Date(event.end_date) - new Date(event.start_date)) %
                         (1000 * 60 * 60 * 24)) /
-                        (1000 * 60 * 60)
+                        (1000 * 60 * 60),
                     )} hours`}
                   </td>
                 </tr>
                 <tr>
-                  <th className=" font-bold whitespace-nowrap">Event Coordinator</th>
+                  <th className=" font-bold whitespace-nowrap">
+                    Event Coordinator
+                  </th>
                   <td className="px-4 py-2">{event.event_coordinator}</td>
                 </tr>
                 <tr>
@@ -92,13 +95,13 @@ export default async function PastTrekDetailPage({ params }) {
                 </tr>
                 <tr>
                   <th className=" font-bold">Fees</th>
-                  <td className="px-4 py-2">Rs. 600.00</td>
+                  <td className="px-4 py-2">Rs. {event.event_fees}</td>
                 </tr>
                 {new Date(event.start_date) > new Date() && (
                   <tr>
                     <td colSpan="2" className="px-4 pt-12 text-center">
                       <Link href="/donate">
-                        <button className="bg-secondary text-white px-8 py-2 rounded-full font-bold" >
+                        <button className="bg-secondary text-white px-8 py-2 rounded-full font-bold">
                           Donate
                         </button>
                       </Link>
@@ -163,22 +166,62 @@ export default async function PastTrekDetailPage({ params }) {
           </div>
         )}
 
+        <div>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
+            Itinerary
+          </h1>
+          <div className="mt-1 text-sm md:text-sm text-left max-w-7xl">
+            <Itinerary itinerary={event.itinerary} />
+          </div>
+        </div>
+
+        <div>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
+            Things to Carry
+          </h1>
+          <p className="mt-1 text-sm md:text-sm text-left max-w-7xl whitespace-pre-line">
+            {event.things_to_carry}
+          </p>
+        </div>
+
+        <div>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
+            What is Included
+          </h1>
+          <p className="mt-1 text-sm md:text-sm text-left max-w-7xl whitespace-pre-line">
+            {event.what_is_included}
+          </p>
+        </div>
+
+        <div>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6  whitespace-pre-line">
+            What is Not Included
+          </h1>
+          <p className="mt-1 text-sm md:text-sm text-left max-w-7xl">
+            {event.what_is_not_included}
+          </p>
+        </div>
+
         <div id="payment-details">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
             Payment Details
           </h1>
           <p className="text-lg font-semibold mb-4">
-            Fees: Rs. 600.00
+            Fees: Rs. {event.event_fees}
           </p>
           <div className="max-w-5xl flex flex-col items-center left-center mx-auto">
             <EventBankDetails />
           </div>
           <div className="mt-8 text-center">
             <p className="text-lg font-semibold mb-4">
-              After completing your payment, please fill out this form to confirm your booking:
+              After completing your payment, please fill out this form to
+              confirm your booking:
             </p>
             <Link
-              href={event.booking_confirmation_form_link || "https://forms.gle/VXt4zmVgKfG9kxqYA"}
+              href={
+                event.booking_confirmation_form_link ||
+                "https://forms.gle/VXt4zmVgKfG9kxqYA"
+              }
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-primary text-white px-6 py-2 rounded-full font-bold hover:bg-primary-dark transition"
