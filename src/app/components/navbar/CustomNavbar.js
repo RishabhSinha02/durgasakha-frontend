@@ -140,26 +140,26 @@ export default function CustomNavbar() {
                 <span className="font-bold">Website Under Development:</span> Please note that all content is placeholder and for testing purposes only.
             </Alert>}
             <Navbar fluid rounded>
-                <NavbarBrand as={Link} href="/">
+                <NavbarBrand as={Link} href="/" className="p-0">
                     <Image
                         src="/navbar/durgasakha-logo-navbar.png"
-                        className="mr-3 w-28 sm:h-12"
+                        className="w-24 xs:w-28 xsm:w-32 sm:h-12 object-contain"
                         alt="Durgasakha"
-                        width={80}
+                        width={200}
                         height={50}
                         priority
                     />
                 </NavbarBrand>
-                <div className="flex md:order-2 gap-4">
+                <div className="flex md:order-2 gap-2 xsm:gap-4 items-center">
                     <div
-                        className='flex gap-2 items-center cursor-pointer font-extrabold text-primary'
+                        className='flex gap-1 xsm:gap-2 items-center cursor-pointer font-extrabold text-primary'
                         onClick={switchLanguage}
                         title={isMarathi ? 'Switch to English' : 'Switch to Marathi'}
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 flex-shrink-0">
                             <path fillRule="evenodd" d="M15.312 11.424a5.5 5.5 0 0 1-9.201 2.466l-.312-.311h2.433a.75.75 0 0 0 0-1.5H3.989a.75.75 0 0 0-.75.75v4.242a.75.75 0 0 0 1.5 0v-2.43l.31.31a7 7 0 0 0 11.712-3.138.75.75 0 0 0-1.449-.39Zm1.23-3.723a.75.75 0 0 0 .219-.53V2.929a.75.75 0 0 0-1.5 0V5.36l-.31-.31A7 7 0 0 0 3.239 8.188a.75.75 0 1 0 1.448.389A5.5 5.5 0 0 1 13.89 6.11l.311.31h-2.432a.75.75 0 0 0 0 1.5h4.243a.75.75 0 0 0 .53-.219Z" clipRule="evenodd" />
                         </svg>
-                        {isMarathi ? 'English' : 'मराठी'}
+                        <span className="hidden xs:inline">{isMarathi ? 'English' : 'मराठी'}</span>
                     </div>
                     <Button as={Link} href="/donate" className="rounded-full bg-secondary">
                         Donate
@@ -188,15 +188,18 @@ export default function CustomNavbar() {
                     <div className="md:hidden">
                         <button
                             onClick={handleDropdownClick('treks')}
-                            className="flex items-center w-full py-2 text-base"
+                            className={`flex items-center justify-between w-full py-2 pl-3 pr-4 text-base border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-400 ${isTrekActive() ? 'text-primary font-bold' : ''}`}
                         >
-                            Treks
+                            <span>Treks</span>
+                            <svg className={`w-4 h-4 transition-transform duration-200 ${openDropdown === 'treks' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
                         </button>
                         {openDropdown === 'treks' && (
-                            <div className="pl-4">
+                            <div className="bg-gray-50/50 dark:bg-gray-800/30 border-b border-gray-100 dark:border-gray-700">
                                 <Link href="/upcoming-treks" legacyBehavior>
                                     <a
-                                        className="block py-2"
+                                        className={`block py-2 pl-6 text-sm hover:text-primary ${isActive('/upcoming-treks') || 'text-gray-600 dark:text-gray-400'}`}
                                         onClick={handleMobileDropdownNav('/upcoming-treks')}
                                     >
                                         Upcoming Treks
@@ -204,7 +207,7 @@ export default function CustomNavbar() {
                                 </Link>
                                 <Link href="/past-treks" legacyBehavior>
                                     <a
-                                        className="block py-2"
+                                        className={`block py-2 pl-6 text-sm border-t border-gray-50/50 dark:border-gray-800/50 hover:text-primary ${isActive('/past-treks') || 'text-gray-600 dark:text-gray-400'}`}
                                         onClick={handleMobileDropdownNav('/past-treks')}
                                     >
                                         Past Treks
@@ -215,15 +218,18 @@ export default function CustomNavbar() {
 
                         <button
                             onClick={handleDropdownClick('events')}
-                            className="flex items-center w-full py-2 text-base"
+                            className={`flex items-center justify-between w-full py-2 pl-3 pr-4 text-base border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-400 ${isEventActive() ? 'text-primary font-bold' : ''}`}
                         >
-                            Events
+                            <span>Events</span>
+                            <svg className={`w-4 h-4 transition-transform duration-200 ${openDropdown === 'events' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
                         </button>
                         {openDropdown === 'events' && (
-                            <div className="pl-4">
+                            <div className="bg-gray-50/50 dark:bg-gray-800/30 border-b border-gray-100 dark:border-gray-700">
                                 <Link href="/upcoming-events" legacyBehavior>
                                     <a
-                                        className="block py-2"
+                                        className={`block py-2 pl-6 text-sm hover:text-primary ${isActive('/upcoming-events') || 'text-gray-600 dark:text-gray-400'}`}
                                         onClick={handleMobileDropdownNav('/upcoming-events')}
                                     >
                                         Upcoming Events
@@ -231,7 +237,7 @@ export default function CustomNavbar() {
                                 </Link>
                                 <Link href="/past-events" legacyBehavior>
                                     <a
-                                        className="block py-2"
+                                        className={`block py-2 pl-6 text-sm border-t border-gray-50/50 dark:border-gray-800/50 hover:text-primary ${isActive('/past-events') || 'text-gray-600 dark:text-gray-400'}`}
                                         onClick={handleMobileDropdownNav('/past-events')}
                                     >
                                         Past Events

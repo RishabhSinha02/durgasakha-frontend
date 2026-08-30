@@ -101,7 +101,7 @@ export default function CustomFooter() {
               <FooterLinkGroup col>
                 <FooterLink
                   as={Link}
-                  href="https://www.instagram.com/shree_durgasakha_trust/"
+                  href="https://www.instagram.com/shreedurgasakha/"
                   className={styles["nav-links"]}
                 >
                   Instagram
@@ -148,7 +148,7 @@ export default function CustomFooter() {
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <FooterIcon
               as={Link}
-              href="https://www.instagram.com/shree_durgasakha_trust/"
+              href="https://www.instagram.com/shreedurgasakha/"
               icon={BsInstagram}
               className="text-primary"
             />
